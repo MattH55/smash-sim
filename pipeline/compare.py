@@ -26,6 +26,7 @@ from common import ROOT, append_jsonl, extract_json_array, llm_complete, load_co
 cfg = load_config()
 CMP_SCHEMA = load_schema("comparison")
 PROMPT = (ROOT / "prompts" / "extract_comparison.md").read_text()
+MAX_CHARS = int(cfg["llm"].get("max_prompt_chars", 300_000))
 LEVEL_RANK = {"same_construct_same_geometry": 0, "same_molecule_different_geometry": 1, "homolog": 2}
 MAX_CANDIDATES = 8
 
@@ -110,7 +111,7 @@ if __name__ == "__main__":
         for p in my:
             if not p.get("smfs_id"):
                 exps.append({"smfs_id": None, "doi": p.get("exp_doi"), "note": "cited by the simulation paper; not indexed in SMASH-BIO"})
-        text = Path(ft[s["doi"]]).read_text()[:300_000] if s["doi"] in ft else ""
+        text = Path(ft[s["doi"]]).read_text()[:MAX_CHARS] if s["doi"] in ft else ""
         prompt = (PROMPT.replace("{{sim_record_json}}", json.dumps(s, ensure_ascii=False))
                         .replace("{{smfs_records_json}}", json.dumps(exps, ensure_ascii=False))
                         .replace("{{doi}}", s["doi"]).replace("{{full_text}}", text))

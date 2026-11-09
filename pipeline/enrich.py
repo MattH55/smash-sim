@@ -30,7 +30,7 @@ CLASSES = load_vocab("model_class")
 IMPLS = load_vocab("implementation")
 P_ENRICH = (ROOT / "prompts" / "enrich_simulation_record.md").read_text()
 P_EXTRACT = (ROOT / "prompts" / "extract_simulation_record.md").read_text()
-MAX_CHARS = 350_000
+MAX_CHARS = int(cfg["llm"].get("max_prompt_chars", 300_000))
 LOCKED = ["sim_id", "doi", ("molecule", "pdb_id"), ("molecule", "uniprot_or_rfam"), "_smashbio"]
 
 

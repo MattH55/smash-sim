@@ -66,18 +66,18 @@ fulltext:
   local_pdf_dir: data/pdfs   # drop PDFs here named <doi with / replaced by _>.pdf for paywalled papers
 
 # LLM provider for enrich / compare / screen.
-# Default: NanoGPT (OpenAI-compatible). Any OpenAI-compatible host works; for Anthropic direct set provider: anthropic.
+# Default: NanoGPT subscription endpoint with an open-weight model (included in the $12/mo plan: 60M input tokens/week).
+# Claude/GPT/Gemini via NanoGPT are NOT in the subscription and bill the prepaid balance instead.
 llm:
   provider: openai_compatible
-  base_url: https://api.nano-gpt.com/api/v1   # NanoGPT's host for large requests / long runtimes
-  # Pick a model with >=128k context (papers are sent whole). Names follow NanoGPT's catalog, e.g.
-  #   anthropic/claude-sonnet-4.5 | anthropic/claude-opus-4.5 | openai/gpt-5.2 | google/gemini-3-flash-preview
-  # Check current names and prices at https://nano-gpt.com/pricing
-  model: anthropic/claude-sonnet-4.5
+  base_url: https://nano-gpt.com/api/subscription/v1   # subscription-included models only; never touches balance
+  # base_url: https://api.nano-gpt.com/api/v1          # pay-per-prompt host (needed for anthropic/*, openai/*, google/*)
+  model: deepseek/deepseek-v3.2            # 128k context; alternatives: zai-org/glm-4.7, deepseek/deepseek-v3.2:thinking
+  fallback_models: [zai-org/glm-4.7, z-ai/glm-4.6]   # tried in order on HTTP 402/404 for the primary model
   max_tokens: 8000
   temperature: 0
   api_key_env: NANOGPT_API_KEY
-  # Subscription-only accounts (no prepaid balance): base_url: https://nano-gpt.com/api/subscription/v1
+  max_prompt_chars: 300000                 # ~75k tokens; keeps whole-paper prompts inside 128k-context models
 
 # Matching sim -> SMASH-BIO experiments (06_match_experiments.py)
 match:
