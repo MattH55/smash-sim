@@ -1,38 +1,3 @@
 doi,title,year,journal,source_set
-10.1039/d6cp00556j,A comparative nanomechanical study of antibody and nanobody binding to SARS-CoV-2 variants.,2026,,smash
-10.1021/acs.analchem.5c04118,Lasso Peptide Syanodin I: Loop-Pulling Two-Step Thermal Unthreading Mechanism.,2025,,smash
-10.1016/j.jmb.2024.168823,A Hydrophobic Core Stabilizes the Residual Structure in the RRM2 Intermediate State of the ALS-linked Protein TDP-43.,2024,,smash
-10.1016/j.bpj.2020.10.023,Piecewise All-Atom SMD Simulations Reveal Key Secondary Structures in Luciferase Unfolding Pathway.,2020,,smash
-10.1007/s00894-024-05946-9,Unveiling dissociation mechanisms and binding patterns in the UHRF1-DPPA3 complex via multi-replica molecular dynamics simulations.,2024,,smash
-10.1021/acs.jpcb.5c06503,Sequence and Force Effects on ssDNA Translocation through a Protein Nanopore: Coarse-Grained Steered Molecular Dynamics Simulations.,2025,,smash
-10.1016/j.jmb.2014.05.007,Propensity to form amyloid fibrils is encoded as excitations in the free energy landscape of monomeric proteins.,2014,,smash
-10.1063/1.5113499,Drift-diffusion (DrDiff) framework determines kinetics and thermodynamics of two-state folding trajectory and tunes diffusion models.,2019,,smash
-10.1021/ja206557y,Effects of pH on proteins: predictions for ensemble and single-molecule pulling experiments.,2012,,smash
-10.1007/s00894-016-2958-4,Impacts of the charged residues mutation S48E/N62H on the thermostability and unfolding behavior of cold shock protein: insights from molecular dynamics simulation with Gō model.,2016,,smash
-10.1063/1.4905606,Probing the folded state and mechanical unfolding pathways of T4 lysozyme using all-atom and coarse-grained molecular simulation.,2015,,smash
-10.1002/prot.24505,All-atom and coarse-grained simulations of the forced unfolding pathways of the SNARE complex.,2014,,smash
-10.1007/978-94-017-9245-5_8,Folding mechanisms of Trefoil Knot proteins studied by molecular dynamics simulations and Go-model.,2015,,smash
-10.1073/pnas.0503758103,Multiple stepwise refolding of immunoglobulin domain I27 upon force quench depends on initial conditions.,2006,,smash
-10.1021/ct400312d,Sampling of Protein Folding Transitions: Multicanonical Versus Replica Exchange Molecular Dynamics.,2013,,smash
-10.1103/physreve.101.012419,Using contact statistics to characterize structure transformation of biopolymer ensembles.,2020,,smash
-10.1002/prot.26588,Rate limiting step of the allosteric activation of the bacterial adhesin FimH investigated by molecular dynamics simulations.,2024,,smash
-10.1016/j.bpj.2014.10.021,Connecting thermal and mechanical protein (un)folding landscapes.,2014,,smash
-10.1016/j.bpj.2025.01.025,In silico analyses of molecular force sensors for mechanical characterization of biological systems.,2025,,smash
-10.1039/c3cp53932f,Sequence-dependent folding landscapes of adenine riboswitch aptamers.,2014,,smash
-10.1016/bs.mie.2014.10.062,Using simulations and kinetic network models to reveal the dynamics and functions of riboswitches.,2015,,smash
-10.1021/ja408595e,Kinetics of allosteric transitions in S-adenosylmethionine riboswitch are accurately predicted from the folding landscape.,2013,,smash
-10.1101/2025.09.26.672567,A Comparative Nanomechanical Study of Antibody and Nanobody Binding to SARS-CoV-2 Variants,2025,,smash
 https://pubmed.ncbi.nlm.nih.gov/12923571/,"MechanoProDB simulation entries (Mesbah, Habermann & Rico, Database 2024)",0,,smash
-10.1016/j.bpj.2008.11.012,"MechanoProDB simulation entries (Mesbah, Habermann & Rico, Database 2024)",0,,smash
-10.1126/science.1239764,"MechanoProDB simulation entries (Mesbah, Habermann & Rico, Database 2024)",0,,smash
-https://www.pnas.org/doi/10.1073/pnas.0813093106#supplementary-materials,"MechanoProDB simulation entries (Mesbah, Habermann & Rico, Database 2024)",0,,smash
-https://www.pnas.org/doi/10.1073/pnas.0813093106#supplementary-materials,"MechanoProDB simulation entries (Mesbah, Habermann & Rico, Database 2024)",0,,smash
-https://www.pnas.org/doi/10.1073/pnas.0813093106#supplementary-materials,"MechanoProDB simulation entries (Mesbah, Habermann & Rico, Database 2024)",0,,smash
-https://www.pnas.org/doi/10.1073/pnas.0813093106#supplementary-materials,"MechanoProDB simulation entries (Mesbah, Habermann & Rico, Database 2024)",0,,smash
-https://www.pnas.org/doi/10.1073/pnas.0813093106#supplementary-materials,"MechanoProDB simulation entries (Mesbah, Habermann & Rico, Database 2024)",0,,smash
-https://www.pnas.org/doi/10.1073/pnas.0813093106,"MechanoProDB simulation entries (Mesbah, Habermann & Rico, Database 2024)",0,,smash
-10.1073/pnas.0813093106,"MechanoProDB simulation entries (Mesbah, Habermann & Rico, Database 2024)",0,,smash
-10.1073/pnas.0813093106,"MechanoProDB simulation entries (Mesbah, Habermann & Rico, Database 2024)",0,,smash
-10.1016/s0006-3495(01)75881-x,"MechanoProDB simulation entries (Mesbah, Habermann & Rico, Database 2024)",0,,smash
-10.1529/biophysj.105.061465,"MechanoProDB simulation entries (Mesbah, Habermann & Rico, Database 2024)",0,,smash
 https://pubmed.ncbi.nlm.nih.gov/12923571/,"MechanoProDB simulation entries (Mesbah, Habermann & Rico, Database 2024)",0,,smash

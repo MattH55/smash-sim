@@ -1,7 +1,6 @@
 class_id,event_type
 AA-EXP,A-entropic
 AA-EXP,A-cooperative
-AA-EXP,B-cross
 AA-IMP,A-entropic
 AA-IMP,A-enthalpic
 AA-IMP,B-series
@@ -24,10 +23,8 @@ CG-OXDNA,B-parallel
 CG-OXDNA,B-cross
 CG-OXDNA,B-formation
 CG-TIS,A-entropic
-CG-TIS,B-single
 CG-TIS,B-series
 CG-TIS,B-cross
-CG-TIS,B-formation
 CG-HIRE,B-single
 CG-HIRE,B-series
 CG-HIRE,B-formation
@@ -35,4 +32,3 @@ CG-MARTINI,A-entropic
 KIN-STEM,B-series
 KIN-STEM,B-cross
 KIN-STEM,B-formation
-KIN-UNZIP,B-series
