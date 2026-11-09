@@ -1,1 +1,35 @@
 {"doi": "10.1016/j.polymer.2017.03.070", "title": "Toward Material-Specific Peptides From in Silico Guided Peptide Engineering to Target PET in the Presence of PS.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1063/1.328693", "title": "The local mechanostructural properties of protein cargoes regulate nucleocytoplasmic transport.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1038/s41467-022-33233-9", "title": "Single-Molecule Investigation of the Binding Interface Stability of SARS-CoV-2 Variants with ACE2.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1126/science.8079175", "title": "Engineering an artificial catch bond using mechanical anisotropy.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1021/jacs.4c12468", "title": "Protamine-Mediated Tangles Produce Extreme Deoxyribonucleic Acid Compaction.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1021/jp9110794", "title": "Strengthening E-cadherin adhesion via antibody-mediated binding stabilization.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1016/j.cell.2022.09.018", "title": "S373P Mutation Stabilizes the Receptor-Binding Domain of the Spike Protein in Omicron and Promotes Binding.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1101/2022.01.24.477633", "title": "Binding of Human ACE2 and RBD of Omicron Enhanced by Unique Interaction Patterns Among SARS-CoV-2 Variants of Concern.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1093/nar/gkac1122", "title": "5-Methyl-cytosine stabilizes DNA but hinders DNA hybridization revealed by magnetic tweezers and simulations.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1021/acs.jctc.9b00473", "title": "Mapping Mechanostable Pulling Geometries of a Therapeutic Anticalin/CTLA-4 Protein Complex.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1073/pnas.2023595118", "title": "Impact of an alpha helix and a cysteine-cysteine disulfide bond on the resistance of bacterial adhesion pili to stress.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1016/j.bpj.2021.01.016", "title": "Oncogenic mutations on Rac1 affect global intrinsic dynamics underlying GTP and PAK1 binding.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1007/s00216-016-0091-y", "title": "Structural characterization of the saxitoxin-targeting APTSTX1 aptamer using optical tweezers and molecular dynamics simulations.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1038/ncomms6539", "title": "Deciphering the scaling of single-molecule interactions using Jarzynski's equality.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1073/pnas.1902702116", "title": "Non-Equilibrium Molecular Dynamics Simulation Captures Potential New Drug Target: Ec-MscL Gating Mechanism Explored with External Electric Field.", "llm_category": "pulling_simulation"}
+{"doi": "10.1002/pro.4792", "title": "Structural insights into YheS-mediated release of SecM-arrested ribosome.", "llm_category": "pulling_simulation"}
+{"doi": "10.64898/2026.05.11.724187", "title": "Bayesian-Steered Structure Prediction of Mechanical Biomolecules Using Twisted Diffusion.", "llm_category": "pulling_simulation"}
+{"doi": "10.1016/j.jbc.2026.113614", "title": "Intrinsically disordered regions of Src and Abl kinases contribute to membrane binding.", "llm_category": "pulling_simulation"}
+{"doi": "10.1038/jhg.2015.87", "title": "Mapping the peptide interaction fingerprint of the Behçet's disease-associated HLA-B∗51.", "llm_category": "pulling_simulation"}
+{"doi": "10.1021/ci200227u", "title": "Binding of SARS-CoV-1/2 NSP1 to DNA Polymerase α-Primase Inhibits DNA Replication through Reduction of Interaction between DNA and DNA Polymerase α-Primase.", "llm_category": "pulling_simulation"}
+{"doi": "10.1146/annurev.physchem.58.052306.144054", "title": "In Silico Study of a Bacteriorhodopsin/TiO2 Hybrid System at the Molecular Level.", "llm_category": "pulling_simulation"}
+{"doi": "10.1038/srep20889", "title": "In silico analyses of molecular force sensors for mechanical characterization of biological systems.", "llm_category": "pulling_simulation"}
+{"doi": "10.1038/s41598-025-86646-z", "title": "Presence of EGF ligand restricts the binding ability of EgB4 nanobody to EGFR extracellular domain.", "llm_category": "pulling_simulation"}
+{"doi": "10.1111/lam.12011", "title": "Key Amino Acid Residues of the Agt1 Transporter for Trehalose Transport by Saccharomyces cerevisiae.", "llm_category": "pulling_simulation"}
+{"doi": "10.1093/nar/gkab1112", "title": "An in silico design method of a peptide bioreceptor for cortisol using molecular modelling techniques.", "llm_category": "pulling_simulation"}
+{"doi": "10.3389/fimmu.2021.694853", "title": "Interplay of PROTAC Complex Dynamics for Undruggable Targets: Insights into Ternary Complex Behavior and Linker Design.", "llm_category": "pulling_simulation"}
+{"doi": "10.1038/s41598-021-94431-x", "title": "Artificial Intelligence-Powered Molecular Docking and Steered Molecular Dynamics for Accurate scFv Selection of Anti-CD30 Chimeric Antigen Receptors.", "llm_category": "pulling_simulation"}
+{"doi": "10.1016/j.bpj.2023.11.001", "title": "Force transmission and SUN-KASH higher-order assembly in the LINC complex models.", "llm_category": "pulling_simulation"}
+{"doi": "10.48550/arxiv.2206.04119", "title": "ForceGen: End-to-end de novo protein generation based on nonlinear mechanical unfolding responses using a protein language diffusion model.", "llm_category": "pulling_simulation"}
+{"doi": "10.1093/nar/gkr024", "title": "Molecular dynamics simulation reveals DNA-specific recognition mechanism via c-Myb in pseudo-palindromic consensus of mim-1 promoter.", "llm_category": "pulling_simulation"}
+{"doi": "10.1038/nrd4581", "title": "Targeting Staphylococcal Cell-Wall Biosynthesis Protein FemX Through Steered Molecular Dynamics and Drug-Repurposing Approach.", "llm_category": "pulling_simulation"}
+{"doi": "10.1016/j.bpj.2009.12.4272", "title": "In-silico approaches for identification of compounds inhibiting SARS-CoV-2 3CL protease.", "llm_category": "pulling_simulation"}
+{"doi": "10.1016/j.ejmech.2023.115226", "title": "Korupensamine A, but not its atropisomer, korupensamine B, inhibits SARS-CoV-2 in vitro by targeting its main protease (Mpro).", "llm_category": "pulling_simulation"}
+{"doi": "10.1016/j.chemphys.2023.111859", "title": "Probing the mechanical properties of ORF3a protein, a transmembrane channel of SARS-CoV-2 virus: Molecular dynamics study.", "llm_category": "pulling_simulation"}
+{"doi": "10.1021/acsami.6b02416", "title": "Discovery and characterization of a functional scFv for CCR2 inhibition via an extracellular loop.", "llm_category": "pulling_simulation"}

@@ -2,8 +2,6 @@ class_id,event_type
 AA-EXP,A-entropic
 AA-EXP,A-cooperative
 AA-IMP,A-entropic
-AA-IMP,A-enthalpic
-AA-IMP,B-series
 AA-IMP,B-parallel
 AA-IMP,B-cross
 AA-ENH,A-entropic
@@ -11,13 +9,11 @@ AA-ENH,B-formation
 CG-GO,B-cross
 CG-SOP,B-parallel
 CG-SOP,B-cross
-CG-SOP,B-formation
 CG-ISING,B-series
 CG-ISING,B-parallel
 CG-ISING,B-formation
 CG-OXDNA,A-entropic
 CG-OXDNA,A-cooperative
-CG-OXDNA,B-single
 CG-OXDNA,B-parallel
 CG-OXDNA,B-cross
 CG-OXDNA,B-formation
