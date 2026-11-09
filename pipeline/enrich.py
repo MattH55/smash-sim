@@ -196,8 +196,10 @@ if __name__ == "__main__":
 
     # --- gap-search papers (not in SMASH-BIO) ---
     if not args.skip_gap:
+        order = {(r.get("doi") or r.get("arxiv_id") or r["dedupe_key"]): i for i, r in enumerate(read_jsonl(cfg["_data"] / "20_screened.jsonl"))}
         gap = [x for x in read_jsonl(cfg["_data"] / "30_fulltext_index.jsonl")
                if x.get("source_set") == "gap" and (x.get("doi") or x["key"]) not in done_dois]
+        gap.sort(key=lambda x: (0 if x.get("text_kind", "fulltext") == "fulltext" else 1, order.get(x.get("doi") or x["key"], 10**9)))
         if args.limit:
             gap = gap[: max(0, args.limit - len(skels))]
         print(f"{len(gap)} gap-search papers to extract")

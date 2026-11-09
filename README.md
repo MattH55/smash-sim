@@ -47,6 +47,10 @@ python pipeline/run.py --steps ingest,fulltext,enrich,compare,views --limit 10
 
 Paywalled papers: drop PDFs into `data/pdfs/<doi with / → _>.pdf` (see `data/30_missing.csv`) and rerun `fulltext`.
 
+## Scaling to the full literature
+
+The gap search (first pass) identified 18,163 records, 16,606 after deduplication, 4,087 passing keyword rules and 2,305 passing the LLM screen: 1,008 pulling-simulation papers, 365 explicit simulation–experiment comparisons, 408 analytical-model papers and 523 experiment-only SMFS papers. The experiment-only set is written to `data/20_smfs_candidates_for_smash_bio.jsonl` as a hand-back for SMASH-BIO's harvester. The other 1,781 are enriched in priority order (comparisons → simulations → analytical; full text before abstract) in chunks of 150 records per scheduled run (every 6 h), so the full corpus completes in a few days without exceeding Actions' job limit. `data/prisma_counts.json` holds the PRISMA numbers.
+
 ## Data flow
 
 ```

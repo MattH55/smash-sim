@@ -115,8 +115,16 @@ if __name__ == "__main__":
     for sk in read_jsonl(cfg["_data"] / "10_skeletons.jsonl"):
         recs.append(dict(doi=sk["doi"], pmcid=None, arxiv_id=None, title=sk.get("title") or "", year=sk.get("year"),
                          journal=None, dedupe_key=sk["doi"], source_set="smash"))
-    for r in read_jsonl(cfg["_data"] / "20_screened.jsonl"):
-        recs.append(dict(r, source_set="gap"))
+    cap = int(cfg["fulltext"].get("max_new_gap_per_run", 400))
+    have = {x.get("doi") or x["key"] for x in read_jsonl(cfg["_data"] / "30_fulltext_index.jsonl")}
+    n_new = 0
+    for r in read_jsonl(cfg["_data"] / "20_screened.jsonl"):       # already in priority order
+        k = r.get("doi") or r.get("arxiv_id") or r["dedupe_key"]
+        if k not in have:
+            if n_new >= cap:
+                continue
+            n_new += 1
+        recs.append(dict(r, source_set="gap", priority=r.get("llm_category")))
     # resolve PMCIDs for skeleton DOIs via Europe PMC (needed for OA XML)
     for r in recs:
         if r["source_set"] == "smash" and r["doi"] and not r["doi"].startswith("smashbio:"):

@@ -97,9 +97,16 @@ if __name__ == "__main__":
 
     if cfg["screen"].get("llm_screen") and not args.no_llm:
         llm_screen(rule_pass)
-        final = [r for r in rule_pass if r.get("llm_include")]
+        inc = [r for r in rule_pass if r.get("llm_include")]
+        final = [r for r in inc if r.get("llm_category") in ("pulling_simulation", "sim_exp_comparison", "analytical_model")]
+        smfs_only = [r for r in inc if r.get("llm_category") == "experiment_only"]
+        write_jsonl(cfg["_data"] / "20_smfs_candidates_for_smash_bio.jsonl", smfs_only)
+        prisma["llm_include_any"] = len(inc)
+        prisma["experiment_only_handed_back"] = len(smfs_only)
     else:
         final = rule_pass
+    PRIORITY = {"sim_exp_comparison": 0, "pulling_simulation": 1, "analytical_model": 2}
+    final.sort(key=lambda r: (PRIORITY.get(r.get("llm_category"), 3), 0 if (r.get("pmcid") or r.get("is_oa")) else 1, -(r.get("year") or 0)))
     prisma["after_llm_screen"] = len(final)
 
     write_jsonl(cfg["_data"] / "20_all_dedup.jsonl", uniq)

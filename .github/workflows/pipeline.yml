@@ -7,13 +7,13 @@ on:
         description: "Comma-separated steps (llm_smoke,ingest,gap_search,seed,screen,fulltext,enrich,compare,views,review_export)"
         default: "ingest,fulltext,enrich,verify,compare,views,review_export"
       limit:
-        description: "Max records for enrich/verify/compare (0 = all)"
-        default: "0"
+        description: "Max records for enrich/verify/compare per run (0 = all; large corpora run in chunks on the schedule)"
+        default: "150"
       no_llm:
         description: "Skip LLM calls (true/false)"
         default: "false"
   schedule:
-    - cron: "17 6 * * 1"   # weekly Monday 06:17 UTC: re-ingest SMASH-BIO and enrich anything new
+    - cron: "17 */6 * * *"   # every 6 h: re-ingest SMASH-BIO and enrich the next chunk of gap-search candidates
 
 permissions:
   contents: write
@@ -52,6 +52,7 @@ jobs:
         run: |
           STEPS="${{ github.event.inputs.steps || 'ingest,fulltext,enrich,verify,compare,views,review_export' }}"
           LIMIT="${{ github.event.inputs.limit }}"
+          [ -z "$LIMIT" ] && LIMIT="150"      # scheduled runs: one chunk per run
           [ "$LIMIT" = "0" ] && LIMIT=""
           NOLLM="${{ github.event.inputs.no_llm }}"
           ARGS="--steps $STEPS"
