@@ -4,7 +4,6 @@ doi,title,year,journal,source_set
 10.1021/acs.analchem.5c04118,Lasso Peptide Syanodin I: Loop-Pulling Two-Step Thermal Unthreading Mechanism.,2025,,smash
 10.1016/j.jmb.2024.168823,A Hydrophobic Core Stabilizes the Residual Structure in the RRM2 Intermediate State of the ALS-linked Protein TDP-43.,2024,,smash
 10.1016/j.bpj.2020.10.023,Piecewise All-Atom SMD Simulations Reveal Key Secondary Structures in Luciferase Unfolding Pathway.,2020,,smash
-10.1021/acs.jpcb.5c00925,Dynamics of a von Willebrand Factor A1 Autoinhibitory Module with O-Linked Glycans and Its Roles in Regulation of GPIbα Binding.,2025,,smash
 10.1007/s00894-024-05946-9,Unveiling dissociation mechanisms and binding patterns in the UHRF1-DPPA3 complex via multi-replica molecular dynamics simulations.,2024,,smash
 10.1021/acs.jpcb.5c06503,Sequence and Force Effects on ssDNA Translocation through a Protein Nanopore: Coarse-Grained Steered Molecular Dynamics Simulations.,2025,,smash
 10.1016/j.jmb.2014.05.007,Propensity to form amyloid fibrils is encoded as excitations in the free energy landscape of monomeric proteins.,2014,,smash
@@ -20,8 +19,6 @@ doi,title,year,journal,source_set
 10.1002/prot.26588,Rate limiting step of the allosteric activation of the bacterial adhesin FimH investigated by molecular dynamics simulations.,2024,,smash
 10.1016/j.bpj.2014.10.021,Connecting thermal and mechanical protein (un)folding landscapes.,2014,,smash
 10.1016/j.bpj.2025.01.025,In silico analyses of molecular force sensors for mechanical characterization of biological systems.,2025,,smash
-10.3390/molecules29174042,Langevin Dynamics Study on the Driven Translocation of Polymer Chains with a Hairpin Structure.,2024,,smash
-10.1093/nar/gkae884,Localization and discrimination of GG mismatch in duplex DNA by synthetic ligand-enhanced protein nanopore analysis.,2024,,smash
 10.1039/c3cp53932f,Sequence-dependent folding landscapes of adenine riboswitch aptamers.,2014,,smash
 10.1016/bs.mie.2014.10.062,Using simulations and kinetic network models to reveal the dynamics and functions of riboswitches.,2015,,smash
 10.1021/ja408595e,Kinetics of allosteric transitions in S-adenosylmethionine riboswitch are accurately predicted from the folding landscape.,2013,,smash
