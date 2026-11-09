@@ -31,6 +31,33 @@ CLASSES = load_vocab("model_class")
 IMPLS = load_vocab("implementation")
 P_ENRICH = (ROOT / "prompts" / "enrich_simulation_record.md").read_text()
 P_EXTRACT = (ROOT / "prompts" / "extract_simulation_record.md").read_text()
+GAP_NOTE = ("\n\nNOTE: this skeleton is EMPTY because the paper is not yet in SMASH-BIO. Fill it from the paper. "
+            "If the paper contains NO pulling simulation and NO analytical model applied to force data (e.g. it is experiment-only, "
+            "a force-field parameterisation without pulling, or unrelated), return an empty JSON array [] .")
+
+
+def empty_skeleton(sim_id: str, doi: str, title: str | None, year) -> dict:
+    """Schema-shaped all-null skeleton so gap papers go through the (reliable) enrichment prompt."""
+    return {
+        "sim_id": sim_id, "doi": doi, "year": year, "title": title, "first_author": None, "preprint": False,
+        "class_id": "UNRESOLVED", "impl_id": None, "impl_version": None, "force_field_or_params": None,
+        "molecule": {"name": "unknown", "type": "other", "pdb_id": None, "uniprot_or_rfam": None, "sequence": None, "sequence_sha1": None,
+                     "construct_boundaries": None, "n_residues_or_nt": None, "oligomer_state": None, "linkers_modelled": False,
+                     "linker_description": None, "topology_tag": "unknown"},
+        "event_types_probed": [],
+        "protocol": {"mode": "other", "pulling_velocity_m_s": None, "pulling_velocity_range_m_s": None, "loading_rate_pN_s": None,
+                     "loading_rate_range_pN_s": None, "spring_constant_pN_nm": None, "constant_force_pN": None, "pull_coordinate": None,
+                     "pull_geometry_note": None, "temperature_K": None, "monovalent_salt_mM": None, "mg_mM": None, "ions_treatment": None, "solvent": None},
+        "sampling": {"n_trajectories": None, "trajectory_length_ns": None, "cg_time_units": None, "total_sampled_time_ns": None, "timestep_fs": None},
+        "benchmark": {"system_size": None, "system_size_unit": None, "hardware": None, "hardware_class": None, "wall_time_per_trajectory_h": None,
+                      "throughput_ns_per_day": None, "core_hours_total": None, "gpu_hours_total": None, "benchmark_source": "absent"},
+        "observables": {"pmf_available": False, "pathway_described": False, "refolding_simulated": False, "hysteresis_reported": False,
+                        "velocity_dependence_reported": False},
+        "reduction_model": [], "stated_assumptions": [],
+        "experimental_comparison_in_paper": {"present": False, "same_molecule": None, "experiment_dois": [], "smfs_ids": [], "note": None},
+        "curation": {"status": "auto", "curator": "gap-search", "date": None, "notes": "gap-search paper, not yet in SMASH-BIO"},
+        "_prov": {},
+    }
 MAX_CHARS = int(cfg["llm"].get("max_prompt_chars", 300_000))
 LOCKED = ["sim_id", "doi", ("molecule", "pdb_id"), ("molecule", "uniprot_or_rfam"), "_smashbio"]
 
@@ -150,7 +177,7 @@ if __name__ == "__main__":
 
     out_ok, out_bad = cfg["_data"] / "40_records.jsonl", cfg["_data"] / "40_rejected.jsonl"
     done_ids = {r["sim_id"].split(".")[0] for r in read_jsonl(out_ok)}        # rejected records are retried
-    done_dois = {r.get("doi") for r in read_jsonl(out_ok)}
+    done_dois = {r.get("doi") for r in read_jsonl(out_ok)} | {r.get("doi") for r in read_jsonl(cfg["_data"] / "40_no_simulation.jsonl")}
     ids = [r["sim_id"] for r in read_jsonl(out_ok)]
     ft_index = read_jsonl(cfg["_data"] / "30_fulltext_index.jsonl")
     ft = {x.get("doi") or x["key"]: x["path"] for x in ft_index}
@@ -203,6 +230,7 @@ if __name__ == "__main__":
     # --- gap-search papers (not in SMASH-BIO) ---
     if not args.skip_gap:
         order = {(r.get("doi") or r.get("arxiv_id") or r["dedupe_key"]): i for i, r in enumerate(read_jsonl(cfg["_data"] / "20_screened.jsonl"))}
+        screened_meta = {(r.get("doi") or r.get("arxiv_id") or r["dedupe_key"]): r for r in read_jsonl(cfg["_data"] / "20_screened.jsonl")}
         gap = [x for x in read_jsonl(cfg["_data"] / "30_fulltext_index.jsonl")
                if x.get("source_set") == "gap" and (x.get("doi") or x["key"]) not in done_dois]
         gap.sort(key=lambda x: (0 if x.get("text_kind", "fulltext") == "fulltext" else 1, order.get(x.get("doi") or x["key"], 10**9)))
@@ -214,17 +242,26 @@ if __name__ == "__main__":
             gtext = Path(item["path"]).read_text()[:MAX_CHARS]
             if item.get("text_kind") == "abstract":
                 gtext += "\n\nNOTE TO EXTRACTOR: only the abstract is available. Fill only what the abstract states; leave everything else null."
-            prompt = P_EXTRACT.replace("{{doi}}", doi).replace("{{full_text}}", gtext)
+            meta = screened_meta.get(doi, {})
+            gskel = empty_skeleton(next_id("SIMX", [i for i in ids if i.startswith("SIMX")]), doi, meta.get("title"), meta.get("year"))
+            prompt = (P_ENRICH.replace("{{skeleton_json}}", json.dumps(gskel, ensure_ascii=False) + GAP_NOTE)
+                              .replace("{{doi}}", doi).replace("{{full_text}}", gtext))
             try:
                 recs = extract_json_array(llm_complete(cfg, prompt))
             except Exception as e:
                 append_jsonl(out_bad, {"doi": doi, "errors": [f"llm/parse: {e}"]}); continue
+            if not recs:
+                append_jsonl(cfg["_data"] / "40_no_simulation.jsonl", {"doi": doi, "title": meta.get("title"), "llm_category": meta.get("llm_category")})
+                print(f"  gap {doi}: no simulation/model in paper (excluded)")
+                continue
             for rec in recs:
               try:
                 if not isinstance(rec, dict):
                     raise ValueError(f"record is {type(rec).__name__}, not object")
-                rec["doi"] = rec.get("doi") or doi
+                rec["doi"] = doi
                 rec["sim_id"] = next_id("SIMX", [i for i in ids if i.startswith("SIMX")])
+                if not rec.get("year") and meta.get("year"):
+                    rec["year"] = meta["year"]
                 rec = postprocess(rec)
                 rec.setdefault("_derived", {})["text_source"] = item.get("text_kind", "fulltext")
                 errs = validate(rec)

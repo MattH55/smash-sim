@@ -122,6 +122,13 @@ def coerce(rec: dict, schema: dict) -> dict:
         if grp in rec and not isinstance(rec[grp], dict):
             log[grp] = f"non-object dropped: {str(rec[grp])[:120]}"
             rec[grp] = {}
+    mol = rec.setdefault("molecule", {})
+    if not mol.get("type"):
+        mol["type"] = "other"; log["molecule.type"] = "missing -> other"
+    if not mol.get("name"):
+        mol["name"] = "unknown"; log["molecule.name"] = "missing -> unknown"
+    rec.setdefault("protocol", {}).setdefault("mode", "other")
+    rec.setdefault("observables", {})
     for arr in ("event_types_probed", "reduction_model", "stated_assumptions"):
         if arr in rec and not isinstance(rec[arr], list):
             rec[arr] = [rec[arr]] if isinstance(rec[arr], str) else []
