@@ -19,12 +19,20 @@ cfg = load_config()
 V = cfg["_data"] / "views"
 V.mkdir(exist_ok=True)
 
-sims = pd.json_normalize(read_jsonl(cfg["_data"] / "40_records.jsonl"))
+recs = read_jsonl(cfg["_data"] / "40_records.jsonl")
+source = "enriched records (40_records.jsonl)"
+if not recs:
+    recs = read_jsonl(cfg["_data"] / "10_skeletons.jsonl")
+    source = "SKELETONS ONLY (no enrichment yet): per_class.csv reflects regex-level coverage"
+sims = pd.json_normalize(recs)
 cmps = pd.json_normalize(read_jsonl(cfg["_data"] / "50_comparisons.jsonl"))
 classes = load_vocab("model_class")
+classes.setdefault("UNRESOLVED", {"name": "unresolved (skeleton)", "event_types_covered": ""})
+print("views from:", source)
 
 if sims.empty:
-    raise SystemExit("no simulation records yet")
+    print("no records at all; nothing to do")
+    raise SystemExit(0)
 
 # --- per class -------------------------------------------------------------
 def envelope(s):

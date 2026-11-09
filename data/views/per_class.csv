@@ -1,0 +1,8 @@
+class_id,class_name,n_records,n_papers,n_molecules,molecule_types,topologies,velocity_m_s_envelope,loading_rate_pN_s_envelope,spring_pN_nm_envelope,system_size_envelope,wall_h_per_traj_envelope,n_with_benchmark,frac_refolding,frac_pathway
+AA-EXP,All-atom explicit-solvent SMD,5,5,5,protein;protein-NA,unknown,0.5–1e+02,,,,,0,0.0,0.0
+CG-GO,Structure-based Go (Calpha or heavier),20,20,16,protein;protein-protein,unknown,2–2,,1.7e+03–1.4e+04,,,0,0.0,0.0
+CG-MARTINI,Martini / GoMartini,6,6,6,DNA;protein;protein-protein,unknown,5e-08–5e-08,,,,,0,0.0,0.0
+CG-OXDNA,oxDNA / oxDNA2 / oxRNA,3,3,1,protein-NA,unknown,,,,,,0,0.0,0.0
+CG-SOP,Self-Organized Polymer (SOP/SOP-SC),5,5,3,RNA;protein,unknown,6.4e-07–5e-06,,0.15–8,,,0,0.0,0.0
+KIN-UNZIP,DNA/RNA unzipping models (NN + polymer + trap),6,6,6,RNA;protein;protein-NA;protein-protein,unknown,1e-07–1e-07,,,,,0,0.0,0.0
+UNRESOLVED,unresolved (skeleton),78,72,51,DNA;RNA;protein;protein-NA;protein-protein,unknown,1e-07–1e+03,,10–7e+03,,,0,0.0,0.0
