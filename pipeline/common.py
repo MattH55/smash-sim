@@ -171,9 +171,9 @@ def extract_json_array(text: str) -> list[Any]:
     text = text.strip()
     text = re.sub(r"^```(?:json)?\s*|\s*```$", "", text, flags=re.S)
     start, end = text.find("["), text.rfind("]")
-    if start == -1 or end == -1:
+    if start == -1:
         raise ValueError("no JSON array in response")
-    body = text[start : end + 1]
+    body = text[start : end + 1] if end > start else text[start:] + "]"
     try:
         return json.loads(body)
     except json.JSONDecodeError:

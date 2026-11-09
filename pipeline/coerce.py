@@ -136,6 +136,12 @@ def coerce(rec: dict, schema: dict) -> dict:
             rec["_prov"][k] = {"quote": str(v)[:300], "page": None, "confidence": 0.3}
     if "class_id" not in rec or rec.get("class_id") is None:
         rec["class_id"] = "UNRESOLVED"
+    cur = rec.get("curation") if isinstance(rec.get("curation"), dict) else {}
+    cur["status"] = cur.get("status") if cur.get("status") in ("auto", "human_checked", "disputed") else "auto"
+    cur.setdefault("curator", None); cur.setdefault("date", None); cur.setdefault("notes", None)
+    if cur.get("date") is not None and not isinstance(cur["date"], str):
+        cur["date"] = str(cur["date"])
+    rec["curation"] = cur
     for grp in ("molecule", "protocol", "sampling", "benchmark", "observables", "experimental_comparison_in_paper", "curation"):
         if grp in rec and not isinstance(rec[grp], dict):
             log[grp] = f"non-object dropped: {str(rec[grp])[:120]}"
