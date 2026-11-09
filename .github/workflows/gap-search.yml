@@ -29,10 +29,12 @@ jobs:
         env:
           NANOGPT_API_KEY: ${{ secrets.NANOGPT_API_KEY }}
           NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
         run: |
+          set +e
           python pipeline/ingest_smash.py
-          python pipeline/gap_search.py
-          if [ "${{ github.event.inputs.snowball || 'true' }}" = "true" ]; then python pipeline/seed.py --snowball --from-records; fi
+          python pipeline/gap_search.py || echo "::warning::gap_search had failures; continuing with what was found"
+          if [ "${{ github.event.inputs.snowball || 'true' }}" = "true" ]; then python pipeline/seed.py --snowball --from-records || echo "::warning::snowball had failures"; fi
           python pipeline/screen.py
       - name: Commit candidates
         if: always()

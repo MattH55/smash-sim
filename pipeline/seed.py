@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import os
 
 from common import RateLimiter, append_jsonl, http_get, load_config, norm_doi, read_jsonl
 
@@ -61,7 +62,10 @@ if __name__ == "__main__":
         for d in sorted(dois):
             rl.wait()
             try:
-                w = http_get(f"https://api.openalex.org/works/doi:{d}", {"mailto": cfg["contact_email"], "select": "id,referenced_works"}).json()
+                oa = {"mailto": cfg["contact_email"], "select": "id,referenced_works"}
+                if os.environ.get("OPENALEX_API_KEY"):
+                    oa["api_key"] = os.environ["OPENALEX_API_KEY"]
+                w = http_get(f"https://api.openalex.org/works/doi:{d}", oa).json()
             except Exception:
                 continue
             wid = w["id"].rsplit("/", 1)[-1]
@@ -73,8 +77,11 @@ if __name__ == "__main__":
                 while cursor:
                     rl.wait()
                     try:
-                        js = http_get("https://api.openalex.org/works", dict(params, **{"per-page": 200, "cursor": cursor, "mailto": cfg["contact_email"],
-                                      "select": "id,doi,title,publication_year,abstract_inverted_index,primary_location,open_access,ids"})).json()
+                        q = dict(params, **{"per-page": 200, "cursor": cursor, "mailto": cfg["contact_email"],
+                                 "select": "id,doi,title,publication_year,abstract_inverted_index,primary_location,open_access,ids"})
+                        if os.environ.get("OPENALEX_API_KEY"):
+                            q["api_key"] = os.environ["OPENALEX_API_KEY"]
+                        js = http_get("https://api.openalex.org/works", q).json()
                     except Exception:
                         break
                     for x in js.get("results", []):

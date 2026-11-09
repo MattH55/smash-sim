@@ -7,6 +7,7 @@ Run:  python gap_search.py [--only pubmed|europepmc|arxiv]
 from __future__ import annotations
 
 import argparse
+import os
 import xml.etree.ElementTree as ET
 
 from common import RateLimiter, http_get, load_config, norm_doi, read_jsonl, write_jsonl
@@ -76,11 +77,18 @@ def search_openalex(tag: str, query: str) -> list[dict]:
     """OpenAlex full-text search; broadest index, returns OA locations and citation counts."""
     hits, cursor = [], "*"
     rl = RateLimiter(8)
+    key = os.environ.get("OPENALEX_API_KEY")
     while True:
         rl.wait()
-        js = http_get("https://api.openalex.org/works",
-                      {"search": query, "per-page": 200, "cursor": cursor, "mailto": EMAIL,
-                       "select": "id,doi,title,publication_year,abstract_inverted_index,primary_location,open_access,cited_by_count,ids,type"}).json()
+        params = {"search": query, "per-page": 200, "cursor": cursor, "mailto": EMAIL,
+                  "select": "id,doi,title,publication_year,abstract_inverted_index,primary_location,open_access,cited_by_count,ids,type"}
+        if key:
+            params["api_key"] = key
+        try:
+            js = http_get("https://api.openalex.org/works", params).json()
+        except Exception as e:
+            print(f"  openalex/{tag}: stopped after {len(hits)} hits ({str(e)[:80]}); set OPENALEX_API_KEY for deeper paging")
+            break
         for w in js.get("results", []):
             if w.get("type") in ("paratext", "erratum", "retraction"):
                 continue
@@ -136,7 +144,10 @@ if __name__ == "__main__":
             continue
         print(f"[{src}]")
         for tag, q in cfg["searches"].get(src, {}).items():
-            all_hits.extend(fn(tag, " ".join(q.split())))
+            try:
+                all_hits.extend(fn(tag, " ".join(q.split())))
+            except Exception as e:
+                print(f"  {src}/{tag} FAILED: {str(e)[:120]}")
     out = cfg["_data"] / "20_hits.jsonl"
     prev = [h for h in read_jsonl(out) if h.get("source") in ("seed", "snowball")]   # keep seed/snowball hits from seed.py
     all_hits = prev + all_hits
