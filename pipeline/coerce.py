@@ -112,7 +112,19 @@ def doi_from_text(x):
 
 
 def coerce(rec: dict, schema: dict) -> dict:
-    log = rec.setdefault("_coerced", {})
+    if not isinstance(rec.get("_coerced"), dict):
+        rec["_coerced"] = {}
+    log = rec["_coerced"]
+    if not isinstance(rec.get("_prov"), dict):
+        log["_prov"] = f"non-object provenance dropped: {str(rec.get('_prov'))[:120]}"
+        rec["_prov"] = {}
+    for grp in ("molecule", "protocol", "sampling", "benchmark", "observables", "experimental_comparison_in_paper", "curation"):
+        if grp in rec and not isinstance(rec[grp], dict):
+            log[grp] = f"non-object dropped: {str(rec[grp])[:120]}"
+            rec[grp] = {}
+    for arr in ("event_types_probed", "reduction_model", "stated_assumptions"):
+        if arr in rec and not isinstance(rec[arr], list):
+            rec[arr] = [rec[arr]] if isinstance(rec[arr], str) else []
     if isinstance(rec.get("doi"), str) and not re.match(r"^(10\.|smashbio:|mpdb:)", rec["doi"]):
         d = doi_from_text(rec["doi"])
         if d != rec["doi"]:

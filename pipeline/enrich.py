@@ -180,6 +180,9 @@ if __name__ == "__main__":
             print(f"  {skel['sim_id']}: LLM/parse error: {str(e)[:300]}")
             continue
         for i, rec in enumerate(recs):
+          try:
+            if not isinstance(rec, dict):
+                raise ValueError(f"record is {type(rec).__name__}, not object")
             rec = postprocess(restore_locked(rec, skel, i if i else None))
             rec.setdefault("_derived", {})["text_source"] = kind.get(skel["doi"], "fulltext")
             if rec["_derived"]["text_source"] == "abstract":
@@ -192,6 +195,9 @@ if __name__ == "__main__":
                 print(f"  {skel['sim_id']}: REJECTED ({len(errs)} schema errors): {'; '.join(errs[:4])[:400]}")
             else:
                 append_jsonl(out_ok, rec); ids.append(rec["sim_id"]); n_done += 1
+          except Exception as ex:
+            append_jsonl(out_bad, {"sim_id": skel["sim_id"], "doi": skel["doi"], "errors": [f"postprocess: {ex}"], "record": rec if isinstance(rec, dict) else str(rec)[:500]})
+            print(f"  {skel['sim_id']}: postprocess error {str(ex)[:120]}")
         print(f"  {skel['sim_id']}: {len(recs)} record(s) returned")
 
     # --- gap-search papers (not in SMASH-BIO) ---
@@ -214,6 +220,9 @@ if __name__ == "__main__":
             except Exception as e:
                 append_jsonl(out_bad, {"doi": doi, "errors": [f"llm/parse: {e}"]}); continue
             for rec in recs:
+              try:
+                if not isinstance(rec, dict):
+                    raise ValueError(f"record is {type(rec).__name__}, not object")
                 rec["doi"] = rec.get("doi") or doi
                 rec["sim_id"] = next_id("SIMX", [i for i in ids if i.startswith("SIMX")])
                 rec = postprocess(rec)
@@ -223,5 +232,8 @@ if __name__ == "__main__":
                     append_jsonl(out_bad, {"doi": doi, "errors": errs, "record": rec})
                 else:
                     append_jsonl(out_ok, rec); ids.append(rec["sim_id"]); n_done += 1
+              except Exception as ex:
+                append_jsonl(out_bad, {"doi": doi, "errors": [f"postprocess: {ex}"], "record": rec if isinstance(rec, dict) else str(rec)[:500]})
+                print(f"  gap {doi}: postprocess error {str(ex)[:120]}")
             print(f"  gap {doi}: {len(recs)} record(s)")
     print(f"done: {n_done} valid records written to {out_ok}")
