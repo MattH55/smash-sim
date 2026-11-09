@@ -146,7 +146,7 @@ def crosswalk(r: dict) -> dict:
     rec = {
         "sim_id": r["record_id"],
         "doi": norm_doi(src.get("doi")) or f"smashbio:{r['record_id']}",
-        "year": src.get("year") or 0,
+        "year": src.get("year") or None,
         "title": src.get("title"),
         "first_author": (src.get("authors") or [None])[0],
         "preprint": False,

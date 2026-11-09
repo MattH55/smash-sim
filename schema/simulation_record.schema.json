@@ -7,7 +7,6 @@
   "required": [
     "sim_id",
     "doi",
-    "year",
     "class_id",
     "molecule",
     "protocol",
@@ -22,18 +21,27 @@
     },
     "doi": {
       "type": "string",
-      "pattern": "^10\\.[0-9]{4,9}/\\S+$"
+      "description": "DOI (10.xxxx/...) or a 'smashbio:SIM-######' / 'mpdb:NN' placeholder when the source has no DOI"
     },
     "year": {
-      "type": "integer",
-      "minimum": 1990,
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1950,
       "maximum": 2100
     },
     "title": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "first_author": {
-      "type": "string"
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "preprint": {
       "type": "boolean",
@@ -622,9 +630,9 @@
         "smfs_ids": {
           "type": "array",
           "items": {
-            "type": "string",
-            "pattern": "^SMFS-[0-9]{6}$"
-          }
+            "type": "string"
+          },
+          "description": "SMASH-BIO SMFS-###### ids, or other-database refs such as MPDB:38"
         },
         "note": {
           "type": [

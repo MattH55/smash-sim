@@ -101,8 +101,46 @@ def flatten_value(x, log, path):
     return x, None, None
 
 
+RANGE_FIELDS = {"pulling_velocity_m_s": "pulling_velocity_range_m_s", "loading_rate_pN_s": "loading_rate_range_pN_s"}
+
+
+def doi_from_text(x):
+    if not isinstance(x, str):
+        return x
+    m = re.search(r"10\.\d{4,9}/[^\s#?]+", x)
+    return m.group(0).rstrip(".,;)").lower() if m else x
+
+
 def coerce(rec: dict, schema: dict) -> dict:
     log = rec.setdefault("_coerced", {})
+    if isinstance(rec.get("doi"), str) and not re.match(r"^(10\.|smashbio:|mpdb:)", rec["doi"]):
+        d = doi_from_text(rec["doi"])
+        if d != rec["doi"]:
+            log["doi"] = rec["doi"]; rec["doi"] = d
+    if rec.get("year") in (0, "0", ""):
+        rec["year"] = None
+    # lists in scalar numeric protocol fields -> slowest/min as the scalar, full list as range
+    proto = rec.get("protocol") or {}
+    for fld, rng in RANGE_FIELDS.items():
+        v = proto.get(fld)
+        if isinstance(v, list):
+            nums = [x for x in v if isinstance(x, (int, float))]
+            if nums:
+                proto[fld] = min(nums)
+                proto.setdefault(rng, None)
+                if not proto.get(rng):
+                    proto[rng] = [min(nums), max(nums)]
+                log[fld] = f"list {v} -> min; range kept"
+            else:
+                proto[fld] = None
+    if isinstance(proto.get("spring_constant_pN_nm"), list):
+        nums = [x for x in proto["spring_constant_pN_nm"] if isinstance(x, (int, float))]
+        log["spring_constant_pN_nm"] = f"list {proto['spring_constant_pN_nm']} -> first"
+        proto["spring_constant_pN_nm"] = nums[0] if nums else None
+    for rng in RANGE_FIELDS.values():
+        if isinstance(proto.get(rng), list) and len(proto[rng]) > 2:
+            nums = [x for x in proto[rng] if isinstance(x, (int, float))]
+            proto[rng] = [min(nums), max(nums)] if nums else None
     # comparison rows: dict-valued sim/exp values
     for fld in ("sim_value", "exp_value"):
         if isinstance(rec.get(fld), dict):

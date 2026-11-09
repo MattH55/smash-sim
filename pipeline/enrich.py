@@ -57,6 +57,8 @@ def restore_locked(rec: dict, skel: dict, suffix: int | None) -> dict:
                 rec.setdefault(g, {})[k] = skel[g][k]
         elif key in skel and skel[key] is not None:
             rec[key] = skel[key]
+    if not rec.get("year") and skel.get("year"):
+        rec["year"] = skel["year"]
     if suffix:
         rec["sim_id"] = f"{skel['sim_id']}.{suffix}"
     return rec
