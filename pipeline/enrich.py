@@ -64,6 +64,20 @@ def restore_locked(rec: dict, skel: dict, suffix: int | None) -> dict:
 
 def postprocess(rec: dict) -> dict:
     rec = coerce(rec, SCHEMA)
+    prov = rec.setdefault("_prov", {})
+    s = rec.get("sampling") or {}
+    # total sampled time is arithmetic, not extraction: derive it and record that
+    if s.get("n_trajectories") and s.get("trajectory_length_ns") and "sampling.total_sampled_time_ns" not in prov:
+        s["total_sampled_time_ns"] = round(s["n_trajectories"] * s["trajectory_length_ns"], 3)
+        prov["sampling.total_sampled_time_ns"] = {"quote": "derived: n_trajectories * trajectory_length_ns", "page": None, "confidence": 0.8}
+    # any other unsupported number: keep it, but flag for review at confidence 0.2 rather than rejecting the record
+    for grp in ("protocol", "observables", "benchmark", "sampling"):
+        for k, v in (rec.get(grp) or {}).items():
+            if isinstance(v, (int, float)) and not isinstance(v, bool) and f"{grp}.{k}" not in prov:
+                prov[f"{grp}.{k}"] = {"quote": "UNSUPPORTED: extractor supplied no quote; verify", "page": None, "confidence": 0.2}
+    b = rec.get("benchmark") or {}
+    if b.get("benchmark_source", "absent") == "absent" and any(b.get(k) for k in ("hardware", "wall_time_per_trajectory_h", "throughput_ns_per_day", "core_hours_total", "gpu_hours_total")):
+        b["benchmark_source"] = "reported"
     mol = rec.get("molecule", {})
     if mol.get("sequence") and not mol.get("sequence_sha1"):
         mol["sequence_sha1"] = sha1(mol["sequence"].upper())
@@ -90,8 +104,8 @@ if __name__ == "__main__":
     args = ap.parse_args()
 
     out_ok, out_bad = cfg["_data"] / "40_records.jsonl", cfg["_data"] / "40_rejected.jsonl"
-    done_ids = {r["sim_id"].split(".")[0] for r in read_jsonl(out_ok)} | {r.get("sim_id", "").split(".")[0] for r in read_jsonl(out_bad)}
-    done_dois = {r.get("doi") for r in read_jsonl(out_ok)} | {r.get("doi") for r in read_jsonl(out_bad)}
+    done_ids = {r["sim_id"].split(".")[0] for r in read_jsonl(out_ok)}        # rejected records are retried
+    done_dois = {r.get("doi") for r in read_jsonl(out_ok)}
     ids = [r["sim_id"] for r in read_jsonl(out_ok)]
     ft = {x.get("doi") or x["key"]: x["path"] for x in read_jsonl(cfg["_data"] / "30_fulltext_index.jsonl")}
 

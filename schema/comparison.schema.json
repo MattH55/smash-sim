@@ -21,7 +21,7 @@
     },
     "sim_id": {
       "type": "string",
-      "pattern": "^SIM-[0-9]{6}$"
+      "pattern": "^SIMX?-[0-9]{6}(\\.[0-9]+)?$"
     },
     "smfs_id": {
       "type": [

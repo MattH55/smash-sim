@@ -99,7 +99,7 @@ if __name__ == "__main__":
         raise SystemExit
 
     out = cfg["_data"] / "50_comparisons.jsonl"
-    done = {c["sim_id"] for c in read_jsonl(out)} | {c.get("sim_id") for c in read_jsonl(cfg["_data"] / "50_rejected.jsonl")}
+    done = {c["sim_id"] for c in read_jsonl(out)}   # records whose rows were all rejected are retried
     ids = [c["cmp_id"] for c in read_jsonl(out)]
     todo = [s for s in sims if s["sim_id"] not in done
             and (any(p["sim_id"] == s["sim_id"] for p in pairs) or s.get("experimental_comparison_in_paper", {}).get("present"))]
@@ -124,12 +124,24 @@ if __name__ == "__main__":
         n_ok = 0
         for r in rows:
             r = coerce(r, CMP_SCHEMA)
+            if r.get("match_level") == "UNTESTED":
+                r["verdict"] = "untested"
+            if r.get("verdict") is None:
+                r["verdict"] = "untested" if r.get("exp_value") in (None, "") else "partial"
+            if not isinstance(r.get("disagreement_reasons"), list):
+                r["disagreement_reasons"] = [] if r["verdict"] in ("agree", "untested") else ["unknown"]
+            for fld in ("source_doi",):
+                if not r.get(fld):
+                    r[fld] = s["doi"]
+            if not r.get("comparison_made_by"):
+                r["comparison_made_by"] = "original_authors"
             r["sim_id"] = s["sim_id"]
             r["cmp_id"] = next_id("CMP", ids)
             r.setdefault("curation", {})["status"] = "auto"
             errs = [e.message for e in jsonschema.Draft202012Validator(CMP_SCHEMA).iter_errors(r)]
             if errs:
                 append_jsonl(cfg["_data"] / "50_rejected.jsonl", {"sim_id": s["sim_id"], "errors": errs, "row": r})
+                print(f"    rejected row ({r.get('observable')}): {'; '.join(errs[:3])[:200]}")
             else:
                 ids.append(r["cmp_id"]); append_jsonl(out, r); n_ok += 1
         print(f"  {s['sim_id']}: {n_ok}/{len(rows)} comparison rows")

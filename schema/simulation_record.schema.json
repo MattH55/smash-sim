@@ -17,7 +17,8 @@
   "properties": {
     "sim_id": {
       "type": "string",
-      "pattern": "^SIM-[0-9]{6}$"
+      "pattern": "^SIMX?-[0-9]{6}(\\.[0-9]+)?$",
+      "description": "SMASH-BIO id; .N suffix for additional setups split from one SMASH-BIO record; SIMX- for gap-search records not yet in SMASH-BIO"
     },
     "doi": {
       "type": "string",
