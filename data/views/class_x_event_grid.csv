@@ -1,11 +1,11 @@
 class_id,A-entropic,A-enthalpic,A-cooperative,B-single,B-series,B-parallel,B-cross,B-formation
-AA-EXP,0,8,0,37,14,3,3,5
+AA-EXP,0,10,0,40,14,6,3,5
 AA-IMP,0,0,0,2,0,0,0,0
 AA-ENH,0,2,0,5,1,0,0,0
-CG-GO,0,5,0,8,8,0,0,5
+CG-GO,0,5,0,8,8,5,0,5
 CG-SOP,0,2,0,1,2,0,0,0
 CG-ISING,0,0,0,0,0,0,0,0
-CG-OXDNA,0,2,0,0,1,0,0,0
+CG-OXDNA,0,3,0,0,2,0,0,0
 CG-TIS,0,0,0,1,0,0,0,1
 CG-HIRE,0,0,0,0,0,0,0,0
 CG-MARTINI,0,1,0,4,1,2,0,0

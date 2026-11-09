@@ -571,3 +571,21 @@
 {"sim_id": "SIM-000109", "smfs_id": "SMFS-000092", "how": "homolog", "rank": 2, "geometry_match": "False"}
 {"sim_id": "SIM-000109", "smfs_id": "SMFS-000093", "how": "homolog", "rank": 2, "geometry_match": "False"}
 {"sim_id": "SIM-000109", "smfs_id": "SMFS-000157", "how": "homolog", "rank": 2, "geometry_match": "False"}
+{"sim_id": "SIM-000091", "smfs_id": "SMFS-000161", "how": "homolog", "rank": 2, "geometry_match": "False"}
+{"sim_id": "SIM-000091", "smfs_id": "SMFS-000173", "how": "homolog", "rank": 2, "geometry_match": "False"}
+{"sim_id": "SIM-000091", "smfs_id": "SMFS-000194", "how": "homolog", "rank": 2, "geometry_match": "False"}
+{"sim_id": "SIM-000091", "smfs_id": "SMFS-000682", "how": "homolog", "rank": 2, "geometry_match": "False"}
+{"sim_id": "SIM-000091", "smfs_id": "SMFS-000697", "how": "homolog", "rank": 2, "geometry_match": "False"}
+{"sim_id": "SIM-000099", "smfs_id": "SMFS-000088", "how": "homolog", "rank": 2, "geometry_match": "False"}
+{"sim_id": "SIM-000099", "smfs_id": "SMFS-000125", "how": "homolog", "rank": 2, "geometry_match": "False"}
+{"sim_id": "SIM-000099", "smfs_id": "SMFS-000358", "how": "homolog", "rank": 2, "geometry_match": "False"}
+{"sim_id": "SIM-000099", "smfs_id": "SMFS-000549", "how": "homolog", "rank": 2, "geometry_match": "False"}
+{"sim_id": "SIM-000099", "smfs_id": "SMFS-000616", "how": "homolog", "rank": 2, "geometry_match": "False"}
+{"sim_id": "SIM-000111", "smfs_id": "SMFS-006234", "how": "cited_doi", "rank": -1, "geometry_match": null}
+{"sim_id": "SIM-000113", "smfs_id": null, "exp_doi": "https://www.pnas.org/doi/10.1073/pnas.0813093106", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIM-000115", "smfs_id": null, "exp_doi": "https://www.pnas.org/doi/10.1073/pnas.0813093106", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIM-000116", "smfs_id": null, "exp_doi": "https://www.pnas.org/doi/10.1073/pnas.0813093106", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIM-000117", "smfs_id": null, "exp_doi": "https://www.pnas.org/doi/10.1073/pnas.0813093106", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIM-000118", "smfs_id": null, "exp_doi": "https://www.pnas.org/doi/10.1073/pnas.0813093106", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIM-000121", "smfs_id": "SMFS-007419", "how": "cited_doi", "rank": -1, "geometry_match": null}
+{"sim_id": "SIM-000122", "smfs_id": null, "exp_doi": "10.1529/biophysj.105.061465", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
