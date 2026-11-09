@@ -1,4 +1,5 @@
 impl_id,class_id,name,pulling_protocols_supported,gpu,license,url
+ALIASES,,"alias map used by coercion: namd3->NAMD; namd2->NAMD; openmm->OPENMM; gromacs->GROMACS; amber->AMBER; smog->SMOG2; oxdna->OXDNA; lammps->LAMMPS; plumed->PLUMED; charmm->CHARMM; cafemol->CAFEMOL; sop-gpu->SOP-GPU; martini->MARTINI; gromacs+plumed->PLUMED",,,,
 GROMACS,AA-EXP,GROMACS pull code,constant_velocity;constant_force;umbrella,TRUE,LGPL,https://www.gromacs.org
 PLUMED,AA-ENH,PLUMED (with GROMACS/NAMD/OpenMM/LAMMPS),constant_velocity;constant_force;umbrella;metadynamics,TRUE,LGPL,https://www.plumed.org
 NAMD,AA-EXP,NAMD SMD / colvars,constant_velocity;constant_force;umbrella;metadynamics,TRUE,free_academic,https://www.ks.uiuc.edu/Research/namd/

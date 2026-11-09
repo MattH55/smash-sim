@@ -90,8 +90,9 @@ gaps = [(c, e) for c in grid.index for e in grid.columns if grid.loc[c, e] == 0
 pd.DataFrame(gaps, columns=["class_id", "event_type"]).to_csv(V / "gaps_covered_but_unstudied.csv", index=False)
 
 if not cmps.empty:
-    cmps[cmps["match_level"] == "UNTESTED"].merge(sims[["sim_id", "doi", "molecule.name", "class_id"]], on="sim_id") \
-        [["sim_id", "doi", "molecule.name", "class_id", "observable", "note"]].to_csv(V / "untested_predictions.csv", index=False)
+    ut = cmps[cmps["match_level"] == "UNTESTED"].merge(sims[["sim_id", "doi", "molecule.name", "class_id"]], on="sim_id", how="left")
+    cols = [c for c in ["sim_id", "doi", "molecule.name", "class_id", "observable", "verdict_criterion", "note"] if c in ut.columns]
+    ut[cols].to_csv(V / "untested_predictions.csv", index=False)
 
 print("views written to", V)
 for f in sorted(V.glob("*.csv")):

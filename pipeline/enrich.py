@@ -21,7 +21,7 @@ from pathlib import Path
 
 import jsonschema
 
-from coerce import coerce
+from coerce import coerce, fix_impl
 from common import (ROOT, append_jsonl, extract_json_array, llm_complete, load_config, load_schema, load_vocab,
                     next_id, read_jsonl, sha1)
 
@@ -39,7 +39,7 @@ def validate(rec: dict) -> list[str]:
     errs = [e.message for e in jsonschema.Draft202012Validator(SCHEMA).iter_errors(rec)]
     if rec.get("class_id") not in CLASSES:
         errs.append(f"class_id {rec.get('class_id')} not in vocab (UNRESOLVED not allowed after enrichment)")
-    if rec.get("impl_id") and rec["impl_id"] not in IMPLS:
+    if rec.get("impl_id") and (rec["impl_id"] not in IMPLS or rec["impl_id"] == "ALIASES"):
         errs.append(f"impl_id {rec.get('impl_id')} not in vocab")
     prov = rec.get("_prov", {})
     for grp in ("protocol", "observables", "benchmark", "sampling"):
@@ -64,6 +64,7 @@ def restore_locked(rec: dict, skel: dict, suffix: int | None) -> dict:
 
 def postprocess(rec: dict) -> dict:
     rec = coerce(rec, SCHEMA)
+    fix_impl(rec, set(IMPLS) - {"ALIASES"}, rec.setdefault("_coerced", {}))
     prov = rec.setdefault("_prov", {})
     s = rec.get("sampling") or {}
     # total sampled time is arithmetic, not extraction: derive it and record that

@@ -58,6 +58,7 @@ jobs:
           python pipeline/run.py $ARGS
 
       - name: Commit results
+        if: always()
         run: |
           git config user.name "smash-sim-bot"
           git config user.email "actions@users.noreply.github.com"
@@ -68,6 +69,7 @@ jobs:
           git push
 
       - name: Upload views as artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: views-${{ github.run_number }}

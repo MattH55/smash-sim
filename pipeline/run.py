@@ -24,6 +24,7 @@ ap.add_argument("--steps", default="ingest,fulltext,enrich,compare,views")
 ap.add_argument("--limit", type=int)
 ap.add_argument("--no-llm", action="store_true")
 a = ap.parse_args()
+failed = []
 for step in a.steps.split(","):
     cmd = [sys.executable, str(HERE / STEP_CMD[step][0])] + STEP_CMD[step][1:]
     if a.limit and step in ("enrich", "compare"):
@@ -31,4 +32,10 @@ for step in a.steps.split(","):
     if a.no_llm and step in ("screen", "compare"):
         cmd += ["--no-llm"]
     print(f"\n=== {step}: {' '.join(cmd[1:])}", flush=True)
-    subprocess.run(cmd, check=True, cwd=HERE)
+    rc = subprocess.run(cmd, cwd=HERE).returncode
+    if rc:
+        failed.append(step)
+        print(f"!!! step {step} failed (exit {rc}); continuing so earlier results are kept", flush=True)
+if failed:
+    print("FAILED STEPS:", failed)
+    sys.exit(1)

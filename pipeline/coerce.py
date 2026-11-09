@@ -49,8 +49,41 @@ def _enum_fix(path, value, allowed, log):
     return None
 
 
+IMPL_ALIASES = {"namd3": "NAMD", "namd2": "NAMD", "namd": "NAMD", "openmm": "OPENMM", "gromacs": "GROMACS", "amber": "AMBER",
+                "smog": "SMOG2", "smog2": "SMOG2", "oxdna": "OXDNA", "oxrna": "OXDNA", "lammps": "LAMMPS", "plumed": "PLUMED",
+                "charmm": "CHARMM", "cafemol": "CAFEMOL", "sop-gpu": "SOP-GPU", "sop": "SOP", "martini": "MARTINI", "tis": "TIS",
+                "kinfold": "KINFOLD", "viennarna": "KINFOLD", "in-house": "INHOUSE", "inhouse": "INHOUSE", "custom": "INHOUSE", "none": "NONE"}
+
+
+def fix_impl(rec, allowed, log):
+    v = rec.get("impl_id")
+    if v is None or v in allowed:
+        return
+    low = str(v).lower().strip()
+    hit = IMPL_ALIASES.get(low) or next((t for k, t in IMPL_ALIASES.items() if k in low), None)
+    log["impl_id"] = str(v)
+    rec["impl_id"] = hit if hit in allowed else "INHOUSE"
+
+
+def flatten_value(x, log, path):
+    """{'value': 400, 'unit': 'pN', 'note': ...} -> 400 (unit/note returned for the caller)."""
+    if isinstance(x, dict):
+        log[path] = str(x)[:200]
+        return x.get("value"), x.get("unit"), x.get("note")
+    return x, None, None
+
+
 def coerce(rec: dict, schema: dict) -> dict:
     log = rec.setdefault("_coerced", {})
+    # comparison rows: dict-valued sim/exp values
+    for fld in ("sim_value", "exp_value"):
+        if isinstance(rec.get(fld), dict):
+            val, unit, note = flatten_value(rec[fld], log, fld)
+            rec[fld] = val
+            if unit and not rec.get("units"):
+                rec["units"] = unit
+            if note:
+                rec["note"] = ((rec.get("note") or "") + f" [{fld}: {note}]").strip()
     props = schema.get("properties", {})
     for k in list(rec.keys()):
         if k not in props and not k.startswith("_"):
@@ -80,6 +113,9 @@ def coerce(rec: dict, schema: dict) -> dict:
                 if fixed is not None and fixed not in kept:
                     kept.append(fixed)
             rec[arr_field] = kept
+    for k, p in (rec.get("_prov") or {}).items():
+        if isinstance(p, dict) and isinstance(p.get("quote"), str) and len(p["quote"]) > 300:
+            p["quote"] = p["quote"][:299] + "…"
     if not log:
         rec.pop("_coerced", None)
     return rec
@@ -93,6 +129,8 @@ def _walk(obj, props, prefix, log):
         val = obj[key]
         if "enum" in spec and not isinstance(val, list):
             obj[key] = _enum_fix(path, val, spec["enum"], log)
+        elif isinstance(val, str) and spec.get("maxLength") and len(val) > spec["maxLength"]:
+            log[path] = "truncated from %d chars" % len(val); obj[key] = val[: spec["maxLength"] - 1] + "…"
         elif spec.get("type") == "object" and "properties" in spec and isinstance(val, dict):
             for k in list(val.keys()):
                 if k not in spec["properties"] and spec.get("additionalProperties") is False:
