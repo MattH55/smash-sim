@@ -707,6 +707,10 @@
       "additionalProperties": {
         "type": "string"
       }
+    },
+    "_verify": {
+      "type": "object",
+      "description": "Cross-model verification result: {model, checked, flagged, fields:{field:{verifier_value, why}}}"
     }
   }
 }

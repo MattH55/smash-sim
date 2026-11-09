@@ -9,7 +9,7 @@ from __future__ import annotations
 import argparse
 import xml.etree.ElementTree as ET
 
-from common import RateLimiter, http_get, load_config, norm_doi, write_jsonl
+from common import RateLimiter, http_get, load_config, norm_doi, read_jsonl, write_jsonl
 
 cfg = load_config()
 EMAIL = cfg["contact_email"]
@@ -65,6 +65,43 @@ def search_europepmc(tag: str, query: str) -> list[dict]:
     return hits
 
 
+def _inv_abstract(inv: dict | None) -> str:
+    if not inv:
+        return ""
+    pos = sorted((p, w) for w, ps in inv.items() for p in ps)
+    return " ".join(w for _, w in pos)
+
+
+def search_openalex(tag: str, query: str) -> list[dict]:
+    """OpenAlex full-text search; broadest index, returns OA locations and citation counts."""
+    hits, cursor = [], "*"
+    rl = RateLimiter(8)
+    while True:
+        rl.wait()
+        js = http_get("https://api.openalex.org/works",
+                      {"search": query, "per-page": 200, "cursor": cursor, "mailto": EMAIL,
+                       "select": "id,doi,title,publication_year,abstract_inverted_index,primary_location,open_access,cited_by_count,ids,type"}).json()
+        for w in js.get("results", []):
+            if w.get("type") in ("paratext", "erratum", "retraction"):
+                continue
+            ids = w.get("ids") or {}
+            hits.append(dict(source="openalex", query_tag=tag, doi=norm_doi(w.get("doi")),
+                             pmid=(ids.get("pmid") or "").rsplit("/", 1)[-1] or None,
+                             pmcid=(ids.get("pmcid") or "").rsplit("/", 1)[-1] or None,
+                             arxiv_id=None, openalex_id=w["id"].rsplit("/", 1)[-1],
+                             title=w.get("title") or "", abstract=_inv_abstract(w.get("abstract_inverted_index")),
+                             year=w.get("publication_year"),
+                             journal=((w.get("primary_location") or {}).get("source") or {}).get("display_name"),
+                             is_oa=bool((w.get("open_access") or {}).get("is_oa")),
+                             oa_url=(w.get("open_access") or {}).get("oa_url"),
+                             cited_by_count=w.get("cited_by_count")))
+        cursor = js.get("meta", {}).get("next_cursor")
+        if not cursor or not js.get("results"):
+            break
+    print(f"  openalex/{tag}: {len(hits)}")
+    return hits
+
+
 def search_arxiv(tag: str, query: str) -> list[dict]:
     ns = {"a": "http://www.w3.org/2005/Atom", "ar": "http://arxiv.org/schemas/atom"}
     hits, start = [], 0
@@ -91,15 +128,17 @@ def search_arxiv(tag: str, query: str) -> list[dict]:
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--only", choices=["pubmed", "europepmc", "arxiv"])
+    ap.add_argument("--only", choices=["pubmed", "europepmc", "arxiv", "openalex"])
     args = ap.parse_args()
     all_hits = []
-    for src, fn in [("pubmed", search_pubmed), ("europepmc", search_europepmc), ("arxiv", search_arxiv)]:
+    for src, fn in [("pubmed", search_pubmed), ("europepmc", search_europepmc), ("arxiv", search_arxiv), ("openalex", search_openalex)]:
         if args.only and args.only != src:
             continue
         print(f"[{src}]")
         for tag, q in cfg["searches"].get(src, {}).items():
             all_hits.extend(fn(tag, " ".join(q.split())))
     out = cfg["_data"] / "20_hits.jsonl"
+    prev = [h for h in read_jsonl(out) if h.get("source") in ("seed", "snowball")]   # keep seed/snowball hits from seed.py
+    all_hits = prev + all_hits
     write_jsonl(out, all_hits)
     print(f"wrote {len(all_hits)} raw hits -> {out}")

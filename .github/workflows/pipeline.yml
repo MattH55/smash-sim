@@ -5,10 +5,10 @@ on:
     inputs:
       steps:
         description: "Comma-separated steps (llm_smoke,ingest,gap_search,seed,screen,fulltext,enrich,compare,views,review_export)"
-        default: "ingest,fulltext,enrich,compare,views,review_export"
+        default: "ingest,fulltext,enrich,verify,compare,views,review_export"
       limit:
-        description: "Max records for enrich/compare (empty = all)"
-        default: "30"
+        description: "Max records for enrich/verify/compare (0 = all)"
+        default: "0"
       no_llm:
         description: "Skip LLM calls (true/false)"
         default: "false"
@@ -49,8 +49,9 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
         run: |
-          STEPS="${{ github.event.inputs.steps || 'ingest,fulltext,enrich,compare,views,review_export' }}"
+          STEPS="${{ github.event.inputs.steps || 'ingest,fulltext,enrich,verify,compare,views,review_export' }}"
           LIMIT="${{ github.event.inputs.limit }}"
+          [ "$LIMIT" = "0" ] && LIMIT=""
           NOLLM="${{ github.event.inputs.no_llm }}"
           ARGS="--steps $STEPS"
           [ -n "$LIMIT" ] && ARGS="$ARGS --limit $LIMIT"

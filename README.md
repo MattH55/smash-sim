@@ -12,10 +12,12 @@ SMASH-BIO's `hub/sim/` pipeline harvests, classifies and builds `SIM-######` rec
 |---|---|---|
 | Skeleton crosswalk | SMASH-BIO record → analysis schema, same `SIM-######` id, identifiers locked | `pipeline/ingest_smash.py` |
 | LLM enrichment | fills nulls from full text with quotes; never overwrites verified identifiers | `pipeline/enrich.py`, `prompts/enrich_simulation_record.md` |
-| Gap search | PubMed / Europe PMC / arXiv for pulling-simulation papers SMASH-BIO has not harvested → provisional `SIMX-######` records and a candidate list for upstream | `pipeline/gap_search.py`, `screen.py`, `seed.py` |
+| Gap search | PubMed / Europe PMC / arXiv / **OpenAlex** for pulling-simulation papers SMASH-BIO has not harvested, plus OpenAlex citation snowballing from the seed cases and from every enriched record → provisional `SIMX-######` records and a candidate list for upstream. Runs as its own workflow (`gap-search.yml`) in parallel with enrichment | `pipeline/gap_search.py`, `screen.py`, `seed.py` |
 | Comparisons | one row per (simulation, experiment, observable) with match level H2H / EXT / QUAL / PRED / UNTESTED, verdict, criterion, disagreement reason, and which triangle arrow it instantiates | `pipeline/compare.py`, `schema/comparison.schema.json` |
 | Views | the review's tables, computed | `pipeline/views.py` → `data/views/` |
-| Human check | lowest-confidence fields first, re-importable | `pipeline/review_sheet.py` |
+| Cross-model verification | a second model (Kimi K2.6) re-checks every extracted number against its quote; disagreements lower confidence and surface in the review sheet | `pipeline/verify.py` |
+| Abstract tier | paywalled papers without a PDF still get a record from title + abstract, flagged `text_source: abstract`, confidence capped at 0.5 | `fetch_fulltext.py` (`abstract_fallback`) |
+| Human check | lowest-confidence fields first, with verifier flags and coercions shown, re-importable | `pipeline/review_sheet.py` |
 
 ## Schema in one paragraph
 
@@ -28,7 +30,8 @@ SMASH-BIO's `hub/sim/` pipeline harvests, classifies and builds `SIM-######` rec
 ### On GitHub Actions (intended)
 
 1. Repo **Settings → Secrets and variables → Actions** → add `NANOGPT_API_KEY` (default provider; key from nano-gpt.com/api, format `sk-nano-…`). To use Anthropic directly instead, add `ANTHROPIC_API_KEY` and set `llm.provider: anthropic` in `pipeline/config.yaml`. `NCBI_API_KEY` is optional.
-2. **Actions → SMASH-SIM pipeline → Run workflow**. Defaults: `ingest,fulltext,enrich,compare,views,review_export`, limit 30. First run: keep the limit, inspect `data/review/sim_records_review.csv`, then rerun with an empty limit.
+2. **Actions → SMASH-SIM pipeline → Run workflow**. Defaults: `ingest,fulltext,enrich,verify,compare,views,review_export`, limit 0 (= all). Use a small limit for a dry run.
+   **Actions → SMASH-SIM gap search → Run workflow** expands the corpus beyond SMASH-BIO; it runs in parallel and commits `data/20_screened.jsonl`, which the next pipeline run then fetches, enriches (as `SIMX-` records) and compares.
 3. Results are committed back to `data/` and the views are attached to the run as an artifact.
 4. A weekly scheduled run re-ingests SMASH-BIO and enriches anything new (idempotent: already-enriched ids are skipped).
 

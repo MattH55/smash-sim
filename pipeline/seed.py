@@ -28,6 +28,7 @@ def crossref_meta(doi: str) -> dict | None:
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--snowball", action="store_true")
+    ap.add_argument("--from-records", action="store_true", help="also snowball from every enriched record's DOI")
     args = ap.parse_args()
 
     hits_path = cfg["_data"] / "20_hits.jsonl"
@@ -48,8 +49,52 @@ if __name__ == "__main__":
             added += 1
     print(f"seed: {added} new DOIs appended to {hits_path}")
 
+    if args.from_records:
+        for r in read_jsonl(cfg["_data"] / "40_records.jsonl"):
+            if r.get("doi") and not r["doi"].startswith("smashbio:"):
+                dois.add(r["doi"])
+        print(f"snowball seed set: {len(dois)} DOIs (seed cases + enriched records)")
+
     if args.snowball:
         n = 0
+        # OpenAlex: references (cited) and citers of each DOI
+        for d in sorted(dois):
+            rl.wait()
+            try:
+                w = http_get(f"https://api.openalex.org/works/doi:{d}", {"mailto": cfg["contact_email"], "select": "id,referenced_works"}).json()
+            except Exception:
+                continue
+            wid = w["id"].rsplit("/", 1)[-1]
+            batch_ids = [x.rsplit("/", 1)[-1] for x in (w.get("referenced_works") or [])]
+            pages = [("refs", {"filter": f"openalex_id:{'|'.join(batch_ids[i:i+50])}"}) for i in range(0, len(batch_ids), 50)]
+            pages.append(("citers", {"filter": f"cites:{wid}"}))
+            for rel, params in pages:
+                cursor = "*"
+                while cursor:
+                    rl.wait()
+                    try:
+                        js = http_get("https://api.openalex.org/works", dict(params, **{"per-page": 200, "cursor": cursor, "mailto": cfg["contact_email"],
+                                      "select": "id,doi,title,publication_year,abstract_inverted_index,primary_location,open_access,ids"})).json()
+                    except Exception:
+                        break
+                    for x in js.get("results", []):
+                        od = norm_doi(x.get("doi"))
+                        if not od or od in existing:
+                            continue
+                        from gap_search import _inv_abstract
+                        ids = x.get("ids") or {}
+                        append_jsonl(hits_path, dict(source="snowball", query_tag=f"{rel}:{d}", doi=od,
+                                                     pmid=(ids.get("pmid") or "").rsplit("/", 1)[-1] or None,
+                                                     pmcid=(ids.get("pmcid") or "").rsplit("/", 1)[-1] or None, arxiv_id=None,
+                                                     title=x.get("title") or "", abstract=_inv_abstract(x.get("abstract_inverted_index")),
+                                                     year=x.get("publication_year"),
+                                                     journal=((x.get("primary_location") or {}).get("source") or {}).get("display_name"),
+                                                     is_oa=bool((x.get("open_access") or {}).get("is_oa")),
+                                                     oa_url=(x.get("open_access") or {}).get("oa_url")))
+                        existing.add(od); n += 1
+                    cursor = js.get("meta", {}).get("next_cursor") if js.get("results") else None
+        print(f"snowball (OpenAlex refs+citers): {n} new DOIs")
+        # OpenCitations as a second net
         for d in sorted(dois):
             for rel in ("citations", "references"):
                 rl.wait()

@@ -51,6 +51,10 @@ def export():
             p = r.get("_prov", {}).get(f, {})
             row[f + "__quote"] = p.get("quote")
             row[f + "__conf"] = p.get("confidence")
+        vf = (r.get("_verify") or {}).get("fields") or {}
+        row["verifier_flags"] = "; ".join(f"{k}: verifier={v.get('verifier_value')} ({v.get('why')})" for k, v in vf.items())
+        row["text_source"] = (r.get("_derived") or {}).get("text_source", "fulltext")
+        row["coerced"] = "; ".join(f"{k}<-{str(v)[:40]}" for k, v in (r.get("_coerced") or {}).items())[:500]
         row["curator_note"] = ""
         rows.append(row)
     df = pd.DataFrame(rows)

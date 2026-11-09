@@ -21,7 +21,7 @@ from pathlib import Path
 
 import jsonschema
 
-from coerce import coerce, fix_impl
+from coerce import coerce, fix_class, fix_impl
 from common import (ROOT, append_jsonl, extract_json_array, llm_complete, load_config, load_schema, load_vocab,
                     next_id, read_jsonl, sha1)
 
@@ -106,6 +106,7 @@ def postprocess(rec: dict) -> dict:
     rec = coerce(rec, SCHEMA)
     verify_units(rec)
     fix_impl(rec, set(IMPLS) - {"ALIASES"}, rec.setdefault("_coerced", {}))
+    fix_class(rec, set(CLASSES), rec["_coerced"])
     prov = rec.setdefault("_prov", {})
     s = rec.get("sampling") or {}
     # total sampled time is arithmetic, not extraction: derive it and record that
@@ -149,7 +150,9 @@ if __name__ == "__main__":
     done_ids = {r["sim_id"].split(".")[0] for r in read_jsonl(out_ok)}        # rejected records are retried
     done_dois = {r.get("doi") for r in read_jsonl(out_ok)}
     ids = [r["sim_id"] for r in read_jsonl(out_ok)]
-    ft = {x.get("doi") or x["key"]: x["path"] for x in read_jsonl(cfg["_data"] / "30_fulltext_index.jsonl")}
+    ft_index = read_jsonl(cfg["_data"] / "30_fulltext_index.jsonl")
+    ft = {x.get("doi") or x["key"]: x["path"] for x in ft_index}
+    kind = {x.get("doi") or x["key"]: x.get("text_kind", "fulltext") for x in ft_index}
 
     # --- skeletons (SMASH-BIO records) ---
     skels = [s for s in read_jsonl(cfg["_data"] / "10_skeletons.jsonl") if s["sim_id"] not in done_ids]
@@ -164,6 +167,8 @@ if __name__ == "__main__":
     n_done = 0
     for skel in skels:
         text = Path(ft[skel["doi"]]).read_text()[:MAX_CHARS]
+        if kind.get(skel["doi"]) == "abstract":
+            text += "\n\nNOTE TO EXTRACTOR: only the abstract is available. Fill only what the abstract states; leave everything else null."
         prompt = (P_ENRICH.replace("{{skeleton_json}}", json.dumps(skel, ensure_ascii=False))
                           .replace("{{doi}}", skel["doi"]).replace("{{full_text}}", text))
         try:
@@ -174,6 +179,11 @@ if __name__ == "__main__":
             continue
         for i, rec in enumerate(recs):
             rec = postprocess(restore_locked(rec, skel, i if i else None))
+            rec.setdefault("_derived", {})["text_source"] = kind.get(skel["doi"], "fulltext")
+            if rec["_derived"]["text_source"] == "abstract":
+                for p in rec.get("_prov", {}).values():
+                    p["confidence"] = min(p.get("confidence", 0.5), 0.5)
+                rec["curation"]["notes"] = ((rec["curation"].get("notes") or "") + " | abstract-only extraction").strip(" |")
             errs = validate(rec)
             if errs:
                 append_jsonl(out_bad, {"sim_id": rec["sim_id"], "doi": skel["doi"], "errors": errs, "record": rec})
@@ -191,7 +201,10 @@ if __name__ == "__main__":
         print(f"{len(gap)} gap-search papers to extract")
         for item in gap:
             doi = item.get("doi") or item["key"]
-            prompt = P_EXTRACT.replace("{{doi}}", doi).replace("{{full_text}}", Path(item["path"]).read_text()[:MAX_CHARS])
+            gtext = Path(item["path"]).read_text()[:MAX_CHARS]
+            if item.get("text_kind") == "abstract":
+                gtext += "\n\nNOTE TO EXTRACTOR: only the abstract is available. Fill only what the abstract states; leave everything else null."
+            prompt = P_EXTRACT.replace("{{doi}}", doi).replace("{{full_text}}", gtext)
             try:
                 recs = extract_json_array(llm_complete(cfg, prompt))
             except Exception as e:
@@ -200,6 +213,7 @@ if __name__ == "__main__":
                 rec["doi"] = rec.get("doi") or doi
                 rec["sim_id"] = next_id("SIMX", [i for i in ids if i.startswith("SIMX")])
                 rec = postprocess(rec)
+                rec.setdefault("_derived", {})["text_source"] = item.get("text_kind", "fulltext")
                 errs = validate(rec)
                 if errs:
                     append_jsonl(out_bad, {"doi": doi, "errors": errs, "record": rec})

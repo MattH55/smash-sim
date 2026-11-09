@@ -66,6 +66,42 @@ def unpaywall_pdf(doi: str) -> str | None:
         return None
 
 
+def oa_url_pdf(url: str | None) -> str | None:
+    if not url:
+        return None
+    try:
+        r = http_get(url, headers={"User-Agent": "smash-sim-pipeline"})
+        if "pdf" in (r.headers.get("content-type") or "").lower() or url.lower().endswith(".pdf"):
+            return pdf_to_text(r.content)
+    except Exception:
+        return None
+    return None
+
+
+def abstract_text(r: dict) -> str | None:
+    """Last resort: title + abstract (from the hit, else Europe PMC / OpenAlex), clearly marked."""
+    abs_ = r.get("abstract") or ""
+    if not abs_ and r.get("doi"):
+        rl.wait()
+        try:
+            js = http_get("https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+                          {"query": f'DOI:"{r["doi"]}"', "format": "json", "pageSize": 1, "resultType": "core"}).json()
+            abs_ = ((js.get("resultList", {}).get("result") or [{}])[0]).get("abstractText") or ""
+        except Exception:
+            pass
+    if not abs_ and r.get("doi"):
+        rl.wait()
+        try:
+            w = http_get(f"https://api.openalex.org/works/doi:{r['doi']}", {"mailto": cfg["contact_email"], "select": "abstract_inverted_index"}).json()
+            inv = w.get("abstract_inverted_index") or {}
+            abs_ = " ".join(w_ for _, w_ in sorted((p, w_) for w_, ps in inv.items() for p in ps))
+        except Exception:
+            pass
+    if len(abs_) < 200:
+        return None
+    return f"<<ABSTRACT ONLY — full text unavailable>>\n## Title\n{r.get('title','')}\n## Abstract\n{abs_}\n"
+
+
 def local_pdf(doi: str) -> str | None:
     p = Path(cfg["fulltext"]["local_pdf_dir"])
     if not p.is_absolute():
@@ -98,8 +134,12 @@ if __name__ == "__main__":
         key = doi or r.get("arxiv_id") or r["dedupe_key"]
         out = FT / f"{doi_to_fname(key)}.txt"
         if out.exists():
-            index.append(dict(key=key, doi=doi, path=str(out), source="cached", source_set=r["source_set"]))
-            continue
+            kind = "abstract" if out.read_text(errors="ignore").startswith("<<ABSTRACT ONLY") else "fulltext"
+            if kind == "abstract" and (r.get("pmcid") or r.get("oa_url")):
+                out.unlink()   # a better source may now exist; refetch
+            else:
+                index.append(dict(key=key, doi=doi, path=str(out), source="cached", source_set=r["source_set"], text_kind=kind))
+                continue
         text, src = None, None
         for s in cfg["fulltext"]["sources"]:
             if s == "europepmc_oa" and r.get("pmcid"):
@@ -116,9 +156,14 @@ if __name__ == "__main__":
                 text, src = pdf_to_text(http_get(f"https://arxiv.org/pdf/{r['arxiv_id']}").content), "arxiv"
             except Exception:
                 pass
+        if not text and r.get("oa_url"):
+            text, src = oa_url_pdf(r["oa_url"]), "openalex_oa_url"
+        text_kind = "fulltext"
+        if not text and cfg["fulltext"].get("abstract_fallback", True):
+            text, src, text_kind = abstract_text(r), "abstract", "abstract"
         if text:
             out.write_text(text)
-            index.append(dict(key=key, doi=doi, path=str(out), source=src, source_set=r["source_set"]))
+            index.append(dict(key=key, doi=doi, path=str(out), source=src, source_set=r["source_set"], text_kind=text_kind))
         else:
             missing.append(dict(doi=doi, title=r["title"], year=r.get("year"), journal=r.get("journal"), source_set=r["source_set"]))
         if i % 25 == 0:

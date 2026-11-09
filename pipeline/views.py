@@ -53,6 +53,8 @@ per_class = pd.DataFrame({
     "system_size_envelope": g["benchmark.system_size"].agg(envelope),
     "wall_h_per_traj_envelope": g["benchmark.wall_time_per_trajectory_h"].agg(envelope),
     "n_with_benchmark": g["benchmark.benchmark_source"].agg(lambda x: (x != "absent").sum()),
+    "n_abstract_only": g["_derived.text_source"].agg(lambda x: (x == "abstract").sum()) if "_derived.text_source" in sims.columns else 0,
+    "n_verifier_flags": g["_verify.flagged"].sum() if "_verify.flagged" in sims.columns else 0,
     "frac_refolding": g["observables.refolding_simulated"].mean().round(2),
     "frac_pathway": g["observables.pathway_described"].mean().round(2),
 })

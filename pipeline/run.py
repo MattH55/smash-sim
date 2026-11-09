@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Orchestrator.  python run.py --steps ingest,fulltext,enrich,compare,views  [--limit N] [--no-llm]
 
-Steps: llm_smoke | ingest | gap_search | screen | seed | fulltext | enrich | compare | views | review_export
+Steps: llm_smoke | ingest | ... | verify (cross-model number check) | gap_search | screen | seed | fulltext | enrich | compare | views | review_export
 """
 import argparse, subprocess, sys
 from pathlib import Path
@@ -15,19 +15,20 @@ STEP_CMD = {
     "screen": ["screen.py"],
     "fulltext": ["fetch_fulltext.py"],
     "enrich": ["enrich.py"],
+    "verify": ["verify.py"],
     "compare": ["compare.py"],
     "views": ["views.py"],
     "review_export": ["review_sheet.py", "export"],
 }
 ap = argparse.ArgumentParser()
-ap.add_argument("--steps", default="ingest,fulltext,enrich,compare,views")
+ap.add_argument("--steps", default="ingest,fulltext,enrich,verify,compare,views")
 ap.add_argument("--limit", type=int)
 ap.add_argument("--no-llm", action="store_true")
 a = ap.parse_args()
 failed = []
 for step in a.steps.split(","):
     cmd = [sys.executable, str(HERE / STEP_CMD[step][0])] + STEP_CMD[step][1:]
-    if a.limit and step in ("enrich", "compare"):
+    if a.limit and step in ("enrich", "verify", "compare"):
         cmd += ["--limit", str(a.limit)]
     if a.no_llm and step in ("screen", "compare"):
         cmd += ["--no-llm"]

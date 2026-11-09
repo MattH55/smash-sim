@@ -55,6 +55,34 @@ IMPL_ALIASES = {"namd3": "NAMD", "namd2": "NAMD", "namd": "NAMD", "openmm": "OPE
                 "kinfold": "KINFOLD", "viennarna": "KINFOLD", "in-house": "INHOUSE", "inhouse": "INHOUSE", "custom": "INHOUSE", "none": "NONE"}
 
 
+CLASS_RULES = [  # (regex on invented class id or free text, target)
+    (r"bell|evans|dudko|dhs|kramers|friddle|bullerjahn|an-bond|an-kinetic|an-rate", "AN-BOND"),
+    (r"cluster|catch|load.?shar|erdmann", "AN-CLUSTER"),
+    (r"wlc|fjc|polymer|elastic|marko|an-poly", "AN-POLY"),
+    (r"jarzynski|crooks|hummer|szabo|neq|an-neq|reconstruct", "AN-NEQ"),
+    (r"an-", "AN-BOND"),
+    (r"kin-unzip|unzip|nearest.?neigh", "KIN-UNZIP"),
+    (r"kin-|kinetic|monte.?carlo.?stem|kmc", "KIN-STEM"),
+    (r"oxdna|oxrna", "CG-OXDNA"), (r"\btis\b|three.?interaction", "CG-TIS"), (r"hire", "CG-HIRE"), (r"martini", "CG-MARTINI"),
+    (r"sop", "CG-SOP"), (r"ising|wsme|wako|binary", "CG-ISING"), (r"smog|go|gō", "CG-GO"),
+    (r"opep|awsem|\bunres\b|\bprime\b|palace|cg-other-prot|cg-prot", "CG-OTHER-PROT"),
+    (r"3spn|pbd|peyrard|g4|quadruplex|cg-other-na|cg-na", "CG-OTHER-NA"),
+    (r"umbrella|metadyn|replica|enhanced|aa-enh|jarzynski", "AA-ENH"),
+    (r"implicit|gb\b|eef1|aa-imp", "AA-IMP"),
+    (r"aa-|all.?atom|explicit|smd|steered|charmm|amber|ff\d\d|opls|gromos|tip[345]p|spc/?e?\b", "AA-EXP"),
+]
+
+
+def fix_class(rec, allowed, log):
+    v = rec.get("class_id")
+    if v in allowed and v != "UNRESOLVED":
+        return
+    text = f"{v or ''} {rec.get('force_field_or_params') or ''} {rec.get('_smashbio', {}).get('family') or ''}".lower().replace("unresolved", "")
+    for pat, target in CLASS_RULES:
+        if re.search(pat, text) and target in allowed:
+            log["class_id"] = str(v); rec["class_id"] = target; return
+
+
 def fix_impl(rec, allowed, log):
     v = rec.get("impl_id")
     if v is None or v in allowed:

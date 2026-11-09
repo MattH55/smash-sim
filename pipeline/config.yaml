@@ -46,6 +46,16 @@ searches:
       AND (ABSTRACT:"optical tweezers" OR ABSTRACT:"atomic force" OR ABSTRACT:"magnetic tweezers"
        OR ABSTRACT:"force spectroscopy")
       AND (ABSTRACT:unfolding OR ABSTRACT:unbinding OR ABSTRACT:rupture OR ABSTRACT:unzipping OR ABSTRACT:overstretching)
+  openalex:
+    # OpenAlex `search` is full-text-ish relevance search; keep queries natural-language, one concept each
+    smd: steered molecular dynamics unfolding OR unbinding force
+    force_probe: force-probe molecular dynamics protein mechanical
+    cg_pulling: coarse-grained simulation mechanical unfolding force extension
+    sop_go: self-organized polymer model OR Go model forced unfolding
+    na_pulling: oxDNA OR oxRNA pulling unzipping overstretching simulation
+    rna_force: RNA pseudoknot OR hairpin mechanical unfolding simulation optical tweezers
+    comparison: molecular dynamics compared single-molecule force spectroscopy AFM optical tweezers
+    analytic: dynamic force spectroscopy theory Bell Evans Dudko free energy landscape
   arxiv:
     sim_broad: >-
       (abs:"steered molecular dynamics" OR abs:"mechanical unfolding" OR abs:"force spectroscopy"
@@ -64,6 +74,7 @@ screen:
 fulltext:
   sources: [europepmc_oa, unpaywall, local_pdf_dir]
   local_pdf_dir: data/pdfs   # drop PDFs here named <doi with / replaced by _>.pdf for paywalled papers
+  abstract_fallback: true    # paywalled + no PDF -> record built from title+abstract, flagged text_source=abstract
 
 # LLM provider for enrich / compare / screen.
 # Default: NanoGPT subscription endpoint with an open-weight model (included in the $12/mo plan: 60M input tokens/week).
@@ -74,6 +85,7 @@ llm:
   # base_url: https://api.nano-gpt.com/api/v1          # pay-per-prompt host (needed for anthropic/*, openai/*, google/*)
   model: deepseek/deepseek-v3.2            # 128k context; alternatives: zai-org/glm-4.7, deepseek/deepseek-v3.2:thinking
   fallback_models: [zai-org/glm-4.7, z-ai/glm-4.6]   # tried in order on HTTP 402/404 for the primary model
+  verifier_model: moonshotai/kimi-k2.6               # different family from the extractor, for cross-model number checks
   max_tokens: 8000
   temperature: 0
   api_key_env: NANOGPT_API_KEY
