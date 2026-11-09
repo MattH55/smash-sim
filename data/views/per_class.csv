@@ -2,8 +2,8 @@ class_id,class_name,n_records,n_papers,n_molecules,molecule_types,topologies,vel
 AA-ENH,All-atom enhanced sampling along extension,7,7,7,protein;protein-protein,homopolymer;ligand-pocket;parallel;series;unknown,1–1e+03,,42–5e+03,2.5e+05–2.5e+05,,3,1,8.0,0.0,1.0
 AA-EXP,All-atom explicit-solvent SMD,63,59,58,DNA;RNA;protein;protein-NA;protein-protein,cross;homopolymer;ligand-pocket;mixed;parallel;series;unknown,1e-07–1e+03,1–1,1.7–7e+03,1.5e+04–1.3e+06,,14,12,87.0,0.08,0.71
 AA-IMP,All-atom implicit-solvent SMD,2,2,2,protein;protein-protein,ligand-pocket;unknown,0.1–10,,3.5e+02–7e+02,,2–2,1,0,2.0,0.0,0.5
-AN-BOND,Single-bond rupture kinetics (Bell,3,3,3,protein;protein-NA,ligand-pocket;series;unknown,5e-07–5e-07,,,,,0,0,2.0,0.67,0.33
-AN-POLY,Polymer elasticity (WLC,2,2,2,protein-NA,homopolymer;mixed,,5.5–5.5,,1e+02–1e+02,,0,0,2.0,0.0,0.5
+AN-BOND,Single-bond rupture kinetics (Bell,4,4,4,protein;protein-NA,ligand-pocket;series;unknown,5e-07–5e-07,,,,,1,0,2.0,0.5,0.25
+AN-POLY,Polymer elasticity (WLC,3,3,3,DNA;protein-NA,homopolymer;mixed,,5.5–5.5,,1e+02–5e+02,,1,0,3.0,0.0,0.33
 CG-GO,Structure-based Go (Calpha or heavier),30,25,25,RNA;protein;protein-NA;protein-protein,cross;homopolymer;ligand-pocket;parallel;series;unknown,1.2e-08–1e+03,,0.4–1.4e+04,,,4,16,45.0,0.33,0.53
 CG-MARTINI,Martini / GoMartini,7,7,6,DNA;other;protein;protein-protein,homopolymer;mixed;parallel;series;unknown,5e-08–0.025,,1.7e+03–1.7e+03,4.1e+03–2.6e+05,,2,3,3.0,0.14,0.43
 CG-OXDNA,oxDNA / oxDNA2 / oxRNA,3,3,1,protein-NA,cross;homopolymer,,5.5–5.5,,,,1,0,2.0,0.0,0.67

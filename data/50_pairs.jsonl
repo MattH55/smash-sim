@@ -589,3 +589,4 @@
 {"sim_id": "SIM-000118", "smfs_id": null, "exp_doi": "https://www.pnas.org/doi/10.1073/pnas.0813093106", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
 {"sim_id": "SIM-000121", "smfs_id": "SMFS-007419", "how": "cited_doi", "rank": -1, "geometry_match": null}
 {"sim_id": "SIM-000122", "smfs_id": null, "exp_doi": "10.1529/biophysj.105.061465", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000001", "smfs_id": "SMFS-003716", "how": "cited_doi", "rank": -1, "geometry_match": null}
