@@ -1,9 +1,6 @@
 class_id,event_type
 AA-EXP,A-entropic
-AA-EXP,A-enthalpic
 AA-EXP,A-cooperative
-AA-EXP,B-single
-AA-EXP,B-series
 AA-EXP,B-parallel
 AA-EXP,B-cross
 AA-IMP,A-entropic
