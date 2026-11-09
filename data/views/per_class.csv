@@ -4,7 +4,7 @@ AA-EXP,All-atom explicit-solvent SMD,63,59,58,DNA;RNA;protein;protein-NA;protein
 AA-IMP,All-atom implicit-solvent SMD,2,2,2,protein;protein-protein,ligand-pocket;unknown,0.1–10,,3.5e+02–7e+02,,2–2,1,0,2.0,0.0,0.5
 AN-BOND,Single-bond rupture kinetics (Bell,3,3,3,protein;protein-NA,ligand-pocket;series;unknown,5e-07–5e-07,,,,,0,0,2.0,0.67,0.33
 AN-POLY,Polymer elasticity (WLC,2,2,2,protein-NA,homopolymer;mixed,,5.5–5.5,,1e+02–1e+02,,0,0,2.0,0.0,0.5
-CG-GO,Structure-based Go (Calpha or heavier),30,25,25,RNA;protein;protein-NA;protein-protein,cross;homopolymer;ligand-pocket;parallel;series;unknown,1.2e-08–1e+03,,0.4–1.4e+04,,,4,16,43.0,0.33,0.53
+CG-GO,Structure-based Go (Calpha or heavier),30,25,25,RNA;protein;protein-NA;protein-protein,cross;homopolymer;ligand-pocket;parallel;series;unknown,1.2e-08–1e+03,,0.4–1.4e+04,,,4,16,45.0,0.33,0.53
 CG-MARTINI,Martini / GoMartini,7,7,6,DNA;other;protein;protein-protein,homopolymer;mixed;parallel;series;unknown,5e-08–0.025,,1.7e+03–1.7e+03,4.1e+03–2.6e+05,,2,3,3.0,0.14,0.43
 CG-OXDNA,oxDNA / oxDNA2 / oxRNA,3,3,1,protein-NA,cross;homopolymer,,5.5–5.5,,,,1,0,2.0,0.0,0.67
 CG-SOP,Self-Organized Polymer (SOP/SOP-SC),6,5,5,RNA;protein,homopolymer;ligand-pocket;parallel;series;unknown,6.4e-07–1,1.1e+05–1.1e+05,0.15–1.1e+02,,20–20,2,3,8.0,0.17,0.67
