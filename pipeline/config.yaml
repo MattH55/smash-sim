@@ -75,7 +75,8 @@ fulltext:
   sources: [europepmc_oa, unpaywall, local_pdf_dir]
   local_pdf_dir: data/pdfs   # drop PDFs here named <doi with / replaced by _>.pdf for paywalled papers
   abstract_fallback: true    # paywalled + no PDF -> record built from title+abstract, flagged text_source=abstract
-  max_new_gap_per_run: 400   # new gap-search papers fetched per run (SMASH-BIO skeletons are never capped)
+  max_new_gap_per_run: 250   # new gap-search papers fetched per run (SMASH-BIO skeletons are never capped)
+  workers: 6                 # parallel fetch threads (global rate limit 5 req/s still applies)
 
 # LLM provider for enrich / compare / screen.
 # Default: NanoGPT subscription endpoint with an open-weight model (included in the $12/mo plan: 60M input tokens/week).

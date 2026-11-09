@@ -80,16 +80,20 @@ def next_id(prefix: str, existing: Iterable[str]) -> str:
 
 
 class RateLimiter:
+    """Thread-safe token spacing: at most `per_second` calls across all threads."""
     def __init__(self, per_second: float):
+        import threading
         self.interval = 1.0 / per_second
-        self._last = 0.0
+        self._next = 0.0
+        self._lock = threading.Lock()
 
     def wait(self):
-        now = time.monotonic()
-        delta = now - self._last
-        if delta < self.interval:
-            time.sleep(self.interval - delta)
-        self._last = time.monotonic()
+        with self._lock:
+            now = time.monotonic()
+            start = max(now, self._next)
+            self._next = start + self.interval
+        if start > now:
+            time.sleep(start - now)
 
 
 def http_get(url: str, params: dict | None = None, headers: dict | None = None, retries: int = 3, timeout: int = 60):

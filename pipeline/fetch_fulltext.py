@@ -137,7 +137,11 @@ if __name__ == "__main__":
             except Exception:
                 pass
     index, missing = [], []
-    for i, r in enumerate(recs):
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    import threading
+    lock = threading.Lock()
+
+    def process(r):
         doi = r.get("doi")
         key = doi or r.get("arxiv_id") or r["dedupe_key"]
         out = FT / f"{doi_to_fname(key)}.txt"
@@ -146,8 +150,7 @@ if __name__ == "__main__":
             if kind == "abstract" and (r.get("pmcid") or r.get("oa_url")):
                 out.unlink()   # a better source may now exist; refetch
             else:
-                index.append(dict(key=key, doi=doi, path=str(out), source="cached", source_set=r["source_set"], text_kind=kind))
-                continue
+                return dict(key=key, doi=doi, path=str(out), source="cached", source_set=r["source_set"], text_kind=kind), None
         text, src = None, None
         for s in cfg["fulltext"]["sources"]:
             if s == "europepmc_oa" and r.get("pmcid"):
@@ -171,11 +174,24 @@ if __name__ == "__main__":
             text, src, text_kind = abstract_text(r), "abstract", "abstract"
         if text:
             out.write_text(text)
-            index.append(dict(key=key, doi=doi, path=str(out), source=src, source_set=r["source_set"], text_kind=text_kind))
-        else:
-            missing.append(dict(doi=doi, title=r["title"], year=r.get("year"), journal=r.get("journal"), source_set=r["source_set"]))
-        if i % 25 == 0:
-            print(f"  {i}/{len(recs)}  got={len(index)} missing={len(missing)}")
+            return dict(key=key, doi=doi, path=str(out), source=src, source_set=r["source_set"], text_kind=text_kind), None
+        return None, dict(doi=doi, title=r["title"], year=r.get("year"), journal=r.get("journal"), source_set=r["source_set"])
+
+    workers = int(cfg["fulltext"].get("workers", 6))
+    with ThreadPoolExecutor(max_workers=workers) as ex:
+        futs = [ex.submit(process, r) for r in recs]
+        for i, fut in enumerate(as_completed(futs)):
+            try:
+                got, miss = fut.result()
+            except Exception as e:
+                got, miss = None, dict(doi=None, title=f"error: {str(e)[:80]}", year=None, journal=None, source_set="?")
+            with lock:
+                if got:
+                    index.append(got)
+                if miss:
+                    missing.append(miss)
+            if i % 25 == 0:
+                print(f"  {i}/{len(recs)}  got={len(index)} missing={len(missing)}", flush=True)
 
     write_jsonl(cfg["_data"] / "30_fulltext_index.jsonl", index)
     with open(cfg["_data"] / "30_missing.csv", "w", newline="") as f:
