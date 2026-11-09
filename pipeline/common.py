@@ -114,7 +114,7 @@ def llm_complete(cfg: dict, prompt: str) -> str:
     llm = cfg["llm"]
     api_key = os.environ.get(llm.get("api_key_env", "ANTHROPIC_API_KEY"))
     if not api_key:
-        raise RuntimeError(f"Set {llm.get('api_key_env')} in the environment")
+        raise RuntimeError(f"Set {llm.get('api_key_env')} in the environment (GitHub: repo secret of the same name)")
     import requests
 
     if llm["provider"] == "anthropic":
@@ -143,7 +143,8 @@ def llm_complete(cfg: dict, prompt: str) -> str:
             },
             timeout=600,
         )
-        r.raise_for_status()
+        if r.status_code >= 400:
+            raise RuntimeError(f"{llm['base_url']} -> HTTP {r.status_code}: {r.text[:300]}")
         return r.json()["choices"][0]["message"]["content"]
     raise ValueError(f"unknown provider {llm['provider']}")
 

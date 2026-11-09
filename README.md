@@ -27,7 +27,7 @@ SMASH-BIO's `hub/sim/` pipeline harvests, classifies and builds `SIM-######` rec
 
 ### On GitHub Actions (intended)
 
-1. Repo **Settings → Secrets and variables → Actions** → add `ANTHROPIC_API_KEY` (and optionally `NCBI_API_KEY`).
+1. Repo **Settings → Secrets and variables → Actions** → add `NANOGPT_API_KEY` (default provider; key from nano-gpt.com/api, format `sk-nano-…`). To use Anthropic directly instead, add `ANTHROPIC_API_KEY` and set `llm.provider: anthropic` in `pipeline/config.yaml`. `NCBI_API_KEY` is optional.
 2. **Actions → SMASH-SIM pipeline → Run workflow**. Defaults: `ingest,fulltext,enrich,compare,views,review_export`, limit 30. First run: keep the limit, inspect `data/review/sim_records_review.csv`, then rerun with an empty limit.
 3. Results are committed back to `data/` and the views are attached to the run as an artifact.
 4. A weekly scheduled run re-ingests SMASH-BIO and enriches anything new (idempotent: already-enriched ids are skipped).
@@ -38,7 +38,7 @@ To run the gap search: steps `gap_search,seed,screen,fulltext,enrich,compare,vie
 
 ```bash
 pip install -r requirements.txt
-export ANTHROPIC_API_KEY=...
+export NANOGPT_API_KEY=sk-nano-...
 python pipeline/run.py --steps ingest,fulltext,enrich,compare,views --limit 10
 ```
 
