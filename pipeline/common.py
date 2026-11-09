@@ -173,4 +173,33 @@ def extract_json_array(text: str) -> list[Any]:
     start, end = text.find("["), text.rfind("]")
     if start == -1 or end == -1:
         raise ValueError("no JSON array in response")
-    return json.loads(text[start : end + 1])
+    body = text[start : end + 1]
+    try:
+        return json.loads(body)
+    except json.JSONDecodeError:
+        repaired = re.sub(r",\s*([}\]])", r"\1", body)            # trailing commas
+        repaired = re.sub(r"(?<!\\)\bNaN\b|\bInfinity\b", "null", repaired)
+        repaired = repaired.replace("\u201c", '"').replace("\u201d", '"')
+        try:
+            return json.loads(repaired)
+        except json.JSONDecodeError:
+            # salvage complete top-level objects from a truncated array
+            objs, depth, cur, in_str, esc = [], 0, "", False, False
+            for ch in body[1:]:
+                cur += ch
+                if in_str:
+                    if esc: esc = False
+                    elif ch == "\\": esc = True
+                    elif ch == '"': in_str = False
+                    continue
+                if ch == '"': in_str = True
+                elif ch == "{": depth += 1
+                elif ch == "}":
+                    depth -= 1
+                    if depth == 0:
+                        try: objs.append(json.loads(cur.strip().lstrip(",").strip()))
+                        except json.JSONDecodeError: pass
+                        cur = ""
+            if objs:
+                return objs
+            raise

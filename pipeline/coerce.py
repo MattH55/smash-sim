@@ -118,6 +118,24 @@ def coerce(rec: dict, schema: dict) -> dict:
     if not isinstance(rec.get("_prov"), dict):
         log["_prov"] = f"non-object provenance dropped: {str(rec.get('_prov'))[:120]}"
         rec["_prov"] = {}
+    # provenance entries written as strings ("quote (page 3)") -> objects
+    for k, v in list(rec["_prov"].items()):
+        if isinstance(v, str):
+            m = re.search(r"\(?(?:page|p\.|section|sec\.?)\s*([A-Za-z0-9 .-]{1,30}?)\)?\s*$", v, re.I)
+            rec["_prov"][k] = {"quote": v[:300], "page": m.group(1).strip() if m else None, "confidence": 0.5}
+        elif isinstance(v, dict):
+            v.setdefault("quote", ""); v.setdefault("page", None)
+            if not isinstance(v.get("confidence"), (int, float)):
+                v["confidence"] = 0.5
+            v["confidence"] = max(0.0, min(1.0, float(v["confidence"])))
+            if not isinstance(v["quote"], str):
+                v["quote"] = str(v["quote"])[:300]
+            if v["page"] is not None and not isinstance(v["page"], (int, str)):
+                v["page"] = str(v["page"])
+        else:
+            rec["_prov"][k] = {"quote": str(v)[:300], "page": None, "confidence": 0.3}
+    if "class_id" not in rec or rec.get("class_id") is None:
+        rec["class_id"] = "UNRESOLVED"
     for grp in ("molecule", "protocol", "sampling", "benchmark", "observables", "experimental_comparison_in_paper", "curation"):
         if grp in rec and not isinstance(rec[grp], dict):
             log[grp] = f"non-object dropped: {str(rec[grp])[:120]}"
