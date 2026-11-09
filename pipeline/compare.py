@@ -124,6 +124,26 @@ if __name__ == "__main__":
         n_ok = 0
         for r in rows:
             r = coerce(r, CMP_SCHEMA)
+            # (a) no comparison -> no row
+            blob = f"{r.get('note') or ''} {r.get('verdict_criterion') or ''}".lower()
+            if r.get("observable") == "other" and r.get("sim_value") in (None, "") and r.get("exp_value") in (None, "") \
+               and r.get("match_level") not in ("UNTESTED", "PRED"):
+                continue
+            if "no experimental comparison" in blob or "not compared" in blob:
+                continue
+            # (b) match level must respect the rate gap: H2H needs <1 log10 unit
+            gap = r.get("rate_overlap_log10")
+            if r.get("match_level") == "H2H" and isinstance(gap, (int, float)) and abs(gap) >= 1:
+                r["_coerced"] = dict(r.get("_coerced") or {}, match_level=f"H2H downgraded: rate gap {gap} log10")
+                r["match_level"] = "EXT" if r.get("extrapolation_model") else "QUAL"
+            if r.get("match_level") == "EXT" and not r.get("extrapolation_model"):
+                r["extrapolation_model"] = "other"
+            # (c) qualitative observables carry no numbers
+            if r.get("observable") in ("pathway_order", "intermediate_identity", "catch_bond_shape", "rank_order_stability", "refolding"):
+                for fld in ("sim_value", "exp_value"):
+                    if isinstance(r.get(fld), (int, float)):
+                        r[fld] = None
+                r["units"] = None
             if r.get("match_level") == "UNTESTED":
                 r["verdict"] = "untested"
             if r.get("verdict") is None:

@@ -62,8 +62,49 @@ def restore_locked(rec: dict, skel: dict, suffix: int | None) -> dict:
     return rec
 
 
+import re as _re
+_VEL = _re.compile(r"(\d+(?:\.\d+)?(?:\s*[×x]\s*10\^?-?\d+)?)\s*(Å|A|angstrom|nm|µm|um|m)\s*(?:/|per)\s*(fs|ps|ns|µs|us|ms|s)\b", _re.I)
+_LEN = {"å": 1e-10, "a": 1e-10, "angstrom": 1e-10, "nm": 1e-9, "µm": 1e-6, "um": 1e-6, "m": 1.0}
+_TIME = {"fs": 1e-15, "ps": 1e-12, "ns": 1e-9, "µs": 1e-6, "us": 1e-6, "ms": 1e-3, "s": 1.0}
+_SPR = _re.compile(r"(\d+(?:\.\d+)?)\s*(kJ|kcal)\s*(?:/|·|\s)?\s*mol(?:\^?-1|–1|⁻¹)?\s*(?:/|·|\s)?\s*(nm|Å|A)\s*(?:\^?-?2|²|2)", _re.I)
+_SPR2 = _re.compile(r"(\d+(?:\.\d+)?)\s*(pN\s*/\s*nm|N\s*/\s*m)", _re.I)
+
+
+def _num(x):
+    x = x.replace(" ", "").replace("×", "x").lower()
+    if "x10" in x:
+        a, b = x.split("x10"); return float(a) * 10 ** float(b.replace("^", ""))
+    return float(x)
+
+
+def verify_units(rec: dict) -> None:
+    """Re-derive velocity and spring constant from the provenance quote; overwrite on >10% mismatch and log it."""
+    prov, log, p = rec.get("_prov", {}), rec.setdefault("_coerced", {}), rec.get("protocol", {})
+    q = (prov.get("protocol.pulling_velocity_m_s") or {}).get("quote", "")
+    m = _VEL.search(q)
+    if m and p.get("pulling_velocity_m_s"):
+        v = _num(m.group(1)) * _LEN[m.group(2).lower()] / _TIME[m.group(3).lower()]
+        if abs(v - p["pulling_velocity_m_s"]) > 0.1 * v:
+            log["protocol.pulling_velocity_m_s"] = f"extractor {p['pulling_velocity_m_s']} -> re-parsed {v:g} m/s from quote"
+            p["pulling_velocity_m_s"] = v
+    q = (prov.get("protocol.spring_constant_pN_nm") or {}).get("quote", "")
+    m = _SPR.search(q)
+    k = None
+    if m:
+        val, en, ln = _num(m.group(1)), m.group(2).lower(), m.group(3).lower()
+        k = val * (1.66 if en == "kj" else 6.95) * (1.0 if ln == "nm" else 100.0)   # kJ/mol/nm2 -> 1.66; kcal/mol/A2 -> 695
+    else:
+        m2 = _SPR2.search(q)
+        if m2:
+            k = _num(m2.group(1)) * (1000.0 if m2.group(2).lower().startswith("n") else 1.0)
+    if k and p.get("spring_constant_pN_nm") and abs(k - p["spring_constant_pN_nm"]) > 0.1 * k:
+        log["protocol.spring_constant_pN_nm"] = f"extractor {p['spring_constant_pN_nm']} -> re-parsed {k:g} pN/nm from quote"
+        p["spring_constant_pN_nm"] = k
+
+
 def postprocess(rec: dict) -> dict:
     rec = coerce(rec, SCHEMA)
+    verify_units(rec)
     fix_impl(rec, set(IMPLS) - {"ALIASES"}, rec.setdefault("_coerced", {}))
     prov = rec.setdefault("_prov", {})
     s = rec.get("sampling") or {}
