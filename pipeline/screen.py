@@ -56,11 +56,12 @@ def rule_screen(rec):
 
 
 def llm_screen(recs, batch=20):
+    recs = [r for r in recs if r.get("llm_include") is None]   # skip ones already screened in a previous run
     for i in range(0, len(recs), batch):
         chunk = recs[i : i + batch]
         papers = "\n\n".join(f"[{j}] TITLE: {r['title']}\nABSTRACT: {(r.get('abstract') or '')[:1500]}" for j, r in enumerate(chunk))
         try:
-            res = extract_json_array(llm_complete(cfg, SCREEN_PROMPT.format(papers=papers)))
+            res = extract_json_array(llm_complete(cfg, SCREEN_PROMPT.replace("{papers}", papers)))
             for item in res:
                 r = chunk[item["i"]]
                 r["llm_include"] = bool(item["include"])
@@ -79,6 +80,11 @@ if __name__ == "__main__":
 
     hits = read_jsonl(cfg["_data"] / "20_hits.jsonl")
     uniq = dedupe(hits)
+    prev = {u["dedupe_key"]: u for u in read_jsonl(cfg["_data"] / "20_all_dedup.jsonl") if u.get("llm_include") is not None}
+    for u in uniq:
+        if u["dedupe_key"] in prev:
+            for k in ("llm_include", "llm_category", "llm_reason"):
+                u[k] = prev[u["dedupe_key"]].get(k)
     in_smash = {s["doi"] for s in read_jsonl(cfg["_data"] / "10_skeletons.jsonl")}
     prisma = {"records_identified": len(hits), "after_dedupe": len(uniq)}
     uniq = [u for u in uniq if u.get("doi") not in in_smash]

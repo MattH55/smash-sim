@@ -6,6 +6,9 @@ on:
       snowball:
         description: "Also snowball citations from seed cases and enriched records (true/false)"
         default: "true"
+      search:
+        description: "Run the database searches (false = reuse saved hits, only screen)"
+        default: "true"
   schedule:
     - cron: "41 7 * * 3"   # weekly Wednesday
 
@@ -33,8 +36,8 @@ jobs:
         run: |
           set +e
           python pipeline/ingest_smash.py
-          python pipeline/gap_search.py || echo "::warning::gap_search had failures; continuing with what was found"
-          if [ "${{ github.event.inputs.snowball || 'true' }}" = "true" ]; then python pipeline/seed.py --snowball --from-records || echo "::warning::snowball had failures"; fi
+          if [ "${{ github.event.inputs.search || 'true' }}" = "true" ]; then python pipeline/gap_search.py || echo "::warning::gap_search had failures; continuing with what was found"; fi
+          if [ "${{ github.event.inputs.search || 'true' }}" = "true" ] && [ "${{ github.event.inputs.snowball || 'true' }}" = "true" ]; then python pipeline/seed.py --snowball --from-records || echo "::warning::snowball had failures"; fi
           python pipeline/screen.py
       - name: Commit candidates
         if: always()
