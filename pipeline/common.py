@@ -132,6 +132,7 @@ def llm_complete(cfg: dict, prompt: str) -> str:
         r.raise_for_status()
         return "".join(b.get("text", "") for b in r.json()["content"])
     elif llm["provider"] == "openai_compatible":
+      for attempt in range(2):
         r = requests.post(
             f"{llm['base_url'].rstrip('/')}/chat/completions",
             headers={"Authorization": f"Bearer {api_key}", "content-type": "application/json"},
@@ -143,9 +144,14 @@ def llm_complete(cfg: dict, prompt: str) -> str:
             },
             timeout=600,
         )
+        if r.status_code in (429, 500, 502, 503, 504) and attempt == 0:
+            time.sleep(10); continue
         if r.status_code >= 400:
-            raise RuntimeError(f"{llm['base_url']} -> HTTP {r.status_code}: {r.text[:300]}")
-        return r.json()["choices"][0]["message"]["content"]
+            raise RuntimeError(f"{llm['base_url']} -> HTTP {r.status_code}: {r.text[:400]}")
+        js = r.json()
+        if "choices" not in js:
+            raise RuntimeError(f"unexpected response shape: {str(js)[:400]}")
+        return js["choices"][0]["message"]["content"]
     raise ValueError(f"unknown provider {llm['provider']}")
 
 

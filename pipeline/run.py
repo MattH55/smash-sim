@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """Orchestrator.  python run.py --steps ingest,fulltext,enrich,compare,views  [--limit N] [--no-llm]
 
-Steps: ingest | gap_search | screen | seed | fulltext | enrich | compare | views | review_export
+Steps: llm_smoke | ingest | gap_search | screen | seed | fulltext | enrich | compare | views | review_export
 """
 import argparse, subprocess, sys
 from pathlib import Path
 
 HERE = Path(__file__).parent
 STEP_CMD = {
+    "llm_smoke": ["llm_smoke.py"],
     "ingest": ["ingest_smash.py"],
     "gap_search": ["gap_search.py"],
     "seed": ["seed.py", "--snowball"],

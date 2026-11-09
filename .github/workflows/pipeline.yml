@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       steps:
-        description: "Comma-separated steps (ingest,gap_search,seed,screen,fulltext,enrich,compare,views,review_export)"
+        description: "Comma-separated steps (llm_smoke,ingest,gap_search,seed,screen,fulltext,enrich,compare,views,review_export)"
         default: "ingest,fulltext,enrich,compare,views,review_export"
       limit:
         description: "Max records for enrich/compare (empty = all)"
@@ -61,8 +61,10 @@ jobs:
         run: |
           git config user.name "smash-sim-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/*.jsonl data/*.json data/*.csv data/views data/review data/smash 2>/dev/null || true
+          git add -A data
+          git status --short | head -30
           git diff --cached --quiet || git commit -m "pipeline run $(date -u +%Y-%m-%dT%H:%MZ): ${{ github.event.inputs.steps || 'scheduled' }}"
+          git pull --rebase -q || true
           git push
 
       - name: Upload views as artifact

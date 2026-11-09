@@ -97,7 +97,9 @@ if __name__ == "__main__":
     skels = [s for s in read_jsonl(cfg["_data"] / "10_skeletons.jsonl") if s["sim_id"] not in done_ids]
     if args.only_unresolved:
         skels = [s for s in skels if s["class_id"] == "UNRESOLVED"]
+    no_ft = [s["sim_id"] for s in skels if s["doi"] not in ft]
     skels = [s for s in skels if s["doi"] in ft]
+    print(f"{len(no_ft)} skeletons skipped (no full text)")
     if args.limit:
         skels = skels[: args.limit]
     print(f"{len(skels)} skeletons to enrich")
@@ -110,15 +112,17 @@ if __name__ == "__main__":
             recs = extract_json_array(llm_complete(cfg, prompt))
         except Exception as e:
             append_jsonl(out_bad, {"sim_id": skel["sim_id"], "doi": skel["doi"], "errors": [f"llm/parse: {e}"]})
+            print(f"  {skel['sim_id']}: LLM/parse error: {str(e)[:300]}")
             continue
         for i, rec in enumerate(recs):
             rec = postprocess(restore_locked(rec, skel, i if i else None))
             errs = validate(rec)
             if errs:
                 append_jsonl(out_bad, {"sim_id": rec["sim_id"], "doi": skel["doi"], "errors": errs, "record": rec})
+                print(f"  {skel['sim_id']}: REJECTED ({len(errs)} schema errors): {'; '.join(errs[:4])[:400]}")
             else:
                 append_jsonl(out_ok, rec); ids.append(rec["sim_id"]); n_done += 1
-        print(f"  {skel['sim_id']}: {len(recs)} record(s)")
+        print(f"  {skel['sim_id']}: {len(recs)} record(s) returned")
 
     # --- gap-search papers (not in SMASH-BIO) ---
     if not args.skip_gap:
