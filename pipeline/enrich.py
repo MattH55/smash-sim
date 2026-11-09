@@ -195,6 +195,8 @@ if __name__ == "__main__":
     print(f"{len(skels)} skeletons to enrich")
     n_done = 0
     for skel in skels:
+        if not Path(ft[skel["doi"]]).exists():
+            print(f"  {skel['sim_id']}: text file missing; skipped"); continue
         text = Path(ft[skel["doi"]]).read_text()[:MAX_CHARS]
         if kind.get(skel["doi"]) == "abstract":
             text += "\n\nNOTE TO EXTRACTOR: only the abstract is available. Fill only what the abstract states; leave everything else null."
@@ -239,6 +241,9 @@ if __name__ == "__main__":
         print(f"{len(gap)} gap-search papers to extract")
         for item in gap:
             doi = item.get("doi") or item["key"]
+            if not Path(item["path"]).exists():
+                print(f"  gap {doi}: text file missing (run fetch_fulltext first); skipped")
+                continue
             gtext = Path(item["path"]).read_text()[:MAX_CHARS]
             if item.get("text_kind") == "abstract":
                 gtext += "\n\nNOTE TO EXTRACTOR: only the abstract is available. Fill only what the abstract states; leave everything else null."
