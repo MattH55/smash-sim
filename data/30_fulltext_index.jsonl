@@ -1,4 +1,5 @@
 {"key": "10.7554/elife.109753", "doi": "10.7554/elife.109753", "path": "/home/runner/work/smash-sim/smash-sim/data/fulltext/10.7554_elife.109753.txt", "source": "cached", "source_set": "smash"}
+{"key": "10.1002/pro.70708", "doi": "10.1002/pro.70708", "path": "/home/runner/work/smash-sim/smash-sim/data/fulltext/10.1002_pro.70708.txt", "source": "europepmc_oa", "source_set": "smash"}
 {"key": "10.3389/fchem.2026.1796912", "doi": "10.3389/fchem.2026.1796912", "path": "/home/runner/work/smash-sim/smash-sim/data/fulltext/10.3389_fchem.2026.1796912.txt", "source": "cached", "source_set": "smash"}
 {"key": "10.1021/acsnano.5c22720", "doi": "10.1021/acsnano.5c22720", "path": "/home/runner/work/smash-sim/smash-sim/data/fulltext/10.1021_acsnano.5c22720.txt", "source": "cached", "source_set": "smash"}
 {"key": "10.1016/j.isci.2026.114685", "doi": "10.1016/j.isci.2026.114685", "path": "/home/runner/work/smash-sim/smash-sim/data/fulltext/10.1016_j.isci.2026.114685.txt", "source": "cached", "source_set": "smash"}
@@ -12,7 +13,7 @@
 {"key": "10.1021/acs.jcim.4c00227", "doi": "10.1021/acs.jcim.4c00227", "path": "/home/runner/work/smash-sim/smash-sim/data/fulltext/10.1021_acs.jcim.4c00227.txt", "source": "cached", "source_set": "smash"}
 {"key": "10.7554/elife.91122", "doi": "10.7554/elife.91122", "path": "/home/runner/work/smash-sim/smash-sim/data/fulltext/10.7554_elife.91122.txt", "source": "cached", "source_set": "smash"}
 {"key": "10.1002/cphc.202200175", "doi": "10.1002/cphc.202200175", "path": "/home/runner/work/smash-sim/smash-sim/data/fulltext/10.1002_cphc.202200175.txt", "source": "cached", "source_set": "smash"}
-{"key": "10.1021/acs.jpcb.5c00925", "doi": "10.1021/acs.jpcb.5c00925", "path": "/home/runner/work/smash-sim/smash-sim/data/fulltext/10.1021_acs.jpcb.5c00925.txt", "source": "europepmc_oa", "source_set": "smash"}
+{"key": "10.1021/acs.jpcb.5c00925", "doi": "10.1021/acs.jpcb.5c00925", "path": "/home/runner/work/smash-sim/smash-sim/data/fulltext/10.1021_acs.jpcb.5c00925.txt", "source": "cached", "source_set": "smash"}
 {"key": "10.1016/j.bpj.2022.11.2941", "doi": "10.1016/j.bpj.2022.11.2941", "path": "/home/runner/work/smash-sim/smash-sim/data/fulltext/10.1016_j.bpj.2022.11.2941.txt", "source": "cached", "source_set": "smash"}
 {"key": "10.1038/s41467-026-75834-8", "doi": "10.1038/s41467-026-75834-8", "path": "/home/runner/work/smash-sim/smash-sim/data/fulltext/10.1038_s41467-026-75834-8.txt", "source": "cached", "source_set": "smash"}
 {"key": "10.1021/acs.jpcb.3c08199", "doi": "10.1021/acs.jpcb.3c08199", "path": "/home/runner/work/smash-sim/smash-sim/data/fulltext/10.1021_acs.jpcb.3c08199.txt", "source": "cached", "source_set": "smash"}
@@ -63,9 +64,9 @@
 {"key": "10.1021/acsomega.4c09605", "doi": "10.1021/acsomega.4c09605", "path": "/home/runner/work/smash-sim/smash-sim/data/fulltext/10.1021_acsomega.4c09605.txt", "source": "cached", "source_set": "smash"}
 {"key": "10.1038/s41467-023-41604-z", "doi": "10.1038/s41467-023-41604-z", "path": "/home/runner/work/smash-sim/smash-sim/data/fulltext/10.1038_s41467-023-41604-z.txt", "source": "cached", "source_set": "smash"}
 {"key": "10.1038/s41467-025-57340-5", "doi": "10.1038/s41467-025-57340-5", "path": "/home/runner/work/smash-sim/smash-sim/data/fulltext/10.1038_s41467-025-57340-5.txt", "source": "cached", "source_set": "smash"}
-{"key": "10.3390/molecules29174042", "doi": "10.3390/molecules29174042", "path": "/home/runner/work/smash-sim/smash-sim/data/fulltext/10.3390_molecules29174042.txt", "source": "europepmc_oa", "source_set": "smash"}
+{"key": "10.3390/molecules29174042", "doi": "10.3390/molecules29174042", "path": "/home/runner/work/smash-sim/smash-sim/data/fulltext/10.3390_molecules29174042.txt", "source": "cached", "source_set": "smash"}
 {"key": "10.1093/nar/gkaf681", "doi": "10.1093/nar/gkaf681", "path": "/home/runner/work/smash-sim/smash-sim/data/fulltext/10.1093_nar_gkaf681.txt", "source": "cached", "source_set": "smash"}
-{"key": "10.1093/nar/gkae884", "doi": "10.1093/nar/gkae884", "path": "/home/runner/work/smash-sim/smash-sim/data/fulltext/10.1093_nar_gkae884.txt", "source": "europepmc_oa", "source_set": "smash"}
+{"key": "10.1093/nar/gkae884", "doi": "10.1093/nar/gkae884", "path": "/home/runner/work/smash-sim/smash-sim/data/fulltext/10.1093_nar_gkae884.txt", "source": "cached", "source_set": "smash"}
 {"key": "10.1038/s42003-025-09206-1", "doi": "10.1038/s42003-025-09206-1", "path": "/home/runner/work/smash-sim/smash-sim/data/fulltext/10.1038_s42003-025-09206-1.txt", "source": "cached", "source_set": "smash"}
 {"key": "10.1002/advs.202501369", "doi": "10.1002/advs.202501369", "path": "/home/runner/work/smash-sim/smash-sim/data/fulltext/10.1002_advs.202501369.txt", "source": "cached", "source_set": "smash"}
 {"key": "10.1021/jacs.3c10923", "doi": "10.1021/jacs.3c10923", "path": "/home/runner/work/smash-sim/smash-sim/data/fulltext/10.1021_jacs.3c10923.txt", "source": "cached", "source_set": "smash"}

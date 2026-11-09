@@ -9,8 +9,6 @@ AA-IMP,B-parallel
 AA-IMP,B-cross
 AA-ENH,A-entropic
 AA-ENH,B-formation
-CG-GO,B-single
-CG-GO,B-series
 CG-GO,B-parallel
 CG-GO,B-cross
 CG-SOP,B-parallel
@@ -34,7 +32,6 @@ CG-HIRE,B-single
 CG-HIRE,B-series
 CG-HIRE,B-formation
 CG-MARTINI,A-entropic
-CG-MARTINI,B-parallel
 KIN-STEM,B-series
 KIN-STEM,B-cross
 KIN-STEM,B-formation

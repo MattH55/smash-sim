@@ -1,9 +1,9 @@
 class_id,class_name,n_records,n_papers,n_molecules,molecule_types,topologies,velocity_m_s_envelope,loading_rate_pN_s_envelope,spring_pN_nm_envelope,system_size_envelope,wall_h_per_traj_envelope,n_with_benchmark,frac_refolding,frac_pathway
 AA-ENH,All-atom enhanced sampling along extension,6,6,6,protein;protein-protein,homopolymer;ligand-pocket;parallel;series,1–1e+03,,42–5e+03,2.5e+05–2.5e+05,,3,0.0,1.0
-AA-EXP,All-atom explicit-solvent SMD,19,18,18,DNA;protein;protein-NA,homopolymer;ligand-pocket;mixed;parallel;series;unknown,0.005–1e+03,,83–2.5e+03,2.6e+05–1.3e+06,,3,0.05,0.79
+AA-EXP,All-atom explicit-solvent SMD,39,37,38,DNA;protein;protein-NA,homopolymer;ligand-pocket;mixed;parallel;series;unknown,1e-07–1e+03,,1.7–7e+03,3.9e+04–1.3e+06,,11,0.08,0.77
 AA-IMP,All-atom implicit-solvent SMD,2,2,2,protein;protein-protein,ligand-pocket;unknown,0.1–10,,3.5e+02–7e+02,,2–2,1,0.0,0.5
-CG-GO,Structure-based Go (Calpha or heavier),2,1,2,protein,homopolymer,,,,,,2,1.0,1.0
-CG-MARTINI,Martini / GoMartini,2,2,2,protein;protein-protein,parallel;series,5e-08–0.025,,1.7e+03–1.7e+03,4.1e+03–2.6e+05,,2,0.0,0.5
+CG-GO,Structure-based Go (Calpha or heavier),12,11,9,protein;protein-protein,homopolymer;ligand-pocket;series;unknown,2.5e-05–2,,95–1.7e+03,,,3,0.42,0.75
+CG-MARTINI,Martini / GoMartini,3,3,3,protein;protein-protein,parallel;series,5e-08–0.025,,1.7e+03–1.7e+03,4.1e+03–2.6e+05,,2,0.0,0.33
 CG-OXDNA,oxDNA / oxDNA2 / oxRNA,1,1,1,protein-NA,cross,,,,,,0,0.0,1.0
 CG-SOP,Self-Organized Polymer (SOP/SOP-SC),3,2,3,protein,homopolymer;ligand-pocket;parallel,4e-05–1,1.1e+05–1.1e+05,8–1.1e+02,,20–20,2,0.33,1.0
 KIN-UNZIP,DNA/RNA unzipping models (NN + polymer + trap),1,1,1,protein-protein,unknown,,,,,,0,0.0,0.0

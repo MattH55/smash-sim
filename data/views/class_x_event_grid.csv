@@ -1,14 +1,14 @@
 class_id,A-entropic,A-enthalpic,A-cooperative,B-single,B-series,B-parallel,B-cross,B-formation
-AA-EXP,0,5,0,15,3,2,0,1
+AA-EXP,0,6,0,27,9,3,0,2
 AA-IMP,0,0,0,2,0,0,0,0
 AA-ENH,0,2,0,4,1,0,0,0
-CG-GO,0,2,0,0,0,0,0,2
+CG-GO,0,2,0,4,4,0,0,3
 CG-SOP,0,2,0,1,1,0,0,0
 CG-ISING,0,0,0,0,0,0,0,0
 CG-OXDNA,0,1,0,0,1,0,0,0
 CG-TIS,0,0,0,0,0,0,0,0
 CG-HIRE,0,0,0,0,0,0,0,0
-CG-MARTINI,0,0,0,2,0,0,0,0
+CG-MARTINI,0,0,0,2,0,1,0,0
 CG-OTHER-NA,0,0,0,0,0,0,0,0
 KIN-STEM,0,0,0,0,0,0,0,0
 KIN-UNZIP,0,0,0,0,0,0,0,0

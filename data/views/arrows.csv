@@ -1,4 +1,6 @@
 direction,agree,disagree,partial,untested
-exp_validates_sim,49,3,5,0
-mutual,3,0,0,0
-sim_predicts_exp,5,0,1,17
+exp_validates_sim,82,8,18,0
+model_reduces_sim,1,0,0,1
+mutual,6,0,0,0
+sim_predicts_exp,6,0,1,23
+sim_validates_model,6,0,0,1
