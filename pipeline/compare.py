@@ -21,6 +21,7 @@ from pathlib import Path
 
 import jsonschema
 
+from coerce import coerce
 from common import ROOT, append_jsonl, extract_json_array, llm_complete, load_config, load_schema, next_id, norm_doi, read_jsonl, write_jsonl
 
 cfg = load_config()
@@ -122,6 +123,7 @@ if __name__ == "__main__":
             continue
         n_ok = 0
         for r in rows:
+            r = coerce(r, CMP_SCHEMA)
             r["sim_id"] = s["sim_id"]
             r["cmp_id"] = next_id("CMP", ids)
             r.setdefault("curation", {})["status"] = "auto"

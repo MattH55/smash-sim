@@ -21,6 +21,7 @@ from pathlib import Path
 
 import jsonschema
 
+from coerce import coerce
 from common import (ROOT, append_jsonl, extract_json_array, llm_complete, load_config, load_schema, load_vocab,
                     next_id, read_jsonl, sha1)
 
@@ -62,6 +63,7 @@ def restore_locked(rec: dict, skel: dict, suffix: int | None) -> dict:
 
 
 def postprocess(rec: dict) -> dict:
+    rec = coerce(rec, SCHEMA)
     mol = rec.get("molecule", {})
     if mol.get("sequence") and not mol.get("sequence_sha1"):
         mol["sequence_sha1"] = sha1(mol["sequence"].upper())

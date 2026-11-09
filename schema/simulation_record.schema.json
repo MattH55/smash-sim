@@ -4,169 +4,669 @@
   "title": "SMASH-SIM simulation_record",
   "description": "One pulling-simulation setup in one publication. One paper may yield several records (different molecules, protocols, or velocities). Field-level provenance lives in `_prov`.",
   "type": "object",
-  "required": ["sim_id", "doi", "year", "class_id", "molecule", "protocol", "observables"],
+  "required": [
+    "sim_id",
+    "doi",
+    "year",
+    "class_id",
+    "molecule",
+    "protocol",
+    "observables"
+  ],
   "additionalProperties": false,
   "properties": {
-    "sim_id": { "type": "string", "pattern": "^SIM-[0-9]{6}$" },
-    "doi": { "type": "string", "pattern": "^10\\.[0-9]{4,9}/\\S+$" },
-    "year": { "type": "integer", "minimum": 1990, "maximum": 2100 },
-    "title": { "type": "string" },
-    "first_author": { "type": "string" },
-    "preprint": { "type": "boolean", "default": false },
-
-    "class_id": { "type": "string", "description": "FK to vocab/model_class.csv; 'UNRESOLVED' allowed only on skeletons before enrichment" },
-    "impl_id": { "type": ["string", "null"], "description": "FK to vocab/implementation.csv; null for analytic models or in-house code" },
-    "impl_version": { "type": ["string", "null"] },
+    "sim_id": {
+      "type": "string",
+      "pattern": "^SIM-[0-9]{6}$"
+    },
+    "doi": {
+      "type": "string",
+      "pattern": "^10\\.[0-9]{4,9}/\\S+$"
+    },
+    "year": {
+      "type": "integer",
+      "minimum": 1990,
+      "maximum": 2100
+    },
+    "title": {
+      "type": "string"
+    },
+    "first_author": {
+      "type": "string"
+    },
+    "preprint": {
+      "type": "boolean",
+      "default": false
+    },
+    "class_id": {
+      "type": "string",
+      "description": "FK to vocab/model_class.csv; 'UNRESOLVED' allowed only on skeletons before enrichment"
+    },
+    "impl_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "FK to vocab/implementation.csv; null for analytic models or in-house code"
+    },
+    "impl_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
     "force_field_or_params": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "description": "e.g. 'CHARMM36m + TIP3P', 'oxDNA2', 'SOP eps_h=1.4 kcal/mol', 'SMOG2 default'"
     },
-
     "molecule": {
       "type": "object",
-      "required": ["name", "type"],
+      "required": [
+        "name",
+        "type"
+      ],
       "additionalProperties": false,
       "properties": {
-        "name": { "type": "string" },
-        "type": { "type": "string", "enum": ["protein", "DNA", "RNA", "protein-protein", "protein-ligand", "protein-NA", "NA-NA", "polysaccharide", "synthetic", "other"] },
-        "pdb_id": { "type": ["string", "null"], "pattern": "^[0-9][A-Za-z0-9]{3}$" },
-        "uniprot_or_rfam": { "type": ["string", "null"] },
-        "sequence": { "type": ["string", "null"], "description": "One-letter sequence of the pulled construct if given; used for matching to SMFS records" },
-        "sequence_sha1": { "type": ["string", "null"] },
-        "construct_boundaries": { "type": ["string", "null"], "description": "Residue/nt range actually pulled, e.g. 'I27 res 1-89', 'nt 12-78'" },
-        "n_residues_or_nt": { "type": ["integer", "null"] },
-        "oligomer_state": { "type": ["string", "null"] },
-        "linkers_modelled": { "type": "boolean", "description": "Were handles/linkers/beads included in the simulation?" },
-        "linker_description": { "type": ["string", "null"] },
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "protein",
+            "DNA",
+            "RNA",
+            "protein-protein",
+            "protein-ligand",
+            "protein-NA",
+            "NA-NA",
+            "polysaccharide",
+            "synthetic",
+            "other"
+          ]
+        },
+        "pdb_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9][A-Za-z0-9]{3}$"
+        },
+        "uniprot_or_rfam": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sequence": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "One-letter sequence of the pulled construct if given; used for matching to SMFS records"
+        },
+        "sequence_sha1": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "construct_boundaries": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Residue/nt range actually pulled, e.g. 'I27 res 1-89', 'nt 12-78'"
+        },
+        "n_residues_or_nt": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "oligomer_state": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "linkers_modelled": {
+          "type": "boolean",
+          "description": "Were handles/linkers/beads included in the simulation?"
+        },
+        "linker_description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "topology_tag": {
-          "type": ["string", "null"],
-          "enum": ["series", "parallel", "cross", "mixed", "homopolymer", "ligand-pocket", "unknown", null],
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "series",
+            "parallel",
+            "cross",
+            "mixed",
+            "homopolymer",
+            "ligand-pocket",
+            "unknown",
+            null
+          ],
           "description": "Dominant load-sharing topology of the broken bonds: series=zipper, parallel=shear, cross=pseudoknot/overlapping"
         }
       }
     },
-
     "event_types_probed": {
       "type": "array",
       "uniqueItems": true,
-      "items": { "type": "string", "enum": ["A-entropic", "A-enthalpic", "A-cooperative", "B-single", "B-series", "B-parallel", "B-cross", "B-formation"] },
+      "items": {
+        "type": "string",
+        "enum": [
+          "A-entropic",
+          "A-enthalpic",
+          "A-cooperative",
+          "B-single",
+          "B-series",
+          "B-parallel",
+          "B-cross",
+          "B-formation"
+        ]
+      },
       "description": "A = polymer stretching; B = bond breakage/formation"
     },
-
     "protocol": {
       "type": "object",
-      "required": ["mode"],
+      "required": [
+        "mode"
+      ],
       "additionalProperties": false,
       "properties": {
-        "mode": { "type": "string", "enum": ["constant_velocity", "constant_force", "force_ramp", "force_quench", "equilibrium_bias", "umbrella", "metadynamics", "replica_exchange", "jarzynski_pulls", "other"] },
-        "pulling_velocity_m_s": { "type": ["number", "null"], "exclusiveMinimum": 0 },
-        "pulling_velocity_range_m_s": { "type": ["array", "null"], "items": { "type": "number" }, "minItems": 2, "maxItems": 2 },
-        "loading_rate_pN_s": { "type": ["number", "null"], "exclusiveMinimum": 0 },
-        "loading_rate_range_pN_s": { "type": ["array", "null"], "items": { "type": "number" }, "minItems": 2, "maxItems": 2 },
-        "spring_constant_pN_nm": { "type": ["number", "null"], "exclusiveMinimum": 0 },
-        "constant_force_pN": { "type": ["number", "null"] },
-        "pull_coordinate": { "type": ["string", "null"], "enum": ["termini_CA", "termini_P", "specified_atoms", "COM_distance", "ligand_pocket", "other", null] },
-        "pull_geometry_note": { "type": ["string", "null"], "description": "Attachment residues, direction, fixed vs moving end" },
-        "temperature_K": { "type": ["number", "null"] },
-        "monovalent_salt_mM": { "type": ["number", "null"] },
-        "mg_mM": { "type": ["number", "null"] },
-        "ions_treatment": { "type": ["string", "null"], "enum": ["explicit", "debye_huckel", "implicit_other", "none", null] },
-        "solvent": { "type": ["string", "null"], "enum": ["explicit", "implicit", "none", null] }
+        "mode": {
+          "type": "string",
+          "enum": [
+            "constant_velocity",
+            "constant_force",
+            "force_ramp",
+            "force_quench",
+            "equilibrium_bias",
+            "umbrella",
+            "metadynamics",
+            "replica_exchange",
+            "jarzynski_pulls",
+            "other"
+          ]
+        },
+        "pulling_velocity_m_s": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "exclusiveMinimum": 0
+        },
+        "pulling_velocity_range_m_s": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "loading_rate_pN_s": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "exclusiveMinimum": 0
+        },
+        "loading_rate_range_pN_s": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "spring_constant_pN_nm": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "exclusiveMinimum": 0
+        },
+        "constant_force_pN": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "pull_coordinate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "termini_CA",
+            "termini_P",
+            "specified_atoms",
+            "COM_distance",
+            "ligand_pocket",
+            "other",
+            null
+          ]
+        },
+        "pull_geometry_note": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Attachment residues, direction, fixed vs moving end"
+        },
+        "temperature_K": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "monovalent_salt_mM": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "mg_mM": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "ions_treatment": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "explicit",
+            "debye_huckel",
+            "implicit_other",
+            "none",
+            null
+          ]
+        },
+        "solvent": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "explicit",
+            "implicit",
+            "none",
+            null
+          ]
+        }
       }
     },
-
     "sampling": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "n_trajectories": { "type": ["integer", "null"], "minimum": 1 },
-        "trajectory_length_ns": { "type": ["number", "null"], "description": "Per trajectory, in simulated ns (CG models: report the model's own time unit converted if the paper gives a mapping, else null and fill `cg_time_units`)" },
-        "cg_time_units": { "type": ["number", "null"] },
-        "total_sampled_time_ns": { "type": ["number", "null"] },
-        "timestep_fs": { "type": ["number", "null"] }
+        "n_trajectories": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "trajectory_length_ns": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Per trajectory, in simulated ns (CG models: report the model's own time unit converted if the paper gives a mapping, else null and fill `cg_time_units`)"
+        },
+        "cg_time_units": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "total_sampled_time_ns": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "timestep_fs": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
       }
     },
-
     "benchmark": {
       "type": "object",
       "additionalProperties": false,
       "description": "Computational cost. Store what is reported; derive the rest and flag it.",
       "properties": {
-        "system_size": { "type": ["integer", "null"], "description": "Atoms (all-atom) or beads (CG) including solvent" },
-        "system_size_unit": { "type": ["string", "null"], "enum": ["atoms", "beads", "nucleotides", "residues", null] },
-        "hardware": { "type": ["string", "null"], "description": "e.g. '4x NVIDIA A100', '128 CPU cores', 'GTX 1080 Ti'" },
-        "hardware_class": { "type": ["string", "null"], "enum": ["cpu", "gpu_consumer", "gpu_datacenter", "cluster", "unknown", null] },
-        "wall_time_per_trajectory_h": { "type": ["number", "null"] },
-        "throughput_ns_per_day": { "type": ["number", "null"] },
-        "core_hours_total": { "type": ["number", "null"] },
-        "gpu_hours_total": { "type": ["number", "null"] },
-        "benchmark_source": { "type": "string", "enum": ["reported", "derived", "absent"], "default": "absent" }
+        "system_size": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Atoms (all-atom) or beads (CG) including solvent"
+        },
+        "system_size_unit": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "atoms",
+            "beads",
+            "nucleotides",
+            "residues",
+            null
+          ]
+        },
+        "hardware": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "e.g. '4x NVIDIA A100', '128 CPU cores', 'GTX 1080 Ti'"
+        },
+        "hardware_class": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "cpu",
+            "gpu_consumer",
+            "gpu_datacenter",
+            "cluster",
+            "unknown",
+            null
+          ]
+        },
+        "wall_time_per_trajectory_h": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "throughput_ns_per_day": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "core_hours_total": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "gpu_hours_total": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "benchmark_source": {
+          "type": "string",
+          "enum": [
+            "reported",
+            "derived",
+            "absent"
+          ],
+          "default": "absent"
+        }
       }
     },
-
     "observables": {
       "type": "object",
       "additionalProperties": false,
       "description": "Values as reported in the simulation. null = not reported. Use *_note for conditions.",
       "properties": {
-        "delta_Lc_nm": { "type": ["number", "null"] },
-        "delta_Lc_note": { "type": ["string", "null"] },
-        "rupture_force_pN": { "type": ["number", "null"], "description": "Most probable or mean peak force at the primary reported velocity" },
-        "rupture_force_sd_pN": { "type": ["number", "null"] },
-        "rupture_force_note": { "type": ["string", "null"] },
-        "dx_dagger_nm": { "type": ["number", "null"] },
-        "k0_s": { "type": ["number", "null"] },
-        "dG_dagger_kT": { "type": ["number", "null"] },
-        "dG_unfold_kT": { "type": ["number", "null"] },
-        "pmf_available": { "type": "boolean", "default": false },
-        "n_intermediates": { "type": ["integer", "null"] },
-        "pathway_described": { "type": "boolean", "default": false },
-        "pathway_summary": { "type": ["string", "null"], "description": "Ordered list of structural elements lost, e.g. 'A strand -> A'G patch -> remainder'" },
-        "refolding_simulated": { "type": "boolean", "default": false },
-        "hysteresis_reported": { "type": "boolean", "default": false },
-        "velocity_dependence_reported": { "type": "boolean", "default": false },
-        "pathway_changes_with_rate": { "type": ["boolean", "null"] },
-        "persistence_length_nm": { "type": ["number", "null"], "description": "For A-type records" },
-        "plateau_force_pN": { "type": ["number", "null"], "description": "For A-cooperative (overstretching/unstacking)" }
+        "delta_Lc_nm": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "delta_Lc_note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rupture_force_pN": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Most probable or mean peak force at the primary reported velocity"
+        },
+        "rupture_force_sd_pN": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "rupture_force_note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "dx_dagger_nm": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "k0_s": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "dG_dagger_kT": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "dG_unfold_kT": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "pmf_available": {
+          "type": "boolean",
+          "default": false
+        },
+        "n_intermediates": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "pathway_described": {
+          "type": "boolean",
+          "default": false
+        },
+        "pathway_summary": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Ordered list of structural elements lost, e.g. 'A strand -> A'G patch -> remainder'"
+        },
+        "refolding_simulated": {
+          "type": "boolean",
+          "default": false
+        },
+        "hysteresis_reported": {
+          "type": "boolean",
+          "default": false
+        },
+        "velocity_dependence_reported": {
+          "type": "boolean",
+          "default": false
+        },
+        "pathway_changes_with_rate": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "persistence_length_nm": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "For A-type records"
+        },
+        "plateau_force_pN": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "For A-cooperative (overstretching/unstacking)"
+        }
       }
     },
-
     "reduction_model": {
       "type": "array",
       "uniqueItems": true,
-      "items": { "type": "string", "enum": ["bell", "bell_evans", "dhs_cusp", "dhs_linear_cubic", "friddle_noy_deyoreo", "bullerjahn_sturm_kroy", "jarzynski", "crooks", "hummer_szabo", "wlc", "ewlc", "fjc", "kramers_1d", "two_pathway_catch", "nearest_neighbor", "none", "other"] },
+      "items": {
+        "type": "string",
+        "enum": [
+          "bell",
+          "bell_evans",
+          "dhs_cusp",
+          "dhs_linear_cubic",
+          "friddle_noy_deyoreo",
+          "bullerjahn_sturm_kroy",
+          "jarzynski",
+          "crooks",
+          "hummer_szabo",
+          "wlc",
+          "ewlc",
+          "fjc",
+          "kramers_1d",
+          "two_pathway_catch",
+          "nearest_neighbor",
+          "none",
+          "other"
+        ]
+      },
       "description": "Analytical model(s) used to reduce the simulation output to parameters"
     },
-
     "stated_assumptions": {
       "type": "array",
-      "items": { "type": "string", "enum": ["pathway_rate_invariant", "fixed_persistence_length", "one_d_reaction_coordinate", "native_centric", "no_nonnative", "no_explicit_ions", "no_mg", "no_solvent", "rigid_handles", "stiff_spring", "other"] },
+      "items": {
+        "type": "string",
+        "enum": [
+          "pathway_rate_invariant",
+          "fixed_persistence_length",
+          "one_d_reaction_coordinate",
+          "native_centric",
+          "no_nonnative",
+          "no_explicit_ions",
+          "no_mg",
+          "no_solvent",
+          "rigid_handles",
+          "stiff_spring",
+          "other"
+        ]
+      },
       "description": "Assumptions the authors state or that the model class implies; used in the caveats section"
     },
-
     "experimental_comparison_in_paper": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "present": { "type": "boolean" },
-        "same_molecule": { "type": ["boolean", "null"] },
-        "experiment_dois": { "type": "array", "items": { "type": "string" } },
-        "smfs_ids": { "type": "array", "items": { "type": "string", "pattern": "^SMFS-[0-9]{6}$" } },
-        "note": { "type": ["string", "null"] }
+        "present": {
+          "type": "boolean"
+        },
+        "same_molecule": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "experiment_dois": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "smfs_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^SMFS-[0-9]{6}$"
+          }
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
       }
     },
-
     "curation": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "status": { "type": "string", "enum": ["auto", "human_checked", "disputed"], "default": "auto" },
-        "curator": { "type": ["string", "null"] },
-        "date": { "type": ["string", "null"], "format": "date" },
-        "notes": { "type": ["string", "null"] }
+        "status": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "human_checked",
+            "disputed"
+          ],
+          "default": "auto"
+        },
+        "curator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
       }
     },
-
     "_smashbio": {
       "type": "object",
       "description": "Carry-over from the SMASH-BIO source record (model.family, schema_version, unit_system, curation). Read-only."
@@ -177,10 +677,34 @@
       "additionalProperties": {
         "type": "object",
         "properties": {
-          "quote": { "type": "string", "maxLength": 300 },
-          "page": { "type": ["integer", "string", "null"] },
-          "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+          "quote": {
+            "type": "string",
+            "maxLength": 300
+          },
+          "page": {
+            "type": [
+              "integer",
+              "string",
+              "null"
+            ]
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
         }
+      }
+    },
+    "_derived": {
+      "type": "object",
+      "description": "Pipeline-derived convenience values (e.g. log10 velocity vs 1 um/s). Not extracted."
+    },
+    "_coerced": {
+      "type": "object",
+      "description": "Free-text values the extractor wrote into enum fields, mapped to the nearest allowed value by the pipeline: {field_path: original_text}. Review these.",
+      "additionalProperties": {
+        "type": "string"
       }
     }
   }
