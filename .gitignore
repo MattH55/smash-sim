@@ -1,0 +1,5 @@
+data/fulltext/
+data/pdfs/
+__pycache__/
+*.pyc
+.env

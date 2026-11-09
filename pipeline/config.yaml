@@ -1,0 +1,81 @@
+# SMASH-SIM extraction pipeline configuration
+
+project_dir: .
+data_dir: data            # created on first run; committed back by the Actions workflow
+
+# SMASH-BIO is the upstream: published SIM records, SMFS records and the sim-exp match table are read from raw GitHub
+smash_bio_repo: MattH55/smash-bio
+smash_bio_ref: main
+
+contact_email: mhalma@opensourcemed.info   # required by NCBI E-utilities and Unpaywall; sent only to those APIs
+ncbi_api_key: null                          # optional; raises E-utilities rate limit to 10 req/s
+
+# Search strings (Part 5 of the research report). Edit freely; each is run separately and tagged.
+searches:
+  pubmed:
+    sim_broad: >-
+      ("steered molecular dynamics"[tiab] OR "force-probe molecular dynamics"[tiab]
+       OR "force probe molecular dynamics"[tiab] OR "constant-force molecular dynamics"[tiab]
+       OR "pulling simulation*"[tiab] OR "forced unfolding"[tiab] OR "mechanical unfolding"[tiab]
+       OR "self-organized polymer"[tiab] OR "Go model"[tiab] OR "Go-model"[tiab]
+       OR oxDNA[tiab] OR oxRNA[tiab])
+      AND (simulat*[tiab] OR "molecular dynamics"[tiab] OR "Brownian dynamics"[tiab] OR "Monte Carlo"[tiab])
+      AND (protein*[tiab] OR DNA[tiab] OR RNA[tiab] OR ligand[tiab] OR receptor[tiab] OR "nucleic acid*"[tiab])
+    analytic: >-
+      ("dynamic force spectroscopy"[tiab] OR "force spectroscopy"[tiab] OR "single-molecule pulling"[tiab])
+      AND ("Bell model"[tiab] OR "Bell-Evans"[tiab] OR Dudko[tiab] OR Kramers[tiab]
+       OR "free energy landscape"[tiab] OR "worm-like chain"[tiab] OR "wormlike chain"[tiab]
+       OR "freely jointed chain"[tiab] OR "catch bond*"[tiab] OR Jarzynski[tiab] OR Crooks[tiab]
+       OR "Hummer-Szabo"[tiab] OR unzipping[tiab] OR overstretching[tiab])
+    comparison: >-
+      ("steered molecular dynamics"[tiab] OR "coarse-grained"[tiab] OR "molecular dynamics"[tiab]
+       OR "Brownian dynamics"[tiab])
+      AND ("atomic force microscop*"[tiab] OR "optical tweezers"[tiab] OR "optical trap*"[tiab]
+       OR "magnetic tweezers"[tiab] OR "biomembrane force probe"[tiab]
+       OR "acoustic force spectroscopy"[tiab] OR "high-speed force spectroscopy"[tiab])
+      AND (unfold*[tiab] OR unbind*[tiab] OR rupture[tiab] OR unzip*[tiab] OR overstretch*[tiab])
+  europepmc:
+    # Europe PMC covers PubMed + preprints (bioRxiv, arXiv via Europe PMC) and gives OA full-text flags
+    sim_broad: >-
+      (ABSTRACT:"steered molecular dynamics" OR ABSTRACT:"force-probe molecular dynamics"
+       OR ABSTRACT:"pulling simulation" OR ABSTRACT:"mechanical unfolding" OR ABSTRACT:"forced unfolding"
+       OR ABSTRACT:"self-organized polymer" OR ABSTRACT:oxDNA OR ABSTRACT:oxRNA OR ABSTRACT:"Go model")
+      AND (ABSTRACT:simulation OR ABSTRACT:"molecular dynamics" OR ABSTRACT:"Brownian dynamics")
+    comparison: >-
+      (ABSTRACT:"steered molecular dynamics" OR ABSTRACT:"molecular dynamics" OR ABSTRACT:"coarse-grained")
+      AND (ABSTRACT:"optical tweezers" OR ABSTRACT:"atomic force" OR ABSTRACT:"magnetic tweezers"
+       OR ABSTRACT:"force spectroscopy")
+      AND (ABSTRACT:unfolding OR ABSTRACT:unbinding OR ABSTRACT:rupture OR ABSTRACT:unzipping OR ABSTRACT:overstretching)
+  arxiv:
+    sim_broad: >-
+      (abs:"steered molecular dynamics" OR abs:"mechanical unfolding" OR abs:"force spectroscopy"
+       OR abs:"pulling simulation") AND (cat:physics.bio-ph OR cat:q-bio.BM OR cat:cond-mat.soft)
+
+# Screening (02_screen.py): title+abstract rules before any LLM call
+screen:
+  must_match_any:            # at least one, case-insensitive regex on title+abstract
+    - "steered molecular dynamics|force[- ]probe|pulling simulation|forced unfolding|mechanical unfolding|unzipping|overstretch"
+    - "optical (tweezers|trap)|atomic force|magnetic tweezers|force spectroscopy|biomembrane force probe|acoustic force"
+  exclude_if_match:
+    - "nanoindentation|capsid indentation|cell stiffness|tissue|AFM imaging only"
+  llm_screen: true           # second-pass LLM yes/no on borderline abstracts
+
+# Full text (03_fetch_fulltext.py)
+fulltext:
+  sources: [europepmc_oa, unpaywall, local_pdf_dir]
+  local_pdf_dir: data/pdfs   # drop PDFs here named <doi with / replaced by _>.pdf for paywalled papers
+
+# Extraction (04_extract.py)
+llm:
+  provider: anthropic        # anthropic | openai_compatible
+  model: claude-sonnet-5-5   # enrichment/comparison; cheap enough for ~hundreds of papers
+  max_tokens: 8000
+  temperature: 0
+  base_url: null             # for openai_compatible
+  api_key_env: ANTHROPIC_API_KEY
+
+# Matching sim -> SMASH-BIO experiments (06_match_experiments.py)
+match:
+  pdb_exact: true
+  sequence_identity_min: 0.95
+  name_fuzzy_min: 0.90       # fallback only, always flagged for human check

@@ -1,0 +1,1 @@
+cmp_id,sim_id,smfs_id,exp_doi,observable,match_level,rate_overlap_log10,extrapolation_model,sim_value,exp_value,units,ratio_sim_over_exp,verdict,verdict_criterion,disagreement_reasons,direction,comparison_made_by,source_doi,note

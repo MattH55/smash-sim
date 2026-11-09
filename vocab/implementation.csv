@@ -1,0 +1,22 @@
+impl_id,class_id,name,pulling_protocols_supported,gpu,license,url
+GROMACS,AA-EXP,GROMACS pull code,constant_velocity;constant_force;umbrella,TRUE,LGPL,https://www.gromacs.org
+PLUMED,AA-ENH,PLUMED (with GROMACS/NAMD/OpenMM/LAMMPS),constant_velocity;constant_force;umbrella;metadynamics,TRUE,LGPL,https://www.plumed.org
+NAMD,AA-EXP,NAMD SMD / colvars,constant_velocity;constant_force;umbrella;metadynamics,TRUE,free_academic,https://www.ks.uiuc.edu/Research/namd/
+AMBER,AA-EXP,AMBER pmemd (nmropt / jarzynski),constant_velocity;constant_force;umbrella;jarzynski_pulls,TRUE,commercial_academic,https://ambermd.org
+OPENMM,AA-EXP,OpenMM CustomExternalForce / CustomCVForce,constant_velocity;constant_force;umbrella,TRUE,MIT,https://openmm.org
+CHARMM,AA-EXP,CHARMM,constant_velocity;constant_force;umbrella,TRUE,commercial_academic,https://www.charmm.org
+LAMMPS,AA-EXP,LAMMPS (fix smd / fix spring),constant_velocity;constant_force,TRUE,GPL,https://www.lammps.org
+SMOG2,CG-GO,SMOG2 structure-based models (runs in GROMACS/OpenMM),constant_velocity;constant_force,TRUE,GPL,https://smog-server.org
+CIEPLAK,CG-GO,Cieplak group structure-based Calpha code (BSDB),constant_velocity;constant_force,FALSE,in_house,http://info.ifpan.edu.pl/BSDB/
+SOP-GPU,CG-SOP,SOP-GPU (Zhmurov/Barsegov),constant_velocity;constant_force;force_quench,TRUE,free_academic,
+SOP,CG-SOP,SOP (Thirumalai group in-house),constant_velocity;constant_force;force_quench,FALSE,in_house,
+CAFEMOL,CG-GO,CafeMol,constant_velocity;constant_force,FALSE,free_academic,https://www.cafemol.org
+OXDNA,CG-OXDNA,oxDNA standalone (MD / VMMC),constant_velocity;constant_force;force_ramp,TRUE,GPL,https://dna.physics.ox.ac.uk
+OXDNA-LAMMPS,CG-OXDNA,oxDNA in LAMMPS,constant_velocity;constant_force,TRUE,GPL,https://www.lammps.org
+OXDNA-WEB,CG-OXDNA,oxdna.org web server,constant_force,TRUE,free,https://oxdna.org
+TIS,CG-TIS,TIS RNA (Thirumalai group in-house),constant_velocity;constant_force;force_quench,FALSE,in_house,
+HIRE-RNA,CG-HIRE,HiRE-RNA,constant_force;replica_exchange,FALSE,in_house,
+MARTINI,CG-MARTINI,Martini (in GROMACS),constant_velocity;constant_force,TRUE,free,https://cgmartini.nl
+KINFOLD,KIN-STEM,Kinfold / ViennaRNA kinetics,constant_force,FALSE,free,https://www.tbi.univie.ac.at/RNA/
+INHOUSE,,In-house or unspecified code,,,,
+NONE,,Analytical model (no software),,,,

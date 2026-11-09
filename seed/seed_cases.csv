@@ -1,0 +1,31 @@
+molecule,molecule_type,class_id,impl_id,sim_doi,exp_doi,observables_compared,match_level,verdict,direction,note
+streptavidin-biotin,protein-ligand,AA-EXP,INHOUSE,10.1126/science.271.5251.997,10.1126/science.8153628,rupture_force;pathway_order,EXT,partial,exp_validates_sim,Grubmuller 1996 force-probe MD vs Florin/Moy/Gaub AFM 1994
+avidin-biotin,protein-ligand,AA-EXP,INHOUSE,10.1016/S0006-3495(97)78804-0,10.1126/science.8153628,rupture_force;pathway_order,QUAL,partial,exp_validates_sim,Izrailev 1997 coined SMD
+streptavidin-biotin,protein-ligand,AN-BOND,NONE,,10.1038/16219,force_vs_loading_rate,QUAL,agree,exp_falsifies_model,Merkel 1999 BFP two linear regimes -> multi-barrier
+streptavidin-biotin,protein-ligand,AA-EXP,GROMACS,10.1073/pnas.1816909116,10.1073/pnas.1816909116,force_vs_loading_rate;pathway_order;dG_dagger;dx_dagger,H2H,agree,mutual,Rico 2019 HS-FS + MD across 11 decades
+streptavidin-biotin (4 geometries),protein-ligand,AA-EXP,NAMD,10.1126/sciadv.aay5999,10.1126/sciadv.aay5999,rank_order_stability;rupture_force,QUAL,agree,exp_validates_sim,Sedlak 2020 rank order matches
+streptavidin-biotin,protein-ligand,AN-BOND,NONE,10.1529/biophysj.107.114454,10.1529/biophysj.107.114454,dx_dagger;k0,QUAL,agree,exp_falsifies_model,Walton 2008 spring-constant dependence of extracted parameters
+titin I27,protein,AA-EXP,NAMD,10.1016/S0006-3495(98)77556-3,10.1126/science.276.5315.1109,delta_Lc;pathway_order;intermediate_identity,QUAL,agree,exp_validates_sim,Lu & Schulten 1998 vs Rief 1997
+titin I27,protein,AA-EXP,NAMD,10.1016/S0006-3495(98)77556-3,10.1038/47083,intermediate_identity,PRED,agree,sim_predicts_exp,A-strand detachment intermediate confirmed by Marszalek 1999
+titin I27,protein,AA-EXP,NAMD,10.1126/science.1239764,10.1126/science.1239764,force_vs_loading_rate,H2H,agree,mutual,Rico 2013 HS-FS at MD speeds
+GFP,protein,CG-SOP,SOP,10.1073/pnas.0705458104,10.1073/pnas.0705458104,pathway_order;n_intermediates;delta_Lc,PRED,agree,sim_predicts_exp,Mickler 2007 bifurcation predicted and confirmed
+ubiquitin,protein,CG-GO,INHOUSE,,10.1038/nphys269,dwell_time_distribution,QUAL,partial,exp_falsifies_model,Brujic 2006 non-exponential dwell times
+protein L / protein G,protein,AA-EXP,INHOUSE,10.1134/S0006297909030110,,pathway_order;intermediate_identity,QUAL,partial,exp_validates_sim,Glyakina 2009 TS matches phi-values for L not G
+talin rod,protein,AA-EXP,NAMD,10.1371/journal.pcbi.0040024,10.1126/science.1162912,intermediate_identity,PRED,agree,sim_predicts_exp,Hytonen & Vogel 2008 -> del Rio 2009 VBS exposure
+talin / alpha-catenin,protein,AA-EXP,INHOUSE,10.1371/journal.pcbi.1006126,,n_intermediates,QUAL,agree,exp_validates_sim,3-helix intermediates PMID 29698481
+vWF A2,protein,AA-EXP,GROMACS,10.1111/j.1538-7836.2009.03640.x,10.1126/science.1170905,pathway_order;n_intermediates,QUAL,agree,exp_validates_sim,Baldauf 2009 vs Zhang/Springer 2009 OT
+FimH-mannose,protein-ligand,AA-EXP,INHOUSE,10.1038/ncomms10738,,catch_bond_shape,QUAL,agree,exp_validates_sim,Sauer 2016 allosteric catch bond
+spectrin repeat,protein,AA-EXP,GROMACS,10.1021/acs.jpcb.9b01251,,force_vs_loading_rate;pathway_order,QUAL,partial,model_reduces_sim,speed limit for force-probe MD
+RNA hairpin P5GA,RNA,CG-TIS,TIS,10.1073/pnas.0408314102,10.1126/science.1058498,rupture_force;dx_dagger;hysteresis,H2H,agree,exp_validates_sim,Hyeon & Thirumalai 2005 near-experimental rates
+RNA P5abc,RNA,AN-NEQ,NONE,,10.1126/science.1071152,dG_unfold,H2H,agree,exp_validates_sim,Liphardt 2002 Jarzynski test
+RNA three-helix junction,RNA,AN-NEQ,NONE,,10.1038/nature04061,dG_unfold,H2H,agree,exp_validates_sim,Collin 2005 Crooks
+lambda-DNA overstretching,DNA,CG-OXDNA,OXDNA,10.1063/1.4792252,10.1126/science.271.5250.795,plateau_force;pathway_order,QUAL,partial,exp_validates_sim,oxDNA 74 pN vs ~65-68 pN; no S-DNA
+DNA overstretching,DNA,AA-EXP,NAMD,10.1103/PhysRevLett.101.118101,10.1126/science.271.5250.795,plateau_force,QUAL,disagree,exp_validates_sim,Luan & Aksimentiev 2008 forces >100 pN
+lambda-DNA unzipping,DNA,KIN-UNZIP,NONE,10.1073/pnas.1001454107,10.1073/pnas.1001454107,force_vs_loading_rate;dG_unfold,H2H,agree,exp_parameterizes_model,Huguet 2010 NN energies from unzipping
+adenine riboswitch add/pbuE,RNA,CG-SOP,SOP,10.1021/ja8063638,10.1093/nar/gkr305,pathway_order;rupture_force,PRED,agree,sim_predicts_exp,Lin & Thirumalai 2008 -> Neupane 2011
+frameshifting pseudoknots,RNA,CG-TIS,TIS,10.1073/pnas.0906625106,,pathway_order,UNTESTED,untested,sim_predicts_exp,Cho Pincus Thirumalai 2009 thermal only
+SRV-1 pseudoknot,RNA,AA-EXP,INHOUSE,10.1038/srep39549,,rupture_force,QUAL,agree,exp_validates_sim,base triples stabilize
+BWYV pseudoknot,RNA,CG-TIS,TIS,10.1016/j.jmb.2016.06.002,,force_vs_loading_rate,UNTESTED,untested,sim_predicts_exp,Hori 2016 force-salt phase diagram
+human telomeric G-quadruplex,DNA,CG-OTHER-NA,INHOUSE,10.1038/s41598-017-10849-2,10.1038/s41598-017-10849-2,rupture_force;force_vs_loading_rate,H2H,agree,mutual,Bergues-Pupo 2017 fitted then predicted
+alpha3D,protein,AN-NEQ,NONE,10.1073/pnas.1519633112,10.1073/pnas.2015728118,pmf,QUAL,disagree,exp_falsifies_model,Edwards 2021 landscape = linker landscape
+17134 PDB proteins,protein,CG-GO,CIEPLAK,10.1371/journal.pcbi.1000547,,rank_order_stability,UNTESTED,untested,sim_predicts_exp,Sikora 2009 superstable predictions mostly untested

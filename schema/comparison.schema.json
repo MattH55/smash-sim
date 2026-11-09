@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://smash-bio.org/schema/comparison.v1.json",
+  "title": "SMASH-SIM comparison",
+  "description": "One row per (simulation record, experiment record, observable). This is the concordance unit. A paper that compares force and pathway yields two rows.",
+  "type": "object",
+  "required": ["cmp_id", "sim_id", "observable", "match_level", "verdict", "direction", "source_doi"],
+  "additionalProperties": false,
+  "properties": {
+    "cmp_id": { "type": "string", "pattern": "^CMP-[0-9]{6}$" },
+    "sim_id": { "type": "string", "pattern": "^SIM-[0-9]{6}$" },
+    "smfs_id": { "type": ["string", "null"], "pattern": "^SMFS-[0-9]{6}$", "description": "SMASH-BIO experiment record; null only when the experiment is not yet indexed (then fill exp_doi)" },
+    "exp_doi": { "type": ["string", "null"] },
+
+    "observable": {
+      "type": "string",
+      "enum": ["delta_Lc", "rupture_force", "force_vs_loading_rate", "dx_dagger", "k0", "dG_dagger", "dG_unfold", "pmf", "pathway_order", "n_intermediates", "intermediate_identity", "refolding", "hysteresis", "persistence_length", "plateau_force", "rank_order_stability", "catch_bond_shape", "dwell_time_distribution", "other"]
+    },
+
+    "match_level": {
+      "type": "string",
+      "enum": ["H2H", "EXT", "QUAL", "PRED", "UNTESTED"],
+      "description": "H2H: overlapping loading rates/velocities, no extrapolation. EXT: agreement only after extrapolation via a stated kinetic model. QUAL: qualitative (same order, same shape) only. PRED: simulation predated and predicted the experiment. UNTESTED: prediction with no matching experiment yet."
+    },
+    "rate_overlap_log10": {
+      "type": ["number", "null"],
+      "description": "log10(sim loading rate / exp loading rate) at the compared point; 0 = matched, >0 = sim faster. Required when match_level is H2H or EXT."
+    },
+    "extrapolation_model": {
+      "type": ["string", "null"],
+      "enum": ["bell_evans", "dhs_cusp", "dhs_linear_cubic", "bullerjahn_sturm_kroy", "friddle_noy_deyoreo", "other", null],
+      "description": "Required when match_level is EXT"
+    },
+
+    "sim_value": { "type": ["number", "string", "null"] },
+    "exp_value": { "type": ["number", "string", "null"] },
+    "units": { "type": ["string", "null"] },
+    "ratio_sim_over_exp": { "type": ["number", "null"] },
+
+    "verdict": { "type": "string", "enum": ["agree", "partial", "disagree", "untested"] },
+    "verdict_criterion": {
+      "type": ["string", "null"],
+      "description": "How agreement was judged, e.g. 'within 20%', 'same rank order of 4 geometries', 'same sequence of 3 elements', 'within reported SD'"
+    },
+
+    "disagreement_reasons": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "enum": ["loading_rate", "spring_constant", "force_field", "missing_ions", "missing_mg", "native_centric_bias", "state_definition_mismatch", "sampling", "pulling_geometry", "linker_or_handle", "instrument_artifact", "temperature", "construct_difference", "unknown", "other"] }
+    },
+
+    "direction": {
+      "type": "string",
+      "enum": ["sim_predicts_exp", "exp_validates_sim", "exp_parameterizes_model", "exp_falsifies_model", "model_reduces_sim", "sim_validates_model", "mutual"],
+      "description": "Which arrow of the analytical/simulation/experiment triangle this comparison instantiates"
+    },
+
+    "comparison_made_by": { "type": "string", "enum": ["original_authors", "later_paper", "smash_sim_curation"] },
+    "source_doi": { "type": "string", "description": "Paper in which the comparison is made (may differ from the sim record's DOI)" },
+    "note": { "type": ["string", "null"] },
+
+    "curation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "status": { "type": "string", "enum": ["auto", "human_checked", "disputed"], "default": "auto" },
+        "curator": { "type": ["string", "null"] },
+        "date": { "type": ["string", "null"], "format": "date" }
+      }
+    },
+    "_prov": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "quote": { "type": "string", "maxLength": 300 },
+          "page": { "type": ["integer", "string", "null"] },
+          "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+        }
+      }
+    }
+  },
+  "allOf": [
+    { "if": { "properties": { "match_level": { "const": "EXT" } } }, "then": { "required": ["extrapolation_model", "rate_overlap_log10"] } },
+    { "if": { "properties": { "match_level": { "const": "H2H" } } }, "then": { "required": ["rate_overlap_log10"] } },
+    { "if": { "properties": { "verdict": { "enum": ["partial", "disagree"] } } }, "then": { "required": ["disagreement_reasons"] } }
+  ]
+}
