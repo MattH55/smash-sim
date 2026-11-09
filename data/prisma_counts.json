@@ -3,5 +3,7 @@
   "after_dedupe": 16606,
   "already_in_smash_bio": 91,
   "after_rule_screen": 4087,
-  "after_llm_screen": 2305
+  "llm_include_any": 2306,
+  "experiment_only_handed_back": 524,
+  "after_llm_screen": 1781
 }
