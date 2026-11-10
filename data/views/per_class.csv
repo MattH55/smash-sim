@@ -1,13 +1,13 @@
 class_id,class_name,n_records,n_papers,n_molecules,molecule_types,topologies,velocity_m_s_envelope,loading_rate_pN_s_envelope,spring_pN_nm_envelope,system_size_envelope,wall_h_per_traj_envelope,n_with_benchmark,n_abstract_only,n_verifier_flags,frac_refolding,frac_pathway
-AA-ENH,All-atom enhanced sampling along extension,10,10,10,other;protein;protein-protein,homopolymer;ligand-pocket;parallel;series;unknown,1–1e+03,,42–5e+03,2.5e+05–2.5e+05,0.096–0.096,5,1,10.0,0.0,0.9
-AA-EXP,All-atom explicit-solvent SMD,119,115,113,DNA;RNA;other;protein;protein-NA;protein-ligand;protein-protein,cross;homopolymer;ligand-pocket;mixed;parallel;series;unknown,1e-07–5e+03,1–1e+12,1.7–4.2e+04,7e+03–1.3e+06,0.2–1.4e+03,44,12,123.0,0.07,0.7
-AA-IMP,All-atom implicit-solvent SMD,6,6,6,protein;protein-ligand;protein-protein,homopolymer;ligand-pocket;mixed;unknown,7e-08–10,,3.5e+02–7e+03,5.2e+04–5.2e+04,2–1.2e+02,4,0,7.0,0.0,0.67
-AN-BOND,Single-bond rupture kinetics (Bell,16,16,15,DNA;other;protein;protein-NA;protein-ligand,homopolymer;ligand-pocket;parallel;series;unknown,4.5e-08–0.00025,13–1.3e+02,0.2–30,6.9e+03–6.9e+03,,5,0,7.0,0.25,0.31
-AN-POLY,Polymer elasticity (WLC,4,4,4,DNA;RNA;protein-NA,homopolymer;ligand-pocket;mixed,,5.5–5.5,,1e+02–5e+02,,1,0,4.0,0.0,0.25
-CG-GO,Structure-based Go (Calpha or heavier),40,34,34,RNA;other;protein;protein-NA;protein-protein,cross;homopolymer;ligand-pocket;parallel;series;unknown,1.2e-08–1e+03,,0.4–1.4e+04,1.4e+05–1.4e+05,36–36,7,16,57.0,0.35,0.6
-CG-MARTINI,Martini / GoMartini,15,15,13,DNA;other;protein;protein-protein,homopolymer;ligand-pocket;mixed;parallel;series;unknown,5e-08–5e+03,,62–1.7e+03,4.1e+03–2.6e+05,,5,3,8.0,0.07,0.4
-CG-OXDNA,oxDNA / oxDNA2 / oxRNA,7,7,4,DNA;other;protein-NA,cross;homopolymer;series,2e-07–0.00014,5.5–5.5,,,,1,0,2.0,0.29,0.71
-CG-SOP,Self-Organized Polymer (SOP/SOP-SC),7,6,6,RNA;other;protein,homopolymer;ligand-pocket;mixed;parallel;series;unknown,6.4e-07–1,1.1e+05–1.1e+05,0.07–1.1e+02,,20–20,2,3,8.0,0.29,0.71
-CG-TIS,Three-interaction-site RNA (TIS) incl. explicit ions,1,1,1,protein-NA,cross,,,,,,0,0,0.0,1.0,1.0
-KIN-STEM,Stem-level kinetic Monte Carlo (secondary-structure state space),2,2,1,protein;protein-protein,ligand-pocket;parallel,0.0001–0.0001,,,,,0,0,6.0,0.0,1.0
-KIN-UNZIP,DNA/RNA unzipping models (NN + polymer + trap),3,3,3,RNA;protein-NA;protein-protein,series;unknown,1e-07–1e-07,,,,,0,0,3.0,0.67,0.67
+AA-ENH,All-atom enhanced sampling along extension,20,20,20,other;protein;protein-ligand;protein-protein,homopolymer;ligand-pocket;parallel;series;unknown,0.1–1e+03,,42–5e+04,1e+02–2.5e+05,0.096–0.096,11,1,20,0.05,0.9
+AA-EXP,All-atom explicit-solvent SMD,180,174,170,DNA;RNA;other;protein;protein-NA;protein-ligand;protein-protein,cross;homopolymer;ligand-pocket;mixed;parallel;series;unknown,7e-09–2e+06,1–1e+12,1.4–7e+05,2.8e+03–1.3e+06,0.2–3e+03,65,12,169,0.07,0.7
+AA-IMP,All-atom implicit-solvent SMD,9,9,9,DNA;other;protein;protein-ligand;protein-protein,homopolymer;ligand-pocket;mixed;unknown,7e-08–10,,3.5e+02–7e+03,1.2e+03–5.2e+04,2–1.2e+02,6,0,8,0.0,0.67
+AN-BOND,Single-bond rupture kinetics (Bell,20,20,19,DNA;other;protein;protein-NA;protein-ligand,homopolymer;ligand-pocket;parallel;series;unknown,4.5e-08–0.00025,13–1.3e+02,0.2–30,6.9e+03–6.9e+03,,5,0,9,0.25,0.3
+AN-POLY,Polymer elasticity (WLC,6,6,6,DNA;RNA;other;protein;protein-NA,homopolymer;ligand-pocket;mixed,,5.5–5.5,,1e+02–5e+02,,1,0,4,0.17,0.33
+CG-GO,Structure-based Go (Calpha or heavier),44,38,38,RNA;other;protein;protein-NA;protein-protein,cross;homopolymer;ligand-pocket;parallel;series;unknown,1.2e-08–1e+03,,0.4–1.4e+04,1.6e+04–1.4e+05,36–36,8,16,60,0.34,0.59
+CG-MARTINI,Martini / GoMartini,16,16,14,DNA;other;protein;protein-protein,homopolymer;ligand-pocket;mixed;parallel;series;unknown,5e-08–5e+03,,62–1.7e+03,4.1e+03–2.6e+05,,5,3,8,0.06,0.44
+CG-OXDNA,oxDNA / oxDNA2 / oxRNA,10,10,7,DNA;other;protein-NA,cross;homopolymer;series,2e-07–0.00014,5.5–5.5,,,,2,0,3,0.4,0.8
+CG-SOP,Self-Organized Polymer (SOP/SOP-SC),10,9,9,RNA;other;protein,cross;homopolymer;ligand-pocket;mixed;parallel;series;unknown,6.4e-07–1,1.1e+05–1.1e+05,0.07–1.1e+02,,20–20,2,3,10,0.4,0.6
+CG-TIS,Three-interaction-site RNA (TIS) incl. explicit ions,1,1,1,protein-NA,cross,,,,,,0,0,0,1.0,1.0
+KIN-STEM,Stem-level kinetic Monte Carlo (secondary-structure state space),2,2,1,protein;protein-protein,ligand-pocket;parallel,0.0001–0.0001,,,,,0,0,6,0.0,1.0
+KIN-UNZIP,DNA/RNA unzipping models (NN + polymer + trap),3,3,3,RNA;protein-NA;protein-protein,series;unknown,1e-07–1e-07,,,,,0,0,3,0.67,0.67

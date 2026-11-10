@@ -33,3 +33,32 @@
 {"doi": "10.1016/j.ejmech.2023.115226", "title": "Korupensamine A, but not its atropisomer, korupensamine B, inhibits SARS-CoV-2 in vitro by targeting its main protease (Mpro).", "llm_category": "pulling_simulation"}
 {"doi": "10.1016/j.chemphys.2023.111859", "title": "Probing the mechanical properties of ORF3a protein, a transmembrane channel of SARS-CoV-2 virus: Molecular dynamics study.", "llm_category": "pulling_simulation"}
 {"doi": "10.1021/acsami.6b02416", "title": "Discovery and characterization of a functional scFv for CCR2 inhibition via an extracellular loop.", "llm_category": "pulling_simulation"}
+{"doi": "10.1038/nrd.2015.37", "title": "N501Y mutation of spike protein in SARS-CoV-2 strengthens its binding to receptor ACE2.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1038/srep08247", "title": "Characterization of monobody scaffold interactions with ligand via force spectroscopy and steered molecular dynamics.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1038/s41598-021-92806-8", "title": "Mechanical Stability and Unfolding Pathways of Parallel Tetrameric G-Quadruplexes Probed by Pulling Simulations.", "llm_category": "pulling_simulation"}
+{"doi": "10.1042/bcj20170085", "title": "May the force be with you: The role of hyper-mechanostability of the bone sialoprotein binding protein during early stages of Staphylococci infections.", "llm_category": "pulling_simulation"}
+{"doi": "10.1073/pnas.202427399", "title": "DNA opening during transcription initiation by RNA polymerase II in atomic detail.", "llm_category": "pulling_simulation"}
+{"doi": "10.1016/j.csbj.2022.06.048", "title": "A computational algorithm to assess the physiochemical determinants of T cell receptor dissociation kinetics.", "llm_category": "pulling_simulation"}
+{"doi": "10.1016/j.csbj.2022.04.018", "title": "Using molecular dynamics simulations to interrogate T cell receptor non-equilibrium kinetics.", "llm_category": "pulling_simulation"}
+{"doi": "10.1038/s41596-020-0312-x", "title": "Cocktail of REGN Antibodies Binds More Strongly to SARS-CoV-2 Than Its Components, but the Omicron Variant Reduces Its Neutralizing Ability.", "llm_category": "pulling_simulation"}
+{"doi": "10.1073/pnas.2021946118/-/dcsupplemental", "title": "Phytochemicals-based targeting RdRp and main protease of SARS-CoV-2 using docking and steered molecular dynamic simulation: A promising therapeutic approach for Tackling COVID-19.", "llm_category": "pulling_simulation"}
+{"doi": "10.1002/chem.202001115", "title": "Comparison of Linear vs. Cyclic RGD Pentapeptide Interactions with Integrin αvβ3 by Molecular Dynamics Simulations.", "llm_category": "pulling_simulation"}
+{"doi": "10.1038/s41594-020-0469-6", "title": "Electrostatic Interactions Explain the Higher Binding Affinity of the CR3022 Antibody for SARS-CoV-2 than the 4A8 Antibody.", "llm_category": "pulling_simulation"}
+{"doi": "10.1016/j.desal.2020.114603", "title": "Binding characteristics of staphylococcal protein A and streptococcal protein G for fragment crystallizable portion of human immunoglobulin G.", "llm_category": "pulling_simulation"}
+{"doi": "10.1021/acs.jpclett.9b01183", "title": "Metadynamics-Based Approaches for Modeling the Hypoxia-Inducible Factor 2α Ligand Binding Process.", "llm_category": "pulling_simulation"}
+{"doi": "10.1016/j.jbc.2021.100718", "title": "The molecular basis for the pH-dependent calcium affinity of the pattern recognition receptor langerin.", "llm_category": "pulling_simulation"}
+{"doi": "10.1002/elsc.202000065", "title": "Dynamic energy correlation analysis of E. coli aspartokinase III and alteration of allosteric regulation by manipulating energy transduction pathways.", "llm_category": "pulling_simulation"}
+{"doi": "10.1063/1.3301140", "title": "Reconstruction of ARNT PAS-B Unfolding Pathways by Steered Molecular Dynamics and Artificial Neural Networks.", "llm_category": "pulling_simulation"}
+{"doi": "10.1021/ci400766b", "title": "The Hydrophobic Ligands Entry and Exit from the GPCR Binding Site-SMD and SuMD Simulations.", "llm_category": "pulling_simulation"}
+{"doi": "10.1016/j.bbrc.2020.03.062", "title": "FKBP12 dimerization mutations effect FK506 binding and differentially alter calcineurin inhibition in the human pathogen Aspergillus fumigatus.", "llm_category": "pulling_simulation"}
+{"doi": "10.1016/j.bpj.2020.01.005", "title": "Mechanical Unfolding of Spectrin Repeats Induces Water-Molecule Ordering.", "llm_category": "pulling_simulation"}
+{"doi": "10.1016/j.str.2018.09.007", "title": "Non-syndromic Mitral Valve Dysplasia Mutation Changes the Force Resilience and Interaction of Human Filamin A.", "llm_category": "pulling_simulation"}
+{"doi": "10.1083/jcb.200611141", "title": "Long-ranged Protein-glycan Interactions Stabilize von Willebrand Factor A2 Domain from Mechanical Unfolding.", "llm_category": "pulling_simulation"}
+{"doi": "10.1002/2211-5463.12316", "title": "Evaluation of Sox2 binding affinities for distinct DNA patterns using steered molecular dynamics simulation.", "llm_category": "pulling_simulation"}
+{"doi": "10.1093/protein/6.1.37", "title": "Skeletal Dysplasia Mutations Effect on Human Filamins' Structure and Mechanosensing.", "llm_category": "pulling_simulation"}
+{"doi": "10.1038/srep20413", "title": "Exploration of multiple Sortase A protein conformations in virtual screening.", "llm_category": "pulling_simulation"}
+{"doi": "10.1063/1.1651473", "title": "A conserved P-loop anchor limits the structural dynamics that mediate nucleotide dissociation in EF-Tu.", "llm_category": "pulling_simulation"}
+{"doi": "10.1007/s00894-014-2092-0", "title": "Steered molecular dynamics identifies critical residues of the Nodamura virus B2 suppressor of RNAi.", "llm_category": "pulling_simulation"}
+{"doi": "10.1016/j.bpj.2013.11.4494", "title": "Atomic level rendering of DNA-drug encounter.", "llm_category": "pulling_simulation"}
+{"doi": "10.1002/bip.21390", "title": "Molecular basis of lateral force spectroscopy nano-diagnostics: computational unbinding of autism related chemokine MCP-1 from IgG antibody.", "llm_category": "pulling_simulation"}
+{"doi": "10.1016/j.bpj.2008.09.043", "title": "Nanomechanics of Ig-like domains of human contactin (BIG-2).", "llm_category": "pulling_simulation"}
