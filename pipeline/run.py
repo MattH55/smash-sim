@@ -17,11 +17,12 @@ STEP_CMD = {
     "enrich": ["enrich.py"],
     "verify": ["verify.py"],
     "compare": ["compare.py"],
+    "reclassify": ["reclassify_other.py"],
     "views": ["views.py"],
     "review_export": ["review_sheet.py", "export"],
 }
 ap = argparse.ArgumentParser()
-ap.add_argument("--steps", default="ingest,fulltext,enrich,verify,compare,views")
+ap.add_argument("--steps", default="ingest,fulltext,enrich,verify,compare,reclassify,views")
 ap.add_argument("--limit", type=int)
 ap.add_argument("--no-llm", action="store_true")
 a = ap.parse_args()

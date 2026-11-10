@@ -5,7 +5,7 @@ on:
     inputs:
       steps:
         description: "Comma-separated steps (llm_smoke,ingest,gap_search,seed,screen,fulltext,enrich,compare,views,review_export)"
-        default: "ingest,fulltext,enrich,verify,compare,views,review_export"
+        default: "ingest,fulltext,enrich,verify,compare,reclassify,views,review_export"
       limit:
         description: "Max records for enrich/verify/compare per run (0 = all; large corpora run in chunks on the schedule)"
         default: "150"
@@ -50,7 +50,7 @@ jobs:
           NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
           OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
         run: |
-          STEPS="${{ github.event.inputs.steps || 'ingest,fulltext,enrich,verify,compare,views,review_export' }}"
+          STEPS="${{ github.event.inputs.steps || 'ingest,fulltext,enrich,verify,compare,reclassify,views,review_export' }}"
           LIMIT="${{ github.event.inputs.limit }}"
           [ -z "$LIMIT" ] && LIMIT="150"      # scheduled runs: one chunk per run
           [ "$LIMIT" = "0" ] && LIMIT=""

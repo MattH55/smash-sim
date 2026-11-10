@@ -250,6 +250,9 @@
       "additionalProperties": {
         "type": "string"
       }
+    },
+    "_drop": {
+      "type": "boolean"
     }
   },
   "allOf": [
