@@ -694,3 +694,89 @@
 {"sim_id": "SIMX-000286", "smfs_id": "SMFS-002652", "how": "cited_doi", "rank": -1, "geometry_match": null}
 {"sim_id": "SIMX-000316", "smfs_id": "SMFS-005078", "how": "cited_doi", "rank": -1, "geometry_match": null}
 {"sim_id": "SIMX-000327", "smfs_id": "SMFS-005612", "how": "cited_doi", "rank": -1, "geometry_match": null}
+{"sim_id": "SIMX-000341", "smfs_id": null, "exp_doi": "10.1371/journal.pone.0019268", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000347", "smfs_id": "SMFS-002029", "how": "cited_doi", "rank": -1, "geometry_match": null}
+{"sim_id": "SIMX-000357", "smfs_id": null, "exp_doi": "10.1126/science.276.5315.1109", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000359", "smfs_id": "SMFS-004351", "how": "cited_doi", "rank": -1, "geometry_match": null}
+{"sim_id": "SIMX-000359", "smfs_id": "SMFS-004017", "how": "cited_doi", "rank": -1, "geometry_match": null}
+{"sim_id": "SIMX-000360", "smfs_id": "SMFS-003706", "how": "cited_doi", "rank": -1, "geometry_match": null}
+{"sim_id": "SIMX-000362", "smfs_id": null, "exp_doi": "10.1074/jbc.M112.436915", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000362", "smfs_id": null, "exp_doi": "10.1016/j.bpj.2008.09.014", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000363", "smfs_id": null, "exp_doi": "10.1073/pnas.94.22.11935", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000363", "smfs_id": null, "exp_doi": "10.1103/PhysRevLett.79.22.4489", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000363", "smfs_id": null, "exp_doi": "10.1103/PhysRevLett.88.24.248102", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000364", "smfs_id": null, "exp_doi": "10.1038/nature11417", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000364", "smfs_id": null, "exp_doi": "10.1038/nature11435", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000367", "smfs_id": null, "exp_doi": "10.1021/acs.nanolett.5b01249", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000368", "smfs_id": null, "exp_doi": "10.1126/science.1080081", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000369", "smfs_id": null, "exp_doi": "10.1093/nar/gkq1263", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000370", "smfs_id": null, "exp_doi": "10.1126/science.292.5517.733", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000370", "smfs_id": null, "exp_doi": "10.1126/science.1067562", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000370", "smfs_id": null, "exp_doi": "10.1073/pnas.0506580102", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000371", "smfs_id": "SMFS-006778", "how": "cited_doi", "rank": -1, "geometry_match": null}
+{"sim_id": "SIMX-000371", "smfs_id": null, "exp_doi": "10.1073/pnas.0602013103", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000372", "smfs_id": null, "exp_doi": "10.1126/science.292.5517.733", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000372", "smfs_id": null, "exp_doi": "10.1126/science.1067562", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000372", "smfs_id": null, "exp_doi": "10.1038/397050a0", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000372", "smfs_id": null, "exp_doi": "10.1038/nsb1003-553", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000376", "smfs_id": "SMFS-007557", "how": "cited_doi", "rank": -1, "geometry_match": null}
+{"sim_id": "SIMX-000376", "smfs_id": null, "exp_doi": "10.1016/S0006-3495(10)00035-1", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000376", "smfs_id": null, "exp_doi": "10.1126/science.1062962", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000376", "smfs_id": null, "exp_doi": "10.1073/pnas.0605410104", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000376", "smfs_id": null, "exp_doi": "10.1074/jbc.M109.083097", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000376", "smfs_id": null, "exp_doi": "10.1529/biophysj.106.103192", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000379", "smfs_id": null, "exp_doi": "10.1016/j.cell.2011.03.012", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000385", "smfs_id": null, "exp_doi": "10.1073/pnas.93.8.3477", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000385", "smfs_id": null, "exp_doi": "10.1002/anie.200500089", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000385", "smfs_id": null, "exp_doi": "10.1039/c0cp00134a", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000387", "smfs_id": null, "exp_doi": "10.1038/39750", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000387", "smfs_id": null, "exp_doi": "10.1021/bm060381l", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000389", "smfs_id": null, "exp_doi": "10.1016/j.jmb.2005.07.010", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000389", "smfs_id": null, "exp_doi": "10.1016/j.jmb.2004.12.051", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000389", "smfs_id": null, "exp_doi": "10.1073/pnas.0506224102", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000389", "smfs_id": null, "exp_doi": "10.1073/pnas.0602117103", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000391", "smfs_id": null, "exp_doi": "10.1073/pnas.0405560101", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000391", "smfs_id": null, "exp_doi": "10.1073/pnas.0602997103", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000392", "smfs_id": null, "exp_doi": "10.1016/j.bpj.2007.01.061", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000393", "smfs_id": "SMFS-006778", "how": "cited_doi", "rank": -1, "geometry_match": null}
+{"sim_id": "SIMX-000396", "smfs_id": null, "exp_doi": "10.1073/pnas.262789199", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000396", "smfs_id": null, "exp_doi": "10.1126/science.1061034", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000397", "smfs_id": null, "exp_doi": "10.1016/j.bpj.2007.01.061", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000399", "smfs_id": "SMFS-007452", "how": "cited_doi", "rank": -1, "geometry_match": null}
+{"sim_id": "SIMX-000399", "smfs_id": null, "exp_doi": "10.1073/pnas.1017299", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000399", "smfs_id": null, "exp_doi": "10.1016/j.bpj.2007.08.001", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000399", "smfs_id": null, "exp_doi": "10.1073/pnas.0901467106", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000399", "smfs_id": null, "exp_doi": "10.1038/nphys225", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000399", "smfs_id": null, "exp_doi": "10.1016/j.bpj.2007.01.031", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000399", "smfs_id": null, "exp_doi": "10.1073/pnas.1001274107", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000400", "smfs_id": null, "exp_doi": "10.1038/nature01832", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000401", "smfs_id": null, "exp_doi": "10.1016/S0022-2836(02)00246-5", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000401", "smfs_id": null, "exp_doi": "10.1016/j.jmb.2004.10.077", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000402", "smfs_id": null, "exp_doi": "10.1126/science.299.5614.1892", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000402", "smfs_id": null, "exp_doi": "10.1073/pnas.0706527104", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000402", "smfs_id": null, "exp_doi": "10.1126/science.303.5664.1674", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000404", "smfs_id": "SMFS-007545", "how": "cited_doi", "rank": -1, "geometry_match": null}
+{"sim_id": "SIMX-000404", "smfs_id": null, "exp_doi": "10.1126/science.266.5186.771", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000411", "smfs_id": null, "exp_doi": "10.1038/nsb0699_346", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000411", "smfs_id": null, "exp_doi": "10.1016/S0006-3495(00)76746-4", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000414", "smfs_id": "SMFS-007557", "how": "cited_doi", "rank": -1, "geometry_match": null}
+{"sim_id": "SIMX-000416", "smfs_id": null, "exp_doi": "10.1073/pnas.94.22.11935", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000416", "smfs_id": null, "exp_doi": "10.1038/13446", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000416", "smfs_id": null, "exp_doi": "10.1103/PhysRevLett.93.078101", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000418", "smfs_id": "SMFS-007657", "how": "cited_doi", "rank": -1, "geometry_match": null}
+{"sim_id": "SIMX-000418", "smfs_id": null, "exp_doi": "10.1126/science.264.5160.792", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000418", "smfs_id": null, "exp_doi": "10.1073/pnas.95.24.14152", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000420", "smfs_id": "SMFS-007657", "how": "cited_doi", "rank": -1, "geometry_match": null}
+{"sim_id": "SIMX-000420", "smfs_id": null, "exp_doi": "10.1126/science.265.5178.1599", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000420", "smfs_id": null, "exp_doi": "10.1126/science.271.5250.792", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000420", "smfs_id": null, "exp_doi": "10.1126/science.271.5250.1835", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000420", "smfs_id": null, "exp_doi": "10.1073/pnas.94.22.11935", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000420", "smfs_id": null, "exp_doi": "10.1126/science.292.5517.733", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000428", "smfs_id": "SMFS-006457", "how": "cited_doi", "rank": -1, "geometry_match": null}
+{"sim_id": "SIMX-000430", "smfs_id": "SMFS-006533", "how": "cited_doi", "rank": -1, "geometry_match": null}
+{"sim_id": "SIMX-000438", "smfs_id": "SMFS-007090", "how": "cited_doi", "rank": -1, "geometry_match": null}
+{"sim_id": "SIMX-000439", "smfs_id": "SMFS-006971", "how": "cited_doi", "rank": -1, "geometry_match": null}
+{"sim_id": "SIMX-000454", "smfs_id": "SMFS-001146", "how": "cited_doi", "rank": -1, "geometry_match": null}
+{"sim_id": "SIMX-000469", "smfs_id": "SMFS-002457", "how": "cited_doi", "rank": -1, "geometry_match": null}
+{"sim_id": "SIMX-000472", "smfs_id": null, "exp_doi": "10.1021/acs.jpcb.6b04709", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-000473", "smfs_id": "SMFS-002785", "how": "cited_doi", "rank": -1, "geometry_match": null}

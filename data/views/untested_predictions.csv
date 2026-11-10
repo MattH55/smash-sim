@@ -35,3 +35,6 @@ SIM-000077,10.1016/j.bpj.2014.10.021,Filamin,CG-GO,dwell_time_distribution,"Auth
 SIMX-000231,10.1103/physreve.97.052414,kinetochore-microtubule attachment,AN-CLUSTER,rupture_force,The paper makes explicit predictions for force-ramp experiments that are stated as not yet performed.,
 SIMX-000242,10.1063/1.3272275,fourth domain of Distyostelium discoideum filamin (DDFLN4),AA-EXP,n_intermediates,authors state the peak was not observed in experiments,
 SIMX-000253,10.1002/anie.202407359,engineered coiled-coils,AA-EXP,rupture_force,"Abstract states validation via SMFS, but no quantitative values or comparison criteria provided.",
+SIM-000016,10.1016/j.bpj.2020.10.023,Firefly luciferase,AA-EXP,pathway_order,"Authors state simulation serves as a point for comparison, but no explicit agreement/disagreement is stated in the abstract.",
+SIMX-000240,10.1063/1.3553801,"Cystine knot proteins (15 studied, e.g., 1bmp, 1fzv, 1c4p)",AA-EXP,pathway_order,no experimental data for CSK proteins,
+SIMX-000442,10.1021/acsnano.6c12331,SuperMyo series β-sheet proteins,AA-EXP,other,authors' judgement: experimental validation confirms computational prediction,

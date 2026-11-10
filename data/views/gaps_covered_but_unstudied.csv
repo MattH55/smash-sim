@@ -5,16 +5,13 @@ AA-IMP,A-entropic
 AA-IMP,B-parallel
 AA-IMP,B-cross
 AA-ENH,A-entropic
-CG-GO,B-cross
 CG-SOP,B-parallel
 CG-SOP,B-cross
-CG-ISING,B-parallel
 CG-OXDNA,A-entropic
 CG-OXDNA,A-cooperative
 CG-OXDNA,B-parallel
 CG-OXDNA,B-cross
 CG-TIS,A-entropic
-CG-TIS,B-series
 CG-TIS,B-cross
 CG-HIRE,B-single
 CG-HIRE,B-series

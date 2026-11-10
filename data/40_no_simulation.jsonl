@@ -82,3 +82,19 @@
 {"doi": "10.1074/jbc.m114.582049", "title": "Chaperones rescue luciferase folding by separating its domains.", "llm_category": "sim_exp_comparison"}
 {"doi": "10.1016/0022-2836(86)90405-5", "title": "DNA condensation by TmHU studied by optical tweezers, AFM and molecular dynamics simulations.", "llm_category": "sim_exp_comparison"}
 {"doi": "10.1021/nn9000148", "title": "Protonated Nanoparticle Surface Governing Ligand Tethering and Cellular Targeting", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1101/2020.11.19.390187", "title": "Neuropilin-1 assists SARS-CoV-2 infection by stimulating the separation of Spike protein S1 and S2.", "llm_category": "pulling_simulation"}
+{"doi": "10.1038/s41598-022-20065-2", "title": "Bell-Evans model and steered molecular dynamics in uncovering the dissociation kinetics of ligands targeting G-protein-coupled receptors.", "llm_category": "analytical_model"}
+{"doi": "10.1063/1.2948948", "title": "Optimal protocols for minimal work processes in underdamped stochastic thermodynamics", "llm_category": "analytical_model"}
+{"doi": "10.1080/15476286.2017.1325069", "title": "Combined single molecule experimental and computational approaches for understanding the unfolding pathway of a viral translation enhancer that participates in a conformational switch", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1021/acsnano.6c12797", "title": "Single-Molecule Studies Reveal That Water Starts to Protect Proteins Even at the ppm Level.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1016/j.ijbiomac.2026.151364", "title": "Structural changes of ovalbumin under alkaline-thermal induction and its gelation mechanism.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1021/acs.jpclett.5c03517", "title": "Real-Time Sub-Molecular Visualization of DNA Folding Using a Hybrid High-Speed AFM and Optical Tweezers System.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1021/acs.nanolett.5c05739", "title": "Determining the Effective DNA Charge Density from Nanopore Translocation Dynamics", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1021/acs.jpclett.4c02973", "title": "Anomalous Force-Dependent Transition Rates Unveil Dual Pathways in Folding and Unfolding Dynamics of Acyl-coenzyme A Binding Protein.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1002/ange.202407359", "title": "Digital and Tunable Genetically Encoded Tension Sensors Based on Engineered Coiled‐Coils", "llm_category": "sim_exp_comparison"}
+{"doi": "10.3390/ijms24020968", "title": "Identification of the Actin-Binding Region and Binding to Host Plant Apple Actin of Immunodominant Transmembrane Protein of ‘Candidatus Phytoplasma mali’", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1021/acs.langmuir.9b03606", "title": "Characterizing the Locus of a Peripheral Membrane Protein–Lipid Bilayer Interaction Underlying Protein Export Activity in E. coli", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1098/rsos.200183 10.17863/cam.53894", "title": "Entropic bonding of the type 1 pilus from experiment and simulation", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1016/j.ijbiomac.2019.08.220", "title": "Dynamic structural determinants underlie the neurotoxicity of the N-terminal tau 26-44 peptide in Alzheimer's disease and other human tauopathies.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1039/c9cp04197d", "title": "Memory effects in single-molecule force spectroscopy measurements of biomolecular folding", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1039/c8cp00925b", "title": "Steered molecular dynamics simulations reveal the role of Ca2+ in regulating mechanostability of cellulose-binding proteins.", "llm_category": "sim_exp_comparison"}
