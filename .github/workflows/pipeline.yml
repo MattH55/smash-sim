@@ -52,7 +52,7 @@ jobs:
         run: |
           STEPS="${{ github.event.inputs.steps || 'ingest,fulltext,enrich,verify,compare,reclassify,views,review_export' }}"
           LIMIT="${{ github.event.inputs.limit }}"
-          [ -z "$LIMIT" ] && LIMIT="150"      # scheduled runs: one chunk per run
+          [ -z "$LIMIT" ] && LIMIT="250"      # scheduled runs: one chunk per run
           [ "$LIMIT" = "0" ] && LIMIT=""
           NOLLM="${{ github.event.inputs.no_llm }}"
           ARGS="--steps $STEPS"
