@@ -62,3 +62,23 @@
 {"doi": "10.1016/j.bpj.2013.11.4494", "title": "Atomic level rendering of DNA-drug encounter.", "llm_category": "pulling_simulation"}
 {"doi": "10.1002/bip.21390", "title": "Molecular basis of lateral force spectroscopy nano-diagnostics: computational unbinding of autism related chemokine MCP-1 from IgG antibody.", "llm_category": "pulling_simulation"}
 {"doi": "10.1016/j.bpj.2008.09.043", "title": "Nanomechanics of Ig-like domains of human contactin (BIG-2).", "llm_category": "pulling_simulation"}
+{"doi": "10.1101/2021.08.15.456425", "title": "A dynamic biomimetic model of the membrane-bound CD4-CD3-TCR complex during pMHC disengagement.", "llm_category": "pulling_simulation"}
+{"doi": "10.1038/ncb3336", "title": "Force-enhanced biophysical connectivity of platelet β3 integrin signaling through Talin is predicted by steered molecular dynamics simulations.", "llm_category": "pulling_simulation"}
+{"doi": "10.1002/wcms.1225", "title": "Effects of protein-protein interactions and ligand binding on the ion permeation in KCNQ1 potassium channel.", "llm_category": "pulling_simulation"}
+{"doi": "10.1016/j.bpj.2017.04.040", "title": "Molecular Simulation and Biochemical Studies Support an Elevator-type Transport Mechanism in EIIC.", "llm_category": "pulling_simulation"}
+{"doi": "10.1016/j.bpj.2011.05.010", "title": "Extension of a three-helix bundle domain of myosin VI and key role of calmodulins.", "llm_category": "pulling_simulation"}
+{"doi": "pmid:22649666", "title": "Modeling of the Full-Size 3D Structure of Human Chaperone Hsp70 and Study of Its Interdomain Interactions.", "llm_category": "pulling_simulation"}
+{"doi": "10.1021/jp810386z", "title": "Theoretical characterization of substrate access/exit channels in the human cytochrome P450 3A4 enzyme: involvement of phenylalanine residues in the gating mechanism.", "llm_category": "pulling_simulation"}
+{"doi": "10.1103/physrevlett.104.108301", "title": "Single-Molecule Force Spectroscopy: Experiments, Analysis, and Simulations.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1021/acsami.7b19865", "title": "A Multifunctional Peptide Linker Stably Anchors to Silica Spicules and Enables MMP-Responsive Release of Diverse Bioactive Cargos.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1021/acs.nanolett.5c04066", "title": "Engineering a Mechanoresponsive DNA Origami Capsule for Drug Delivery to Narrowed Arteries", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1073/pnas.2602326123", "title": "An aggregation-prone region in talin controls talin self-interactions and regulates integrin adhesion complex dynamics", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1002/advs.202404186", "title": "Broad Adaptability of Coronavirus Adhesion Revealed from the Complementary Surface Affinity of Membrane and Spikes", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1073/pnas.2220741120", "title": "Deciphering molecular mechanisms stabilizing the reovirus-binding complex", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1073/pnas.2218425120", "title": "Universality in RNA and DNA deformations induced by salt, temperature change, stretching force, and protein binding", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1126/sciadv.abn1384", "title": "Twist-diameter coupling drives DNA twist changes with salt and temperature", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1103/physreve.98.032146", "title": "Experimental test of ensemble inequivalence and the fluctuation theorem in the force ensemble in DNA pulling experiments", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1021/acs.biomac.6b00469", "title": "Assembly and Mechanical Properties of the Cargo-Free and Cargo-Loaded Bacterial Nanocompartment Encapsulin", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1074/jbc.m114.582049", "title": "Chaperones rescue luciferase folding by separating its domains.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1016/0022-2836(86)90405-5", "title": "DNA condensation by TmHU studied by optical tweezers, AFM and molecular dynamics simulations.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1021/nn9000148", "title": "Protonated Nanoparticle Surface Governing Ligand Tethering and Cellular Targeting", "llm_category": "sim_exp_comparison"}
