@@ -150,3 +150,21 @@
 {"doi": "10.1002/jcb.30237", "title": "Identification of acridinedione scaffolds as potential inhibitor of DENV-2 C protein: An in silico strategy to combat dengue.", "llm_category": "pulling_simulation"}
 {"doi": "10.1021/acs.jpclett.2c00030", "title": "Guanine-Specific Chemical Reaction Reveals ssDNA Interactions on Carbon Nanotube Surfaces.", "llm_category": "pulling_simulation"}
 {"doi": "10.1080/07391102.2021.1957716", "title": "Accuracy and precision of binding free energy prediction for a tacrine related lead inhibitor of acetylcholinesterase with an arsenal of supercomputerized molecular modelling methods: a comparative study.", "llm_category": "pulling_simulation"}
+{"doi": "10.1083/jcb.201106057", "title": "Arrhythmogenic cardiomyopathy related DSG2 mutations affect desmosomal cadherin binding kinetics.", "llm_category": "analytical_model"}
+{"doi": "10.1042/bst20120349", "title": "Insights into chromatin fibre structure by <i>in vitro</i> and <i>in silico</i> single-molecule stretching experiments", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1016/j.xphs.2021.01.002", "title": "Molecular Dynamics Simulation to Uncover the Mechanisms of Protein Instability During Freezing.", "llm_category": "pulling_simulation"}
+{"doi": "10.1021/acssensors.0c02241", "title": "Practical Guide to Single-Protein AFM Nanomechanical Spectroscopy Mapping: Insights and Pitfalls As Unraveled by All-Atom MD Simulations on Immunoglobulin G.", "llm_category": "pulling_simulation"}
+{"doi": "10.1080/07391102.2019.1580616", "title": "Insights from molecular dynamics simulations and steered molecular dynamics simulations to exploit new trends of the interaction between HIF-1α and p300.", "llm_category": "pulling_simulation"}
+{"doi": "10.1021/jacs.9b12861", "title": "A Latent Mechanoacid for Time-Stamped Mechanochromism and Chemical Signaling in Polymeric Materials", "llm_category": "pulling_simulation"}
+{"doi": "10.26434/chemrxiv.7771112.v1 10.26434/chemrxiv.7771112 10.1021/acs.jctc.1c00405 10.1021/acs.jctc.9b00199 10.26434/chemrxiv.7771112.v2", "title": "Massively Parallel Implementation of Steered Molecular Dynamics in Tinker-HP: Comparisons of Polarizable and Non-Polarizable Simulations of Realistic Systems", "llm_category": "pulling_simulation"}
+{"doi": "10.1101/620005", "title": "Supercoiling DNA optically", "llm_category": "pulling_simulation"}
+{"doi": "10.1007/s10822-018-0136-8", "title": "Using steered molecular dynamics to study the interaction between ADP and the nucleotide-binding domain of yeast Hsp70 protein Ssa1.", "llm_category": "pulling_simulation"}
+{"doi": "10.1007/s12010-017-2549-6", "title": "Steered Molecular Dynamics for Investigating the Interactions Between Insulin Receptor Tyrosine Kinase (IRK) and Variants of Protein Tyrosine Phosphatase 1B (PTP1B).", "llm_category": "pulling_simulation"}
+{"doi": "10.1088/1742-5468/2016/12/123204", "title": "Nonequilibrium work theorems applied to transitions between configurational domains", "llm_category": "pulling_simulation"}
+{"doi": "10.1002/jcc.23977", "title": "Mechanism of proteolysis in matrix metalloproteinase-2 revealed by QM/MM modeling.", "llm_category": "pulling_simulation"}
+{"doi": "10.1002/psc.2739", "title": "A novel chimeric peptide with antimicrobial activity.", "llm_category": "pulling_simulation"}
+{"doi": "10.1002/macp.201400585", "title": "Polyethylene‐Assisted Exfoliation of Hexagonal Boron Nitride in Composite Fibers: A Combined Experimental and Computational Study", "llm_category": "pulling_simulation"}
+{"doi": "10.1021/bi500814t", "title": "Flexible docking-based molecular dynamics/steered molecular dynamics calculations of protein-protein contacts in a complex of cytochrome P450 1A2 with cytochrome b5.", "llm_category": "pulling_simulation"}
+{"doi": "10.1021/bi4015715", "title": "Subtle dynamics of holo glutamine binding protein revealed with a rigid paramagnetic probe.", "llm_category": "pulling_simulation"}
+{"doi": "10.1039/c3cp53511h", "title": "A steered molecular dynamics mediated hit discovery for histone deacetylases.", "llm_category": "pulling_simulation"}
+{"doi": "10.2174/13816128113199990632", "title": "In silico screening for potent inhibitors against the NS3/4A protease of hepatitis C virus.", "llm_category": "pulling_simulation"}
