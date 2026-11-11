@@ -40,3 +40,4 @@ SIMX-000240,10.1063/1.3553801,"Cystine knot proteins (15 studied, e.g., 1bmp, 1f
 SIMX-000442,10.1021/acsnano.6c12331,SuperMyo series β-sheet proteins,AA-EXP,other,authors' judgement: experimental validation confirms computational prediction,
 SIM-000014,10.1021/acsomega.4c01396,Fat10,AA-EXP,pathway_order,"The paper makes an explicit experimentally-testable prediction about the unfolding pathway of Fat10 under mechanical pulling, but no matching experiment exists in SMASH-BIO.",
 SIM-000014,10.1021/acsomega.4c01396,Fat10,AA-EXP,other,"The paper makes an explicit experimentally-testable prediction about the work required to unfold Fat10, but no matching experiment exists in SMASH-BIO.",
+SIMX-000734,10.7498/aps.61.146102,"single wall carbon nanotube (8,8)",AA-EXP,rupture_force,authors' stated judgement,

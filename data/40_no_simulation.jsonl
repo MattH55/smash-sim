@@ -134,3 +134,19 @@
 {"doi": "10.1073/pnas.1003533107", "title": "Promoter melting triggered by bacterial RNA polymerase occurs in three steps.", "llm_category": "pulling_simulation"}
 {"doi": "10.1021/bi9005072", "title": "Glutamate racemase dimerization inhibits dynamic conformational flexibility and reduces catalytic rates.", "llm_category": "pulling_simulation"}
 {"doi": "10.1088/1478-3975/6/2/025003", "title": "Dynamical modeling of molecular constructions and setups for DNA unzipping", "llm_category": "pulling_simulation"}
+{"doi": "10.1016/j.actbio.2025.04.012", "title": "The tubular cavity of tobacco mosaic virus shields mechanical stress and regulates disassembly.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1155/2012/569870", "title": "Revealing −1 Programmed Ribosomal Frameshifting Mechanisms by Single-Molecule Techniques and Computational Methods", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1021/acs.langmuir.2c02418", "title": "Interfacial Layer Breaker: A Violation of Stokes’ Law in High-Speed Atomic Force Microscope Flows", "llm_category": "pulling_simulation"}
+{"doi": "10.3390/ijms11041557", "title": "Chromatin Fiber Dynamics under Tension and Torsion", "llm_category": "pulling_simulation"}
+{"doi": "10.1088/0953-8984/15/18/305", "title": "Dynamic single-molecule force spectroscopy: bond rupture analysis with variable spacer length", "llm_category": "pulling_simulation"}
+{"doi": "10.2174/0113894501473387260824100136", "title": "In-silico Identification of Cyclic Peptide Inhibitors for A42r Profilin-like Protein from Monkeypox Virus.", "llm_category": "pulling_simulation"}
+{"doi": "10.1016/j.foodchem.2026.149307", "title": "Impact of protein binding topology on the stability and antioxidant capacity of α-linolenic acid nanoemulsions.", "llm_category": "pulling_simulation"}
+{"doi": "10.1021/acs.jpcb.6c00613", "title": "Decoupling Gating and Selectivity in the Mechanosensitive OSCA3.1 Channel: A Free Energy Landscape and Hydration Dynamics Study.", "llm_category": "pulling_simulation"}
+{"doi": "10.1021/acs.langmuir.5c06371", "title": "The Complex Formation Mechanism between β-Cyclodextrin and Organic Micropollutants in Water, Studied by Molecular Dynamics Simulations.", "llm_category": "pulling_simulation"}
+{"doi": "10.1016/j.ijbiomac.2025.148553", "title": "Understanding the host cell surface receptor recognition by adeno associated virus 2 capsid protein and its modulation through allostery-driven mutations: An integrative modelling and simulation approach.", "llm_category": "pulling_simulation"}
+{"doi": "10.1109/tvcg.2024.3372128", "title": "Molecular Docking Improved with Human Spatial Perception Using Virtual Reality.", "llm_category": "pulling_simulation"}
+{"doi": "10.1098/rsta.2022.0243", "title": "Molecular basis of conformational changes and mechanics of integrins.", "llm_category": "pulling_simulation"}
+{"doi": "10.1080/07391102.2023.2175374", "title": "Arginine transportation mechanism through cationic amino acid transporter 1: insights from molecular dynamics studies.", "llm_category": "pulling_simulation"}
+{"doi": "10.1002/jcb.30237", "title": "Identification of acridinedione scaffolds as potential inhibitor of DENV-2 C protein: An in silico strategy to combat dengue.", "llm_category": "pulling_simulation"}
+{"doi": "10.1021/acs.jpclett.2c00030", "title": "Guanine-Specific Chemical Reaction Reveals ssDNA Interactions on Carbon Nanotube Surfaces.", "llm_category": "pulling_simulation"}
+{"doi": "10.1080/07391102.2021.1957716", "title": "Accuracy and precision of binding free energy prediction for a tacrine related lead inhibitor of acetylcholinesterase with an arsenal of supercomputerized molecular modelling methods: a comparative study.", "llm_category": "pulling_simulation"}
