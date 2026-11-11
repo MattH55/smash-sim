@@ -120,3 +120,17 @@
 {"doi": "10.1360/ssv-2025-0103", "title": "Decoding nucleosome dynamics: insights from single-molecule magnetic tweezers approaches", "llm_category": "pulling_simulation"}
 {"doi": "10.1109/mcse.2007.55", "title": "Conformational Changes and Unfolding of β-Amyloid Substrates in the Active Site of γ-Secretase.", "llm_category": "pulling_simulation"}
 {"doi": "10.32469/10355/105927", "title": "Theoretical and computational modeling of the interactions of peptides and proteins with lipid bilayer surfaces", "llm_category": "pulling_simulation"}
+{"doi": "10.1116/1.4983150", "title": "“Living” dynamics of filamentous bacteria on an adherent surface under hydrodynamic exposure", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1016/s0263-7855(97)00009-x", "title": "In Silico Evaluation of Hexamethylene Amiloride Derivatives as Potential Luminal Inhibitors of SARS-CoV-2 E Protein.", "llm_category": "pulling_simulation"}
+{"doi": "10.1021/ar000033j", "title": "The effects of mutation on the drug binding affinity of Neuraminidase: case study of Capsaicin using steered molecular dynamics simulation.", "llm_category": "pulling_simulation"}
+{"doi": "10.1002/smll.202201674", "title": "Gecko Adhesion on Flat and Rough Surfaces: Simulations with a Multi‐Scale Molecular Model", "llm_category": "pulling_simulation"}
+{"doi": "10.1002/jcc.540130812", "title": "Mimicking H3 Substrate Arginine in the Design of G9a Lysine Methyltransferase Inhibitors for Cancer Therapy: A Computational Study for Structure-Based Drug Design.", "llm_category": "pulling_simulation"}
+{"doi": "10.1093/nar/gkab656", "title": "A nanoscale DNA force spectrometer capable of applying tension and compression on biomolecules.", "llm_category": "pulling_simulation"}
+{"doi": "10.1002/pro.3117", "title": "The structural role of osteocalcin in bone biomechanics and its alteration in Type-2 Diabetes.", "llm_category": "pulling_simulation"}
+{"doi": "10.1038/s41586-018-0215-y", "title": "Large-scale conformational rearrangement of the α5-helix of Gα subunits in complex with the guanine nucleotide exchange factor Ric8A.", "llm_category": "pulling_simulation"}
+{"doi": "10.1021/acs.nanolett.8b03860", "title": "Plasmon Rulers as a Probe for Real-Time Microsecond Conformational Dynamics of Single Molecules", "llm_category": "pulling_simulation"}
+{"doi": "10.1021/acs.nanolett.8b01374", "title": "Programmable Multivalent DNA-Origami Tension Probes for Reporting Cellular Traction Forces", "llm_category": "pulling_simulation"}
+{"doi": "10.1073/pnas.1014278108", "title": "Unfolding and translocation pathway of substrate protein controlled by structure in repetitive allosteric cycles of the ClpY ATPase.", "llm_category": "pulling_simulation"}
+{"doi": "10.1073/pnas.1003533107", "title": "Promoter melting triggered by bacterial RNA polymerase occurs in three steps.", "llm_category": "pulling_simulation"}
+{"doi": "10.1021/bi9005072", "title": "Glutamate racemase dimerization inhibits dynamic conformational flexibility and reduces catalytic rates.", "llm_category": "pulling_simulation"}
+{"doi": "10.1088/1478-3975/6/2/025003", "title": "Dynamical modeling of molecular constructions and setups for DNA unzipping", "llm_category": "pulling_simulation"}
