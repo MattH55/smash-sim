@@ -98,3 +98,25 @@
 {"doi": "10.1016/j.ijbiomac.2019.08.220", "title": "Dynamic structural determinants underlie the neurotoxicity of the N-terminal tau 26-44 peptide in Alzheimer's disease and other human tauopathies.", "llm_category": "sim_exp_comparison"}
 {"doi": "10.1039/c9cp04197d", "title": "Memory effects in single-molecule force spectroscopy measurements of biomolecular folding", "llm_category": "sim_exp_comparison"}
 {"doi": "10.1039/c8cp00925b", "title": "Steered molecular dynamics simulations reveal the role of Ca2+ in regulating mechanostability of cellulose-binding proteins.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1186/1471-2105-7-316", "title": "Computational studies on the catalytic potential of the double active site for enzyme engineering.", "llm_category": "pulling_simulation"}
+{"doi": "10.1091/mbc.e17-03-0168", "title": "Salt bridges gate α-catenin activation at intercellular junctions.", "llm_category": "pulling_simulation"}
+{"doi": "10.1038/srep12550", "title": "Multiple stochastic pathways in forced peptide-lipid membrane detachment.", "llm_category": "analytical_model"}
+{"doi": "10.64898/2026.01.13.699108", "title": "An Aggregation Prone Region (APR) in talin controls talin self-interactions to regulate integrin adhesion complex dynamics", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1101/2022.07.15.499953", "title": "Plasticity of the proteasome-targeting signal Fat10 enhances substrate degradation", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1101/2022.08.14.503897", "title": "Combining DNA scaffolds and acoustic force spectroscopy to characterize individual protein bonds", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1039/c5nr07612a", "title": "Adsorption orientations and immunological recognition of antibodies on graphene.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1021/la504542f", "title": "Scaling from single molecule to macroscopic adhesion at polymer/metal interfaces.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1088/0953-8984/27/6/064106", "title": "Condensation transition and forced unravelling of DNA-histone H1 toroids: a multi-state free energy landscape", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1002/ange.201409691", "title": "Lokalisierung eines mechanochemischen Bindungsbruchs durch Einbettung des Mechanophors in einen Makrocyclus", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1134/s0006297913110023", "title": "Experimental and theoretical studies of mechanical unfolding of different proteins", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1002/adfm.201203424", "title": "In Situ Atomic Force Microscopy as a Tool for Investigating Interactions and Assembly Dynamics in Biomolecular and Biomineral Systems", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1063/1.4758988", "title": "Molecular dynamics prediction of interfacial strength and validation through atomic force microscopy", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1088/0953-8984/22/45/454119", "title": "Sequence-dependent unfolding kinetics of DNA hairpins studied by nanopore force spectroscopy.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1002/prot.21145", "title": "Thermal versus mechanical unfolding of ubiquitin.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1021/acs.chemrev.7b00305", "title": "An In silico analysis on the phosphorylation dependent structural and thermal stability of thermophilic proteins.", "llm_category": "pulling_simulation"}
+{"doi": "10.5281/zenodo.22948215", "title": "AMR-UNBIND", "llm_category": "pulling_simulation"}
+{"doi": "10.14288/1.0452095", "title": "Steered molecular dynamics simulations of optical tweezer experiments on the CsgA subunit", "llm_category": "pulling_simulation"}
+{"doi": "10.1016/0378-1119(87)90468-9", "title": "GerAB residues predicted to interfere with water passage based on steered molecular dynamics are key to germinosome functionality.", "llm_category": "pulling_simulation"}
+{"doi": "10.1360/ssv-2025-0103", "title": "Decoding nucleosome dynamics: insights from single-molecule magnetic tweezers approaches", "llm_category": "pulling_simulation"}
+{"doi": "10.1109/mcse.2007.55", "title": "Conformational Changes and Unfolding of β-Amyloid Substrates in the Active Site of γ-Secretase.", "llm_category": "pulling_simulation"}
+{"doi": "10.32469/10355/105927", "title": "Theoretical and computational modeling of the interactions of peptides and proteins with lipid bilayer surfaces", "llm_category": "pulling_simulation"}
