@@ -184,3 +184,29 @@
 {"doi": "10.1039/b413131b", "title": "Simulated force-induced unfolding of alpha-helices: dependence of stretching stability on primary sequence.", "llm_category": "pulling_simulation"}
 {"doi": "pmid:16783922", "title": "Force-induced unfolding of the focal adhesion targeting domain and the influence of paxillin binding.", "llm_category": "pulling_simulation"}
 {"doi": "10.1115/1.1804999", "title": "Dynamic Analysis of a Protein-Ligand Molecular Chain Attached to an Atomic Force Microscope", "llm_category": "pulling_simulation"}
+{"doi": "10.1101/2021.03.01.433414", "title": "Titin kinase ubiquitination aligns autophagy receptors with mechanical signals in the sarcomere.", "llm_category": "pulling_simulation"}
+{"doi": "10.1371/journal.pone.0041667", "title": "Bisphenol A binds to the local anesthetic receptor site to block the human cardiac sodium channel.", "llm_category": "pulling_simulation"}
+{"doi": "10.1096/fj.09-151084", "title": "Structural insights into retinitis pigmentosa from unfolding simulations of rhodopsin mutants.", "llm_category": "pulling_simulation"}
+{"doi": "10.1103/physreve.63.021905", "title": "Mechanical unfolding and refolding of proteins: An off-lattice model study", "llm_category": "pulling_simulation"}
+{"doi": "10.3390/life12071089", "title": "Nucleic Acid Thermodynamics Derived from Mechanical Unzipping Experiments", "llm_category": "analytical_model"}
+{"doi": "10.3390/biomedicines9101395", "title": "Protein Unfolding: Denaturant vs. Force", "llm_category": "analytical_model"}
+{"doi": "10.1039/d0cs00318b", "title": "Nanomechanical mapping of soft materials with the atomic force microscope: methods, theory and applications", "llm_category": "analytical_model"}
+{"doi": "10.1073/pnas.1712790115", "title": "Dynamic force spectroscopy of synthetic oligorotaxane foldamers.", "llm_category": "analytical_model"}
+{"doi": "10.1146/annurev-physiol-021317-121303", "title": "Mechanical Protein Unfolding and Degradation", "llm_category": "analytical_model"}
+{"doi": "10.1063/1.5030427", "title": "Communication: Transition-path velocity as an experimental measure of barrier crossing dynamics", "llm_category": "analytical_model"}
+{"doi": "10.1088/0034-4885/79/7/076601", "title": "The physics of pulling polyproteins: a review of single molecule force spectroscopy using the AFM to study protein unfolding", "llm_category": "analytical_model"}
+{"doi": "10.1093/nar/gkw1173", "title": "Elasticity of the transition state for oligonucleotide hybridization", "llm_category": "analytical_model"}
+{"doi": "10.18725/oparu-3340", "title": "Single molecule force spectroscopic investigation of the siloxane bond in polydimethylsiloxane and atomic force microscopy Imaging of nucleosomal arrays", "llm_category": "analytical_model"}
+{"doi": "10.1073/pnas.1519633112", "title": "On artifacts in single-molecule force spectroscopy", "llm_category": "analytical_model"}
+{"doi": "10.1146/annurev-biophys-051013-022754", "title": "Reconstructing Folding Energy Landscapes by Single-Molecule Force Spectroscopy", "llm_category": "analytical_model"}
+{"doi": "title:methodsofsinglemoleculeenergylandscapereconstructionwithopticaltraps", "title": "Methods of single-molecule energy landscape reconstruction with optical traps", "llm_category": "analytical_model"}
+{"doi": "10.5075/epfl-thesis-5440", "title": "Statistical Study of the Unfolding of Multimodular Proteins and their Energy Landscape by Atomic Force Microscopy", "llm_category": "analytical_model"}
+{"doi": "10.1073/pnas.0806085105", "title": "Theory, analysis, and interpretation of single-molecule force spectroscopy experiments.", "llm_category": "analytical_model"}
+{"doi": "10.1103/physrevlett.101.248104", "title": "New Dynamical Window onto the Landscape for Forced Protein Unfolding", "llm_category": "analytical_model"}
+{"doi": "0307160v2", "title": "A New Look at Dynamic Force Spectroscopy of Adhesion Bonds", "llm_category": "analytical_model"}
+{"doi": "10.1073/pnas.071034098", "title": "Free energy reconstruction from nonequilibrium single-molecule pulling experiments.", "llm_category": "analytical_model"}
+{"doi": "10.1007/s12551-025-01310-0", "title": "On the free energy of protein folding in optical tweezers experiments", "llm_category": "analytical_model"}
+{"doi": "10.1088/1674-1056/acf03e", "title": "Combination of density-clustering and supervised classification for event identification in single-molecule force spectroscopy data", "llm_category": "analytical_model"}
+{"doi": "10.1021/acs.jpcb.1c03552", "title": "Details of Single-Molecule Force Spectroscopy Data Decoded by a Network-Based Automatic Clustering Algorithm", "llm_category": "analytical_model"}
+{"doi": "10.1039/c9ay01150a", "title": "ForSDAT: an automated platform for analyzing force spectroscopy measurements", "llm_category": "analytical_model"}
+{"doi": "10.1021/acsomega.7b01815", "title": "Determination of the Thermodynamic Parameters of DNA\nDouble Helix Unwinding with the Help of Mechanical Methods", "llm_category": "analytical_model"}
