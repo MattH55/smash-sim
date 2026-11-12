@@ -1,8 +1,8 @@
 direction,agree,disagree,partial,untested
 exp_falsifies_model,0,7,0,0
 exp_parameterizes_model,27,0,2,0
-exp_validates_sim,550,30,111,10
-model_reduces_sim,9,0,1,1
-mutual,106,1,6,0
-sim_predicts_exp,35,2,5,47
-sim_validates_model,25,0,1,1
+exp_validates_sim,578,31,111,10
+model_reduces_sim,9,1,1,1
+mutual,109,1,6,0
+sim_predicts_exp,36,2,5,48
+sim_validates_model,26,0,1,1
