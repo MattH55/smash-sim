@@ -29,7 +29,8 @@ def crossref_meta(doi: str) -> dict | None:
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--snowball", action="store_true")
-    ap.add_argument("--from-records", action="store_true", help="also snowball from every enriched record's DOI")
+    ap.add_argument("--from-records", action="store_true", help="also snowball from enriched records with an experimental comparison")
+    ap.add_argument("--max-records", type=int, default=150, help="max record DOIs to snowball per run")
     args = ap.parse_args()
 
     hits_path = cfg["_data"] / "20_hits.jsonl"
@@ -51,10 +52,17 @@ if __name__ == "__main__":
     print(f"seed: {added} new DOIs appended to {hits_path}")
 
     if args.from_records:
-        for r in read_jsonl(cfg["_data"] / "40_records.jsonl"):
-            if r.get("doi") and not r["doi"].startswith("smashbio:"):
-                dois.add(r["doi"])
-        print(f"snowball seed set: {len(dois)} DOIs (seed cases + enriched records)")
+        # snowball only from records that compare to experiment (the review's core), newest first, capped
+        recs = [r for r in read_jsonl(cfg["_data"] / "40_records.jsonl")
+                if r.get("doi") and not r["doi"].startswith(("smashbio:", "mpdb:"))
+                and r.get("experimental_comparison_in_paper", {}).get("present")]
+        recs.sort(key=lambda r: -(r.get("year") or 0))
+        already = set(read_jsonl(cfg["_data"] / "21_snowballed.jsonl") and [x["doi"] for x in read_jsonl(cfg["_data"] / "21_snowballed.jsonl")])
+        fresh = [r["doi"] for r in recs if r["doi"] not in already][: args.max_records]
+        dois |= set(fresh)
+        print(f"snowball seed set: {len(dois)} DOIs (seed cases + {len(fresh)} not-yet-snowballed comparison records)")
+        for d in fresh:
+            append_jsonl(cfg["_data"] / "21_snowballed.jsonl", {"doi": d})
 
     if args.snowball:
         n = 0
