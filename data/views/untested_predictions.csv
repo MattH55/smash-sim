@@ -44,3 +44,4 @@ SIMX-000734,10.7498/aps.61.146102,"single wall carbon nanotube (8,8)",AA-EXP,rup
 SIMX-000963,10.1021/acs.jctc.8b01270,A2A adenosine receptor,AA-EXP,dwell_time_distribution,good correlation (R² = 0.79) reported between computational metric and experimental residence time,
 SIMX-001337,10.1021/acsnano.4c07352,unknown,CG-GO,other,Authors' own judgement: 'The predictions from our models are then confirmed experimentally'.,
 SIMX-001361,10.1021/acs.jpcb.8b02137,β-lactamase protein with small compounds,AA-ENH,rupture_force,Correlation coefficient R ≈ 0.84 reported between simulation-derived rupture/unbinding time and experimental inhibition constants.,
+SIMX-000944,10.1021/acs.jcim.9b00649,Sigma1 receptor (S1R),AA-EXP,dG_unfold,authors' stated agreement between free energy calculations and experimental Ki values,

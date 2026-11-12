@@ -210,3 +210,28 @@
 {"doi": "10.1021/acs.jpcb.1c03552", "title": "Details of Single-Molecule Force Spectroscopy Data Decoded by a Network-Based Automatic Clustering Algorithm", "llm_category": "analytical_model"}
 {"doi": "10.1039/c9ay01150a", "title": "ForSDAT: an automated platform for analyzing force spectroscopy measurements", "llm_category": "analytical_model"}
 {"doi": "10.1021/acsomega.7b01815", "title": "Determination of the Thermodynamic Parameters of DNA\nDouble Helix Unwinding with the Help of Mechanical Methods", "llm_category": "analytical_model"}
+{"doi": "10.1038/s42003-019-0734-6", "title": "Positive allosteric modulators of lecithin: Cholesterol acyltransferase adjust the orientation of the membrane-binding domain and alter its spatial free energy profile.", "llm_category": "pulling_simulation"}
+{"doi": "10.56919/usci.2652.019", "title": "Comparative Force-Induced Structural Transitions in Single and Double-Stranded DNA from Coarse-Grained oxDNA2 Simulations", "llm_category": "pulling_simulation"}
+{"doi": "10.1039/d3sm00219e", "title": "Viscoelasticity of single folded proteins using dynamic atomic force microscopy", "llm_category": "analytical_model"}
+{"doi": "10.35848/1347-4065/abfa6b", "title": "Detecting non-covalent interactions in high vacuum by single molecule force spectroscopy: a brief review", "llm_category": "analytical_model"}
+{"doi": "10.1016/j.bpj.2016.08.018", "title": "Can Dissipative Properties of Single Molecules Be Extracted from a Force Spectroscopy Experiment?", "llm_category": "analytical_model"}
+{"doi": "10.1021/acs.nanolett.5b01223", "title": "Single-molecule force spectroscopy of membrane proteins from membranes freely spanning across nanoscopic pores.", "llm_category": "analytical_model"}
+{"doi": "10.1039/c3sm52257a", "title": "Comparison of three competing dynamic force spectroscopy models to study binding forces of amyloid-β (1-42).", "llm_category": "analytical_model"}
+{"doi": "10.1021/la101269q", "title": "Kinetic Parameters from Detection Probability in Single Molecule Force Spectroscopy", "llm_category": "analytical_model"}
+{"doi": "10.3390/ijms11052134", "title": "Reconsideration of Dynamic Force Spectroscopy Analysis of Streptavidin-Biotin Interactions", "llm_category": "analytical_model"}
+{"doi": "10.1063/1.3369006", "title": "Master equation approach to single oligomeric enzyme catalysis: Mechanically controlled further catalysis", "llm_category": "analytical_model"}
+{"doi": "10.1002/9780470027318.a9039", "title": "Probing Biomolecular Interactions Using Nanopore Force Spectroscopy", "llm_category": "analytical_model"}
+{"doi": "10.1103/physreve.77.031916", "title": "Maxwell relations for single-DNA experiments: Monitoring protein binding and double-helix torque with force-extension measurements", "llm_category": "analytical_model"}
+{"doi": "10.1002/prot.22281", "title": "Mechanical stability and differentially conserved physical–chemical properties of titin Ig‐domains", "llm_category": "analytical_model"}
+{"doi": "10.1002/cphc.200700662", "title": "From Valleys to Ridges: Exploring the Dynamic Energy Landscape of Single Membrane Proteins", "llm_category": "analytical_model"}
+{"doi": "10.1021/la702368b", "title": "Dwell Time Analysis of a Single-Molecule Mechanochemical Reaction", "llm_category": "analytical_model"}
+{"doi": "10.1016/j.ultramic.2007.04.019", "title": "An integrated methodology for data processing in dynamic force spectroscopy of ligand–receptor binding", "llm_category": "analytical_model"}
+{"doi": "10.1557/proc-0899-n03-01", "title": "The Effect of Tethering on the Chemical Kinetics of Single Bonds", "llm_category": "analytical_model"}
+{"doi": "10.1016/j.jbiotec.2004.04.017", "title": "Theoretical analysis of dynamic force spectroscopy experiments on ligand–receptor complexes", "llm_category": "analytical_model"}
+{"doi": "10.1021/la026188c", "title": "Determination of Energy Barriers for Intermolecular Interactions by Variable Temperature Dynamic Force Spectroscopy", "llm_category": "analytical_model"}
+{"doi": "10.1557/proc-790-p4.3", "title": "Tapping-mode AFM - Force Measurement Capabilities on Compliant Surfaces", "llm_category": "analytical_model"}
+{"doi": "10.1073/pnas.082520599", "title": "Combining constitutive materials modeling with atomic force microscopy to understand the mechanical properties of living cells", "llm_category": "analytical_model"}
+{"doi": "10.1103/physreve.63.021906", "title": "Stretching a macromolecule in an atomic force microscope: Statistical mechanical analysis", "llm_category": "analytical_model"}
+{"doi": "10.1073/pnas.180293097", "title": "Unbinding process of adsorbed proteins under external stress studied by atomic force microscopy spectroscopy", "llm_category": "analytical_model"}
+{"doi": "10.1021/la991368g", "title": "Reconstruction of the Tip−Surface Interaction Potential by Analysis of the Brownian Motion of an Atomic Force Microscope Tip", "llm_category": "analytical_model"}
+{"doi": "10.1002/(sici)1097-0134(19991201)37:4<576::aid-prot8>3.0.co;2-o", "title": "Graphical method for force analysis: Macromolecular mechanics with atomic force microscopy", "llm_category": "analytical_model"}

@@ -839,3 +839,14 @@
 {"sim_id": "SIMX-001333", "smfs_id": "SMFS-007602", "how": "cited_doi", "rank": -1, "geometry_match": null}
 {"sim_id": "SIMX-001356", "smfs_id": "SMFS-002415", "how": "cited_doi", "rank": -1, "geometry_match": null}
 {"sim_id": "SIMX-001362", "smfs_id": "SMFS-003084", "how": "cited_doi", "rank": -1, "geometry_match": null}
+{"sim_id": "SIMX-001370", "smfs_id": "SMFS-004410", "how": "cited_doi", "rank": -1, "geometry_match": null}
+{"sim_id": "SIMX-001375", "smfs_id": null, "exp_doi": "10.1021/acs.nanolett.7b00941", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-001383", "smfs_id": null, "exp_doi": "10.1021/acs.langmuir.5b04618", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-001398", "smfs_id": "SMFS-005076", "how": "cited_doi", "rank": -1, "geometry_match": null}
+{"sim_id": "SIMX-001399", "smfs_id": null, "exp_doi": "10.3390/polym5010269", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-001400", "smfs_id": "SMFS-005337", "how": "cited_doi", "rank": -1, "geometry_match": null}
+{"sim_id": "SIMX-001410", "smfs_id": "SMFS-005611", "how": "cited_doi", "rank": -1, "geometry_match": null}
+{"sim_id": "SIMX-001434", "smfs_id": "SMFS-006461", "how": "cited_doi", "rank": -1, "geometry_match": null}
+{"sim_id": "SIMX-001450", "smfs_id": "SMFS-006789", "how": "cited_doi", "rank": -1, "geometry_match": null}
+{"sim_id": "SIMX-001460", "smfs_id": "SMFS-007159", "how": "cited_doi", "rank": -1, "geometry_match": null}
+{"sim_id": "SIMX-001468", "smfs_id": null, "exp_doi": "10.1021/ma0009404", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
