@@ -235,3 +235,12 @@
 {"doi": "10.1073/pnas.180293097", "title": "Unbinding process of adsorbed proteins under external stress studied by atomic force microscopy spectroscopy", "llm_category": "analytical_model"}
 {"doi": "10.1021/la991368g", "title": "Reconstruction of the Tip−Surface Interaction Potential by Analysis of the Brownian Motion of an Atomic Force Microscope Tip", "llm_category": "analytical_model"}
 {"doi": "10.1002/(sici)1097-0134(19991201)37:4<576::aid-prot8>3.0.co;2-o", "title": "Graphical method for force analysis: Macromolecular mechanics with atomic force microscopy", "llm_category": "analytical_model"}
+{"doi": "10.1038/nsmb1196", "title": "Evolution of N-terminal mechanical lability as a determinant for Type III secretion.", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1023/a:1023450204528", "title": "Optical tweezers stretching of chromatin", "llm_category": "pulling_simulation"}
+{"doi": "10.1006/bbrc.2001.5426", "title": "Stretching Short Biopolymers Using Optical Tweezers", "llm_category": "pulling_simulation"}
+{"doi": "10.1039/c4cs00176a", "title": "Quantitative biomolecular imaging by dynamic nanomechanical mapping", "llm_category": "analytical_model"}
+{"doi": "10.1039/c3cp52142g", "title": "Towards design principles for determining the mechanical stability of proteins", "llm_category": "analytical_model"}
+{"doi": "10.1002/cphc.201200154", "title": "Feeling Inter‐ or Intramolecular Interactions with the Polymer Chain as Probe: Recent Progress in SMFS Studies on Macromolecular Interactions", "llm_category": "analytical_model"}
+{"doi": "10.1143/apex.2.085002", "title": "Site-Selective Anatomy of Step-by-Step Reactions in Ligand–Receptor Bonding Processes Using Dynamic Force Spectroscopy", "llm_category": "analytical_model"}
+{"doi": "10.1103/physreve.77.031912", "title": "Refined procedure of evaluating experimental single-molecule force spectroscopy data", "llm_category": "analytical_model"}
+{"doi": "10.1002/cphc.200400343", "title": "Protein Unfolding and Refolding Under Force: Methodologies for Nanomechanics", "llm_category": "analytical_model"}

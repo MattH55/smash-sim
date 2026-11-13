@@ -850,3 +850,6 @@
 {"sim_id": "SIMX-001450", "smfs_id": "SMFS-006789", "how": "cited_doi", "rank": -1, "geometry_match": null}
 {"sim_id": "SIMX-001460", "smfs_id": "SMFS-007159", "how": "cited_doi", "rank": -1, "geometry_match": null}
 {"sim_id": "SIMX-001468", "smfs_id": null, "exp_doi": "10.1021/ma0009404", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-001475", "smfs_id": "SMFS-006878", "how": "cited_doi", "rank": -1, "geometry_match": null}
+{"sim_id": "SIMX-001476", "smfs_id": null, "exp_doi": "10.1038/nsmb.1821", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-001476", "smfs_id": null, "exp_doi": "10.1038/nature04383", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
