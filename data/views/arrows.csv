@@ -1,7 +1,7 @@
 direction,agree,disagree,partial,untested
 exp_falsifies_model,0,9,0,0
-exp_parameterizes_model,43,0,2,0
-exp_validates_sim,610,34,113,12
+exp_parameterizes_model,44,0,2,0
+exp_validates_sim,611,34,114,12
 model_reduces_sim,27,1,1,1
 mutual,114,1,7,0
 sim_predicts_exp,38,2,5,52
