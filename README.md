@@ -47,9 +47,11 @@ python pipeline/run.py --steps ingest,fulltext,enrich,compare,views --limit 10
 
 Paywalled papers: drop PDFs into `data/pdfs/<doi with / → _>.pdf` (see `data/30_missing.csv`) and rerun `fulltext`.
 
-## Scaling to the full literature
+## Scaling to the full literature — status (13 Nov 2026)
 
-The gap search (first pass) identified 18,163 records, 16,606 after deduplication, 4,087 passing keyword rules and 2,305 passing the LLM screen: 1,008 pulling-simulation papers, 365 explicit simulation–experiment comparisons, 408 analytical-model papers and 523 experiment-only SMFS papers. The experiment-only set is written to `data/20_smfs_candidates_for_smash_bio.jsonl` as a hand-back for SMASH-BIO's harvester. The other 1,781 are enriched in priority order (comparisons → simulations → analytical; full text before abstract) in chunks of 150 records per scheduled run (every 6 h), so the full corpus completes in a few days without exceeding Actions' job limit. `data/prisma_counts.json` holds the PRISMA numbers.
+PRISMA (first pass): 18,163 records identified → 16,606 after deduplication → 91 already in SMASH-BIO → 4,087 keyword-pass → 2,306 LLM-include, of which 524 experiment-only SMFS papers were handed back to SMASH-BIO (`data/20_smfs_candidates_for_smash_bio.jsonl`) and 1,781 simulation/model papers were enriched. Result: **1,608 analysis records** (127 SMASH-BIO-derived covering 121/123 SMASH-BIO records; 1,481 gap-search `SIMX-` records), 246 papers excluded by the extractor as containing no pulling simulation or model, 68 unprocessable (no text of any kind). Text basis: 468 records from full text, 1,140 from abstract only (flagged `_derived.text_source`, confidence capped at 0.5). **1,099 comparison rows** for 610 records; 670 of them from full-text records. Every record cross-verified (2,238 numbers checked, 450 flagged). Chunks run every 6 h (200 records) and the gap search weekly; both are idempotent.
+
+Known limits of the automated pass: abstract-only records carry class, molecule and protocol mode but rarely numbers; `disagreement_reasons` were mostly returned as `unknown` and need a targeted pass; event-type tagging over-uses `A-enthalpic` relative to `A-entropic`; `molecule.type` is `other` for most abstract-only records. The review sheet (`data/review/sim_records_review.csv`, 1,608 rows, 134 with a field at confidence ≤ 0.3) is the entry point for human curation.
 
 ## Data flow
 
