@@ -244,3 +244,5 @@
 {"doi": "10.1143/apex.2.085002", "title": "Site-Selective Anatomy of Step-by-Step Reactions in Ligand–Receptor Bonding Processes Using Dynamic Force Spectroscopy", "llm_category": "analytical_model"}
 {"doi": "10.1103/physreve.77.031912", "title": "Refined procedure of evaluating experimental single-molecule force spectroscopy data", "llm_category": "analytical_model"}
 {"doi": "10.1002/cphc.200400343", "title": "Protein Unfolding and Refolding Under Force: Methodologies for Nanomechanics", "llm_category": "analytical_model"}
+{"doi": "10.1063/1.1740224", "title": "Bond clusters control rupture force limit in shear loaded histidine-Ni2+ metal-coordinated proteins.", "llm_category": "pulling_simulation"}
+{"doi": "10.3390/life11060515", "title": "Biomechanics of Neutrophil Tethers", "llm_category": "analytical_model"}
