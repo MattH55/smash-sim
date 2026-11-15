@@ -5,4 +5,4 @@ exp_validates_sim,612,34,115,13
 model_reduces_sim,28,1,2,1
 mutual,114,1,7,0
 sim_predicts_exp,38,2,5,52
-sim_validates_model,32,0,1,1
+sim_validates_model,32,0,2,1
