@@ -1,10 +1,10 @@
 class_id,A-entropic,A-enthalpic,A-cooperative,B-single,B-series,B-parallel,B-cross,B-formation
-AA-EXP,0,137,0,591,90,47,17,19
+AA-EXP,0,137,0,592,90,47,17,19
 AA-IMP,0,7,0,16,2,0,0,0
 AA-ENH,0,13,0,92,4,2,0,4
 CG-GO,0,32,0,50,27,8,1,11
 CG-SOP,0,11,0,7,7,0,0,2
-CG-ISING,0,4,0,7,7,1,0,1
+CG-ISING,0,5,0,8,7,1,0,1
 CG-OXDNA,0,8,0,1,7,0,0,1
 CG-TIS,0,2,0,2,1,0,0,1
 CG-HIRE,0,0,0,0,0,0,0,0
