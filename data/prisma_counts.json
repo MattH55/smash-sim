@@ -1,9 +1,9 @@
 {
-  "records_identified": 18163,
-  "after_dedupe": 16606,
-  "already_in_smash_bio": 91,
-  "after_rule_screen": 4087,
-  "llm_include_any": 2306,
-  "experiment_only_handed_back": 524,
-  "after_llm_screen": 1781
+  "records_identified": 54691,
+  "after_dedupe": 53261,
+  "already_in_smash_bio": 101,
+  "after_rule_screen": 5293,
+  "llm_include_any": 2666,
+  "experiment_only_handed_back": 759,
+  "after_llm_screen": 1906
 }
