@@ -878,3 +878,4 @@
 {"sim_id": "SIMX-001582", "smfs_id": null, "exp_doi": "10.1083/jcb.200901149", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
 {"sim_id": "SIMX-001583", "smfs_id": null, "exp_doi": "10.1110/ps.037325.108", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
 {"sim_id": "SIMX-001597", "smfs_id": null, "exp_doi": "10.1063/1.2756527", "how": "cited_doi_unindexed", "rank": 0, "geometry_match": null}
+{"sim_id": "SIMX-001605", "smfs_id": "SMFS-003861", "how": "cited_doi", "rank": -1, "geometry_match": null}

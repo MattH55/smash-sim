@@ -1,5 +1,5 @@
 class_id,A-entropic,A-enthalpic,A-cooperative,B-single,B-series,B-parallel,B-cross,B-formation
-AA-EXP,0,145,0,608,95,49,17,20
+AA-EXP,0,145,0,609,95,49,17,20
 AA-IMP,0,7,0,17,2,0,0,0
 AA-ENH,0,13,0,95,4,2,0,4
 CG-GO,0,33,0,50,29,8,1,12
@@ -14,7 +14,7 @@ KIN-STEM,0,0,0,2,0,0,0,0
 KIN-UNZIP,0,1,0,0,3,0,0,0
 AN-BOND,1,79,0,131,68,16,2,4
 AN-CLUSTER,0,0,0,1,0,1,0,0
-AN-POLY,0,45,0,7,13,1,0,2
+AN-POLY,0,46,0,7,13,1,0,2
 AN-NEQ,0,1,0,5,0,0,0,0
 CG-OTHER-PROT,0,0,0,2,0,0,0,0
 UNRESOLVED,0,0,0,0,0,0,0,0

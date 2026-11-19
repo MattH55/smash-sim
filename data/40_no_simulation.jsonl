@@ -296,3 +296,11 @@
 {"doi": "10.1063/1.2404981", "title": "Adhesion and elasticity in nanoscale indentation", "llm_category": "analytical_model"}
 {"doi": "10.1115/1.2073647", "title": "Thermo-Mechanical Responses of a Surface-Coupled AFM Cantilever", "llm_category": "analytical_model"}
 {"doi": "10.1021/nl034049p", "title": "Unzipping DNA Oligomers", "llm_category": "analytical_model"}
+{"doi": "10.1073/pnas.1920444117", "title": "Structural determinants of protocadherin-15 mechanics and function in hearing and balance perception.", "llm_category": "pulling_simulation"}
+{"doi": "10.1016/j.bpr.2021.100035", "title": "Correlating single-molecule rupture mechanics with cell population adhesion by yeast display", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1098/rsob.160136", "title": "Dynamics of cell wall elasticity pattern shapes the cell during yeast mating morphogenesis", "llm_category": "sim_exp_comparison"}
+{"doi": "10.64898/2026.02.08.704728", "title": "Coiled-coil domain kinking controls laminin-332 cleavage by elastase", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1021/acs.jpcb.5c00962", "title": "Correlation between Hydrogen Bond Strength and Temperature: A Quantitative Single-Molecule Study over a Broad Temperature Range", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1101/2025.05.14.653975", "title": "Flexible fitting to infer atomistic-precision models of large-amplitude conformational dynamics in biomolecules from high-speed atomic force microscopy imaging", "llm_category": "pulling_simulation"}
+{"doi": "10.1063/1.4967963", "title": "Dynamic simulations show repeated narrowing maximizes DNA linearization in elastomeric nanochannels", "llm_category": "pulling_simulation"}
+{"doi": "10.1021/jacs.8b02851", "title": "Angle-Dependent Atomic Force Microscopy Single-Chain Pulling of Adsorbed Macromolecules from Planar Surfaces Unveils the Signature of an Adsorption–Desorption Transition", "llm_category": "analytical_model"}
