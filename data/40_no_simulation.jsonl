@@ -248,3 +248,51 @@
 {"doi": "10.3390/life11060515", "title": "Biomechanics of Neutrophil Tethers", "llm_category": "analytical_model"}
 {"doi": "title:coarsegrainmolecularmodeldevelopmentandimplementationfordescribingvonwillebrandfactorbehaviorinhumanbloodflow", "title": "Coarse Grain Molecular Model Development and Implementation for Describing von Willebrand Factor Behavior in Human Blood Flow", "llm_category": "pulling_simulation"}
 {"doi": "10.1007/bf00169632", "title": "Bacteria as Bio-Template for 3D Carbon Nanotube Architectures.", "llm_category": "pulling_simulation"}
+{"doi": "10.1002/marc.70322", "title": "Single‐Chain Inherent Elasticity Reveals γ‐Irradiation–Induced Backbone Reconstruction in Poly(Vinylidene Fluoride)", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1093/nar/gkae063", "title": "The origin of different bending stiffness between double-stranded RNA and DNA revealed by magnetic tweezers and simulations", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1126/sciadv.adm7030", "title": "Synthesis, insertion, and characterization of SARS-CoV-2 membrane protein within lipid bilayers", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1126/science.adl0635", "title": "Removal of Pseudomonas type IV pili by a small RNA virus", "llm_category": "sim_exp_comparison"}
+{"doi": "10.20350/digitalcsic/13971", "title": "A Tethered Ligand Assay to Probe SARS-CoV-2:ACE2 Interactions", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1103/physrevresearch.2.043385", "title": "Universal force correlations in an RNA-DNA unzipping experiment", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1021/jacs.9b04383", "title": "Opposing Temperature Dependence of the Stretching Response of Single PEG and PNiPAM Polymers", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1021/acsphotonics.8b00176", "title": "Direct Particle Tracking Observation and Brownian Dynamics Simulations of a Single Nanoparticle Optically Trapped by a Plasmonic Nanoaperture", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1002/anie.201100181", "title": "Single‐Molecule Determination of the Face‐Specific Adsorption of Amelogenin’s C‐Terminus on Hydroxyapatite", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1109/iros.2009.5354351", "title": "Atomic force microscopy-based single-cell indentation: Experimentation and finite element simulation", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1073/pnas.96.14.7894", "title": "Atomic levers control pyranose ring conformations", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1101/2025.05.16.654432", "title": "Real-time Visualization of Trigger Factor on Translating Ribosomes", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1101/2025.06.05.657321", "title": "SURFS and AlphaFold Reveal Ribosome Footprint Shift Caused by EF-Tu D81 Mutation", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1093/nar/gkaf588", "title": "Structural and mechanistic insights into the sequential dsDNA cleavage by SpCas12f1", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1002/adts.202500522", "title": "Automatic Identification of Fold in Optical Tweezers‐Based Single‐Molecule Force Spectroscopy", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1021/acsnano.3c03055", "title": "Nanoscopic Characterization Reveals that Bulk Amorphous Elementary Boron Is Composed of a Ladder-like Polymer with B4 as the Structural Unit", "llm_category": "sim_exp_comparison"}
+{"doi": "10.3390/ijms21114142", "title": "Profound Nanoscale Structural and Biomechanical Changes in DNA Helix upon Treatment with Anthracycline Drugs", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1093/bioinformatics/btaa626", "title": "Automatic classification of single-molecule force spectroscopy traces from heterogeneous samples", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1042/bst20140302", "title": "Myosin tails and single α-helical domains", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1002/pro.503", "title": "Phenotypic effects of Ehlers–Danlos syndrome‐associated mutation on the FnIII domain of tenascin‐X", "llm_category": "sim_exp_comparison"}
+{"doi": "10.4028/www.scientific.net/ssp.121-123.1093", "title": "Experimental and Numerical Studies on B-DNA Overstretching Transition in Presence of Sodium Ions at Physiological Temperature", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1063/1.2175473", "title": "Imaging stability and average tip-sample force in tapping mode atomic force microscopy", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1063/1.2387122", "title": "Increasing the Q factor in the constant-excitation mode of frequency-modulation atomic force microscopy in liquid", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1128/jb.187.6.2127-2137.2005", "title": "Simultaneous Force and Fluorescence Measurements of a Protein That Forms a Bond between a Living Bacterium and a Solid Surface", "llm_category": "sim_exp_comparison"}
+{"doi": "10.3390/mi17111317", "title": "Molecular Dynamics Simulation of Atomic Force Microscopy Imaging of Groove Structures in Graphene", "llm_category": "pulling_simulation"}
+{"doi": "10.1016/j.lwt.2024.115914", "title": "Discovery of natural agents against Staphylococcus aureus based on EIIC by protein modeling, virtual screening and molecular dynamics", "llm_category": "pulling_simulation"}
+{"doi": "10.1021/acs.jpcb.6c04230", "title": "Hierarchical Reinforcement of Wireframe DNA Origami Nanotubes: Effects of Molecular Connectivity, Edge Architecture, Geometry, and Bracing on Tensile Mechanics.", "llm_category": "pulling_simulation"}
+{"doi": "10.1021/acsphotonics.5c01008", "title": "In-Plane Excitation of Wedge Plasmon Polariton Modes in a Double Nanohole for Trapping and Sensing Nanoparticles", "llm_category": "pulling_simulation"}
+{"doi": "10.1002/slct.202500794", "title": "Deep Learning‐Guided Molecular Docking for Rapid Identification of Novel HER2 Inhibitors in Breast Cancer Therapy", "llm_category": "pulling_simulation"}
+{"doi": "10.1021/acsnano.5c10073", "title": "Flexible Fitting to Infer Atomistic-Precision Models of Large-Amplitude Conformational Dynamics in Biomolecules from High-Speed Atomic Force Microscopy Imaging", "llm_category": "pulling_simulation"}
+{"doi": "10.3390/molecules28176367", "title": "Molecular Dynamics Simulation of Polyacrylamide Adsorption on Calcite", "llm_category": "pulling_simulation"}
+{"doi": "10.1002/cphc.201600690", "title": "Free Energy of Bare and Capped Gold Nanoparticles Permeating through a Lipid Bilayer", "llm_category": "pulling_simulation"}
+{"doi": "10.1063/1.2897760", "title": "Biomolecular simulations of membranes: Physical properties from different force fields", "llm_category": "pulling_simulation"}
+{"doi": "10.1364/oe.510635", "title": "Self-induced back-action for aperture trapping: Bethe-Rayleigh theory", "llm_category": "analytical_model"}
+{"doi": "10.1103/physreve.79.021910", "title": "Deformation of biological cells in the acoustic field of an oscillating bubble", "llm_category": "analytical_model"}
+{"doi": "10.1103/physrevlett.95.160601", "title": "Direct Observation of Nondiffusive Motion of a Brownian Particle", "llm_category": "analytical_model"}
+{"doi": "10.1088/0957-4484/8/2/004", "title": "How does a tip tap?", "llm_category": "analytical_model"}
+{"doi": "10.1093/nar/gkae560", "title": "TMPyP binding evokes a complex, tunable nanomechanical response in DNA", "llm_category": "analytical_model"}
+{"doi": "10.1007/978-1-4939-9187-7_7", "title": "Dynamic Force Spectroscopy Analysis on the Redox States of Protein Disulphide Bonds", "llm_category": "analytical_model"}
+{"doi": "10.7498/aps.65.188703", "title": "Mechanical properties of elastomeric proteins studied by single molecule force spectroscopy", "llm_category": "analytical_model"}
+{"doi": "10.1201/b11637", "title": "Dynamic Force Spectroscopy and Biomolecular Recognition", "llm_category": "analytical_model"}
+{"doi": "10.1002/elps.201200351", "title": "Progress toward the application of molecular force spectroscopy to <scp>DNA</scp> sequencing", "llm_category": "analytical_model"}
+{"doi": "10.1063/1.3510481", "title": "Quantitative modeling of forces in electromagnetic tweezers", "llm_category": "analytical_model"}
+{"doi": "10.1002/cphc.200700175", "title": "Interrogation of Single Synthetic Polymer Chains and Polysaccharides by AFM‐Based Force Spectroscopy", "llm_category": "analytical_model"}
+{"doi": "10.1557/proc-1062-nn05-08", "title": "Asymptotic Strength Limit of Hydrogen Bond Assemblies in Proteins at Vanishing Pulling Rates", "llm_category": "analytical_model"}
+{"doi": "10.1063/1.2404981", "title": "Adhesion and elasticity in nanoscale indentation", "llm_category": "analytical_model"}
+{"doi": "10.1115/1.2073647", "title": "Thermo-Mechanical Responses of a Surface-Coupled AFM Cantilever", "llm_category": "analytical_model"}
+{"doi": "10.1021/nl034049p", "title": "Unzipping DNA Oligomers", "llm_category": "analytical_model"}
