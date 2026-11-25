@@ -306,3 +306,4 @@
 {"doi": "10.1021/jacs.8b02851", "title": "Angle-Dependent Atomic Force Microscopy Single-Chain Pulling of Adsorbed Macromolecules from Planar Surfaces Unveils the Signature of an Adsorption–Desorption Transition", "llm_category": "analytical_model"}
 {"doi": "10.1093/bioinformatics/btl293", "title": "A novel pattern recognition algorithm to classify membrane protein unfolding pathways with high-throughput single-molecule force spectroscopy", "llm_category": "analytical_model"}
 {"doi": "10.1126/sciadv.adv1962", "title": "DNA origami–enhanced force spectroscopy and AlphaFold structural analyses reveal the folding landscape of calcium-binding proteins", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1021/ct500193u", "title": "A Coarse-Grained Model of Unstructured Single-Stranded DNA Derived from Atomistic Simulation and Single-Molecule Experiment", "llm_category": "analytical_model"}
