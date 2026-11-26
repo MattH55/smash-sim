@@ -351,3 +351,5 @@
 {"doi": "10.1021/acs.jpca.8b11137", "title": "Generalized Langevin Equation as a Model for Barrier Crossing Dynamics in Biomolecular Folding", "llm_category": "analytical_model"}
 {"doi": "10.1021/acs.jpcb.8b11137", "title": "Generalized Langevin Equation as a Model for Barrier Crossing Dynamics in Biomolecular Folding", "llm_category": "analytical_model"}
 {"doi": "10.1039/c7cp03011h", "title": "Toward a quantitative description of microscopic pathway heterogeneity in protein folding", "llm_category": "analytical_model"}
+{"doi": "10.1073/pnas.2417234122", "title": "Identifying the interactions conferring functional mechanical rigidity on RNase-resistant RNA from Zika virus", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1021/acsnano.0c01739", "title": "Entry Dynamics of Single Ebola Virus Revealed by Force Tracing", "llm_category": "sim_exp_comparison"}
