@@ -1,14 +1,14 @@
 class_id,class_name,n_records,n_papers,n_molecules,molecule_types,topologies,velocity_m_s_envelope,loading_rate_pN_s_envelope,spring_pN_nm_envelope,system_size_envelope,wall_h_per_traj_envelope,n_with_benchmark,n_abstract_only,n_verifier_flags,frac_refolding,frac_pathway
-AA-ENH,All-atom enhanced sampling along extension,134,134,113,RNA;other;protein;protein-ligand;protein-protein,cross;homopolymer;ligand-pocket;mixed;parallel;series;unknown,5e-08–1e+03,5.5–5.5,0.2–3.5e+05,1e+02–3.6e+05,0.096–0.096,18,103,28,0.05,0.53
-AA-EXP,All-atom explicit-solvent SMD,934,928,819,DNA;RNA;other;protein;protein-NA;protein-ligand;protein-protein,cross;homopolymer;ligand-pocket;mixed;parallel;series;unknown,7e-09–2e+06,1–2.5e+12,1–7e+05,1.1e+02–4.5e+06,0.2–3e+03,88,720,230,0.05,0.49
-AA-IMP,All-atom implicit-solvent SMD,26,26,26,DNA;other;protein;protein-ligand;protein-protein,homopolymer;ligand-pocket;mixed;parallel;series;unknown,7e-08–2.6e+02,,3.5e+02–7e+03,1.2e+03–5.2e+04,2–1.2e+02,6,14,12,0.0,0.5
-AN-BOND,Single-bond rupture kinetics (Bell,362,362,225,DNA;RNA;other;protein;protein-NA;protein-ligand,cross;homopolymer;ligand-pocket;mixed;parallel;series;unknown,4.5e-08–6,1–6.6e+03,0.03–7e+03,6.9e+03–6.9e+03,,17,249,51,0.08,0.11
+AA-ENH,All-atom enhanced sampling along extension,141,141,117,RNA;other;protein;protein-ligand;protein-protein,cross;homopolymer;ligand-pocket;mixed;parallel;series;unknown,5e-08–1e+03,5.5–5.5,0.2–3.5e+05,1e+02–3.6e+05,0.096–0.096,18,110,28,0.05,0.51
+AA-EXP,All-atom explicit-solvent SMD,1032,1026,894,DNA;RNA;other;protein;protein-NA;protein-ligand;protein-protein,cross;homopolymer;ligand-pocket;mixed;parallel;series;unknown,7e-09–2e+06,1–2.5e+12,1–7e+05,1.1e+02–4.5e+06,0.2–3e+03,105,783,262,0.05,0.49
+AA-IMP,All-atom implicit-solvent SMD,27,27,27,DNA;other;protein;protein-ligand;protein-protein,homopolymer;ligand-pocket;mixed;parallel;series;unknown,7e-08–2.6e+02,,30–7e+03,1.2e+03–5.2e+04,2–1.2e+02,6,14,13,0.0,0.52
+AN-BOND,Single-bond rupture kinetics (Bell,380,380,241,DNA;RNA;other;protein;protein-NA;protein-ligand,cross;homopolymer;ligand-pocket;mixed;parallel;series;unknown,4.5e-08–6,1–6.6e+03,0.03–7e+03,6.9e+03–6.9e+03,,22,258,57,0.08,0.12
 AN-CLUSTER,Bond-cluster / load-sharing models (parallel,2,2,2,other,parallel;unknown,,0.0003–0.0003,,,,0,1,0,0.0,0.0
 AN-NEQ,Nonequilibrium work and landscape reconstruction (Jarzynski,8,8,8,RNA;other,homopolymer;ligand-pocket;series;unknown,4e-07–4e-07,6e+03–6e+03,,,,0,6,2,0.0,0.12
-AN-POLY,Polymer elasticity (WLC,61,61,47,DNA;RNA;other;polysaccharide;protein;protein-NA,homopolymer;ligand-pocket;mixed;parallel;series;unknown,1e-06–2e-05,5.5–5.5,0.25–65,1e+02–5e+02,,2,31,20,0.07,0.1
-CG-GO,Structure-based Go (Calpha or heavier),108,102,85,RNA;other;protein;protein-NA;protein-protein,cross;homopolymer;ligand-pocket;mixed;parallel;series;unknown,1.2e-08–7e+06,,0.35–4.8e+04,1.6e+04–1.4e+05,36–36,11,66,82,0.31,0.52
+AN-POLY,Polymer elasticity (WLC,63,63,49,DNA;RNA;other;polysaccharide;protein;protein-NA,cross;homopolymer;ligand-pocket;mixed;parallel;series;unknown,1e-06–2e-05,5.5–5.5,0.25–65,1e+02–5e+02,,2,31,20,0.06,0.1
+CG-GO,Structure-based Go (Calpha or heavier),112,106,87,RNA;other;protein;protein-NA;protein-protein,cross;homopolymer;ligand-pocket;mixed;parallel;series;unknown,1.2e-08–7e+06,,0.35–4.8e+04,1.6e+04–1.4e+05,36–36,12,69,83,0.3,0.54
 CG-ISING,Ising-like binary-variable Go (WSME type),18,17,17,DNA;RNA;other;protein;protein-NA,homopolymer;mixed;parallel;series;unknown,3e-08–1.5e-06,,13–30,1e+04–1e+04,,1,6,10,0.22,0.5
-CG-MARTINI,Martini / GoMartini,30,30,27,DNA;other;protein;protein-protein,homopolymer;ligand-pocket;mixed;parallel;series;unknown,5e-08–5e+03,,62–1.7e+03,4.1e+03–2.6e+05,,6,15,9,0.03,0.37
+CG-MARTINI,Martini / GoMartini,33,33,30,DNA;other;protein;protein-protein,cross;homopolymer;ligand-pocket;mixed;parallel;series;unknown,5e-08–5e+03,,62–1.7e+03,4.1e+03–2.6e+05,,6,15,9,0.03,0.33
 CG-OTHER-NA,Other NA coarse-grained (3SPN,1,1,1,other,unknown,,,,,,0,1,0,0.0,1.0
 CG-OTHER-PROT,Other protein coarse-grained (OPEP,2,2,2,protein,unknown,,,,,,0,2,0,0.0,0.0
 CG-OXDNA,oxDNA / oxDNA2 / oxRNA,17,17,14,DNA;other;protein-NA,cross;homopolymer;series;unknown,2e-07–0.00014,5.5–5.5,,,,2,7,3,0.29,0.59

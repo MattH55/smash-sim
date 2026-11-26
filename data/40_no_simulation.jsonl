@@ -307,3 +307,42 @@
 {"doi": "10.1093/bioinformatics/btl293", "title": "A novel pattern recognition algorithm to classify membrane protein unfolding pathways with high-throughput single-molecule force spectroscopy", "llm_category": "analytical_model"}
 {"doi": "10.1126/sciadv.adv1962", "title": "DNA origami–enhanced force spectroscopy and AlphaFold structural analyses reveal the folding landscape of calcium-binding proteins", "llm_category": "sim_exp_comparison"}
 {"doi": "10.1021/ct500193u", "title": "A Coarse-Grained Model of Unstructured Single-Stranded DNA Derived from Atomistic Simulation and Single-Molecule Experiment", "llm_category": "analytical_model"}
+{"doi": "10.33011/livecoms.5.1.2375", "title": "A Suite of Tutorials for the BioSimSpace Framework for Interoperable Biomolecular Simulation [Article v1.0]", "llm_category": "pulling_simulation"}
+{"doi": "10.1002/smll.74269", "title": "Large‐Scale Structural Dynamics in the Tail Fiber Modulate the Infective Transition of the T7 Bacteriophage", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1093/nar/gkag817", "title": "Imaging and mechanism of DNA–DNA recognition mediated by divalent ions", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1016/j.jtha.2025.08.023", "title": "Significance of the amino acid at position 2561 in the C4 domain of von Willebrand factor", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1073/pnas.2003395117", "title": "Single-molecule and in silico dissection of the interaction between Polycomb repressive complex 2 and chromatin", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1021/acs.nanolett.9b04418", "title": "Sequential Bending and Twisting around C–C Single Bonds by Mechanical Lifting of a Pre-Adsorbed Polymer", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1088/1361-6463/aa599d", "title": "Single-molecule manipulation experiments to explore friction and adhesion", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1039/c5nr08092d", "title": "A relationship between three-dimensional surface hydration structures and force distribution measured by atomic force microscopy", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1021/acs.langmuir.6b03814", "title": "Chemical Identification at the Solid–Liquid Interface", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1103/physrevb.92.155412", "title": "Mechanism of atomic force microscopy imaging of three-dimensional hydration structures at a solid-liquid interface", "llm_category": "sim_exp_comparison"}
+{"doi": "title:astudyofbacterialadhesiononasinglecelllevelbymeansofforcemeasuringopticaltweezersandsimulations", "title": "A study of bacterial adhesion on a single-cell level by means of force measuring optical tweezers and simulations", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1073/pnas.0509645103", "title": "Evaluation of synthetic linear motor-molecule actuation energetics", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1021/acs.jpcc.5c01034", "title": "Effect of Ions on Solution Structure and Hydration Forces at the Orthoclase–Water Interface", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1021/acsnano.4c01797", "title": "Effect of Solvent Composition on Non-DLVO Forces and Oriented Attachment of Zinc Oxide Nanoparticles", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1021/acs.jpclett.3c02755", "title": "Dynamic Counterion Condensation Model Decodes Functional Dynamics of RNA Pseudoknot in SARS-CoV-2: Control of Ion-Mediated Pierced Lasso Topology", "llm_category": "sim_exp_comparison"}
+{"doi": "10.3390/molecules28041857", "title": "Regulatory Mechanism of Opposite Charges on Chiral Self-Assembly of Cellulose Nanocrystals", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1101/2022.06.05.493249", "title": "Pathogen-Host Adhesion between SARS-CoV-2 Spike Proteins from Different Variants and Human ACE2 Probed at Single-Molecule and Single-Cell Levels", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1021/acs.jpcb.4c01391", "title": "Binding of SARS-CoV-2 Nonstructural Protein 1 to 40S Ribosome Inhibits mRNA Translation", "llm_category": "pulling_simulation"}
+{"doi": "10.3390/ijms25010336", "title": "The Adsorption of P2X2 Receptors Interacting with IgG Antibodies Revealed by Combined AFM Imaging and Mechanical Simulation", "llm_category": "pulling_simulation"}
+{"doi": "10.1021/acs.jpcb.2c00708", "title": "Cocktail of REGN Antibodies Binds More Strongly to SARS-CoV-2 Than Its Components, but the Omicron Variant Reduces Its Neutralizing Ability", "llm_category": "pulling_simulation"}
+{"doi": "10.3389/fcell.2022.958957", "title": "Not sorcery after all: Roles of multiple charged residues in membrane insertion of gasdermin-A3", "llm_category": "pulling_simulation"}
+{"doi": "10.53846/goediss-9527", "title": "Modelling the Dynamics of Actomyosin Networks", "llm_category": "pulling_simulation"}
+{"doi": "10.11606/t.76.2019.tde-20052019-141004", "title": "Estudo do recobrimento biológico de nanossuperfícies por modelagem computacional: aplicação no desenvolvimento de nanoimunossensores", "llm_category": "pulling_simulation"}
+{"doi": "10.1021/cn500277f", "title": "Modulation of Alzheimer’s Aβ Protofilament-Membrane Interactions by Lipid Headgroups", "llm_category": "pulling_simulation"}
+{"doi": "10.1021/ja500445z", "title": "ILQINS Hexapeptide, Identified in Lysozyme Left-Handed Helical Ribbons and Nanotubes, Forms Right-Handed Helical Ribbons and Crystals", "llm_category": "pulling_simulation"}
+{"doi": "10.1111/cbdd.12469", "title": "Enzymatic Studies of Isoflavonoids as Selective and Potent Inhibitors of Human Leukocyte 5‐Lipo‐Oxygenase", "llm_category": "pulling_simulation"}
+{"doi": "10.4161/cam.2.2.6154", "title": "Modeling and simulation of chemomechanics at the cell-matrix interface", "llm_category": "pulling_simulation"}
+{"doi": "10.1002/smll.202408977", "title": "Terminal Tryptophan‐Directed Anisotropic Self‐Assembly for Precise Protein Nanostructure Regulation", "llm_category": "pulling_simulation"}
+{"doi": "10.1016/j.csbj.2024.02.023", "title": "Phosphopeptide binding to the N-SH2 domain of tyrosine phosphatase SHP2 correlates with the unzipping of its central β-sheet", "llm_category": "pulling_simulation"}
+{"doi": "10.1002/cplu.202300758", "title": "Graphene Exfoliation in Binary NMP/Water Mixtures by Molecular Dynamics Simulations", "llm_category": "pulling_simulation"}
+{"doi": "10.1021/acsomega.3c07267", "title": "In Silico Screening\nof Chlorogenic Acids from Plant\nSources against Human Translocase‑I to Identify Competitive\nInhibitors to Treat Diabetes", "llm_category": "pulling_simulation"}
+{"doi": "10.1021/acs.macromol.1c02270", "title": "Mechanical Size Effect of Freestanding Nanoconfined Polymer Films", "llm_category": "pulling_simulation"}
+{"doi": "10.1002/cphc.202000873", "title": "Cell‐Penetrating Peptides: Correlation between Peptide‐Lipid Interaction and Penetration Efficiency", "llm_category": "pulling_simulation"}
+{"doi": "10.1021/acs.langmuir.6b02663", "title": "Molecular Dynamics Simulation of Bismuth Telluride Exfoliation Mechanisms in Different Ionic Liquid Solvents", "llm_category": "pulling_simulation"}
+{"doi": "10.1002/bip.22751", "title": "A comparison of four different conformations adopted by human telomeric G‐quadruplex using computer simulations", "llm_category": "pulling_simulation"}
+{"doi": "10.1021/jp504942t", "title": "Implementation of the Forward–Reverse Method for Calculating the Potential of Mean Force Using a Dynamic Restraining Protocol", "llm_category": "pulling_simulation"}
+{"doi": "10.1021/la401442r", "title": "Hydrated Polyamide Membrane and Its Interaction with Alginate: A Molecular Dynamics Study", "llm_category": "pulling_simulation"}
+{"doi": "10.1021/jp303097v", "title": "Molecular Dynamics Simulations of Alkylsilane Monolayers on Silica Nanoasperities: Impact of Surface Curvature on Monolayer Structure and Pathways for Energy Dissipation in Tribological Contacts", "llm_category": "pulling_simulation"}
+{"doi": "10.1021/acs.jpcb.0c02009", "title": "How Good is Jarzynski’s Equality for Computer-Aided Drug Design?", "llm_category": "analytical_model"}

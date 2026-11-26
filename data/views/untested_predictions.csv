@@ -46,3 +46,4 @@ SIMX-001337,10.1021/acsnano.4c07352,unknown,CG-GO,other,Authors' own judgement: 
 SIMX-001361,10.1021/acs.jpcb.8b02137,β-lactamase protein with small compounds,AA-ENH,rupture_force,Correlation coefficient R ≈ 0.84 reported between simulation-derived rupture/unbinding time and experimental inhibition constants.,
 SIMX-000944,10.1021/acs.jcim.9b00649,Sigma1 receptor (S1R),AA-EXP,dG_unfold,authors' stated agreement between free energy calculations and experimental Ki values,
 SIMX-000563,10.1016/j.bbamem.2006.03.028,bacteriorhodopsin,CG-GO,other,authors state model predicts lack of symmetry,
+SIMX-001659,10.1039/c6sm02568d,"DNA hairpin (20TS06/T4, 20TS10/T4)",AN-BOND,other,"authors predict that active forces lower the barrier and increase the rate, but no direct quantitative comparison to experiment is made",
