@@ -346,3 +346,8 @@
 {"doi": "10.1021/la401442r", "title": "Hydrated Polyamide Membrane and Its Interaction with Alginate: A Molecular Dynamics Study", "llm_category": "pulling_simulation"}
 {"doi": "10.1021/jp303097v", "title": "Molecular Dynamics Simulations of Alkylsilane Monolayers on Silica Nanoasperities: Impact of Surface Curvature on Monolayer Structure and Pathways for Energy Dissipation in Tribological Contacts", "llm_category": "pulling_simulation"}
 {"doi": "10.1021/acs.jpcb.0c02009", "title": "How Good is Jarzynski’s Equality for Computer-Aided Drug Design?", "llm_category": "analytical_model"}
+{"doi": "10.1073/pnas.0808213105", "title": "Selectin catch–slip kinetics encode shear threshold adhesive behavior of rolling leukocytes", "llm_category": "analytical_model"}
+{"doi": "10.1088/1572-9494/ad3226", "title": "Theoretical study of the nonlinear force-loading control in single-molecule stretching experiments", "llm_category": "analytical_model"}
+{"doi": "10.1021/acs.jpca.8b11137", "title": "Generalized Langevin Equation as a Model for Barrier Crossing Dynamics in Biomolecular Folding", "llm_category": "analytical_model"}
+{"doi": "10.1021/acs.jpcb.8b11137", "title": "Generalized Langevin Equation as a Model for Barrier Crossing Dynamics in Biomolecular Folding", "llm_category": "analytical_model"}
+{"doi": "10.1039/c7cp03011h", "title": "Toward a quantitative description of microscopic pathway heterogeneity in protein folding", "llm_category": "analytical_model"}
