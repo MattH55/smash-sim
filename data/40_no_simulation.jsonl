@@ -353,3 +353,5 @@
 {"doi": "10.1039/c7cp03011h", "title": "Toward a quantitative description of microscopic pathway heterogeneity in protein folding", "llm_category": "analytical_model"}
 {"doi": "10.1073/pnas.2417234122", "title": "Identifying the interactions conferring functional mechanical rigidity on RNase-resistant RNA from Zika virus", "llm_category": "sim_exp_comparison"}
 {"doi": "10.1021/acsnano.0c01739", "title": "Entry Dynamics of Single Ebola Virus Revealed by Force Tracing", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1002/smll.202514267", "title": "Mapping the Conformational Landscape of DNA Minicircles Through Atomic Force Microscopy and Shape Space Analysis", "llm_category": "sim_exp_comparison"}
+{"doi": "10.1039/c7nr00198c", "title": "Hydrophilicities of amylose and natural cellulose are regulated by the linkage between sugar rings", "llm_category": "sim_exp_comparison"}
