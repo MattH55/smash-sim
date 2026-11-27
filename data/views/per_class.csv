@@ -6,7 +6,7 @@ AN-BOND,Single-bond rupture kinetics (Bell,384,384,242,DNA;RNA;other;protein;pro
 AN-CLUSTER,Bond-cluster / load-sharing models (parallel,2,2,2,other,parallel;unknown,,0.0003–0.0003,,,,0,1,0,0.0,0.0
 AN-NEQ,Nonequilibrium work and landscape reconstruction (Jarzynski,8,8,8,RNA;other,homopolymer;ligand-pocket;series;unknown,4e-07–4e-07,6e+03–6e+03,,,,0,6,2,0.0,0.12
 AN-POLY,Polymer elasticity (WLC,64,64,50,DNA;RNA;other;polysaccharide;protein;protein-NA,cross;homopolymer;ligand-pocket;mixed;parallel;series;unknown,1e-06–2e-05,5.5–5.5,0.25–65,1e+02–5e+02,,2,32,20,0.06,0.09
-CG-GO,Structure-based Go (Calpha or heavier),112,106,87,RNA;other;protein;protein-NA;protein-protein,cross;homopolymer;ligand-pocket;mixed;parallel;series;unknown,1.2e-08–7e+06,,0.35–4.8e+04,1.6e+04–1.4e+05,36–36,12,69,83,0.3,0.54
+CG-GO,Structure-based Go (Calpha or heavier),113,107,88,RNA;other;protein;protein-NA;protein-protein,cross;homopolymer;ligand-pocket;mixed;parallel;series;unknown,1.2e-08–7e+06,,0.35–4.8e+04,1.6e+04–1.4e+05,36–36,12,70,83,0.3,0.53
 CG-ISING,Ising-like binary-variable Go (WSME type),19,18,18,DNA;RNA;other;protein;protein-NA,cross;homopolymer;mixed;parallel;series;unknown,3e-08–1.5e-06,,13–30,1e+04–1e+04,,1,6,10,0.21,0.47
 CG-MARTINI,Martini / GoMartini,33,33,30,DNA;other;protein;protein-protein,cross;homopolymer;ligand-pocket;mixed;parallel;series;unknown,5e-08–5e+03,,62–1.7e+03,4.1e+03–2.6e+05,,6,15,9,0.03,0.33
 CG-OTHER-NA,Other NA coarse-grained (3SPN,1,1,1,other,unknown,,,,,,0,1,0,0.0,1.0
