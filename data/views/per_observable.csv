@@ -1,8 +1,8 @@
 match_level,EXT,EXT,EXT,EXT,H2H,H2H,H2H,H2H,PRED,PRED,PRED,QUAL,QUAL,QUAL,QUAL,UNTESTED,n,frac_agree,n_H2H
 verdict,agree,disagree,partial,untested,agree,disagree,partial,untested,agree,disagree,untested,agree,disagree,partial,untested,untested,,,
 observable,,,,,,,,,,,,,,,,,,,
-rupture_force,99,9,19,2,99,5,14,1,2,0,0,153,8,15,3,12,441,0.8,119
-pathway_order,6,1,1,0,33,1,1,0,4,0,3,247,5,51,8,14,375,0.77,35
+rupture_force,99,9,19,2,99,5,14,1,2,0,0,154,8,15,3,12,442,0.8,119
+pathway_order,6,1,1,0,33,1,1,0,4,0,3,248,5,51,8,14,376,0.77,35
 other,15,0,4,1,25,0,3,2,5,0,1,120,3,11,0,16,206,0.8,30
 dG_unfold,8,1,1,0,10,1,0,1,0,0,0,30,4,12,0,1,69,0.7,12
 delta_Lc,0,1,0,0,15,0,2,0,0,0,0,12,3,3,1,0,37,0.73,17
